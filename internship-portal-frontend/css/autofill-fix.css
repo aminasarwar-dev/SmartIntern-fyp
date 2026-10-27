@@ -1,0 +1,17 @@
+/* =========================================================
+   GLOBAL FIX: CHROME AUTOFILL BLUE BACKGROUND
+========================================================= */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+
+    -webkit-text-fill-color: #332d35 !important;
+
+    caret-color: #332d35;
+
+    transition: background-color 9999s ease-in-out 0s;
+}

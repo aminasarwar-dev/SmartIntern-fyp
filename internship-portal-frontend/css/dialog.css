@@ -1,0 +1,120 @@
+/* =========================================================
+   SMARTINTERN — DIALOGS (confirm / prompt / alert)
+   Same tokens as the rest of the site (variables.css).
+========================================================= */
+
+.sd-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 11000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(41, 35, 43, .45);
+    backdrop-filter: blur(4px);
+}
+
+.sd-overlay.show {
+    display: flex;
+}
+
+.sd-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 28px;
+    box-sizing: border-box;
+    border: 1px solid #eee3ed;
+    border-radius: 24px;
+    background: #fffdfb;
+    box-shadow: 0 24px 70px rgba(41, 35, 43, .18);
+}
+
+.sd-title {
+    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.25;
+    color: var(--dark, #29232b);
+}
+
+.sd-text {
+    margin: 0 0 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted, #777078);
+    white-space: pre-line;
+}
+
+.sd-field {
+    margin: 0 0 18px;
+}
+
+.sd-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--dark, #29232b);
+}
+
+.sd-field textarea,
+.sd-field input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--border, #eadfe8);
+    border-radius: 14px;
+    background: #fff;
+    font: inherit;
+    font-size: 14px;
+    color: var(--dark, #29232b);
+    resize: vertical;
+}
+
+.sd-field textarea:focus,
+.sd-field input:focus {
+    outline: 2px solid var(--purple, #b38bd7);
+    outline-offset: 1px;
+}
+
+.sd-error {
+    min-height: 16px;
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: #c0475b;
+}
+
+.sd-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.sd-btn {
+    padding: 11px 20px;
+    border: 1px solid var(--border, #eadfe8);
+    border-radius: 999px;
+    background: #fff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark, #29232b);
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.sd-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(70, 40, 70, .08);
+}
+
+.sd-btn.primary {
+    border-color: var(--dark, #29232b);
+    background: var(--dark, #29232b);
+    color: #fff;
+}
+
+.sd-btn.primary.danger {
+    border-color: #c0475b;
+    background: #c0475b;
+}

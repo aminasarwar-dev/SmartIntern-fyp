@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartIntern — AI Skill Gap</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- GSAP -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+
+
+    <!-- ONLY THIS CSS -->
+
+    <link rel="stylesheet" href="../css/layout-student.css">
+    <link
+        rel="stylesheet"
+        href="../css/skill-gap.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+    <link rel="stylesheet" href="../css/logout-model.css">
+
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="student"></script>
+</head>
+
+
+<body class="student-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <a href="index.html">
+                Smart<span>Intern</span>
+            </a>
+
+        </div>
+
+
+        <!-- Student Profile -->
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AS
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong id="sidebarStudentName">
+                    Student
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="student-dashboard.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a
+                href="student-browse-internships.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌕</span>
+
+                <span>Browse Internships</span>
+
+            </a>
+
+
+            <a
+                href="student-my-applications.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">▣</span>
+
+                <span>My Applications</span>
+
+            </a>
+
+
+            <a
+                href="resume-upload.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">↥</span>
+
+                <span>Resume</span>
+
+            </a>
+
+
+
+            <p class="nav-label nav-label-space">
+                AI TOOLS
+            </p>
+
+
+            <a
+                href="skill-gap.html"
+                class="sidebar-link active"
+            >
+
+                <span class="nav-icon">✦</span>
+
+                <span>AI Skill Gap</span>
+
+            </a>
+
+
+            <a
+                href="ai-match.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◎</span>
+
+                <span>AI Matches</span>
+
+            </a>
+
+
+
+            <p class="nav-label nav-label-space">
+                ACCOUNT
+            </p>
+
+
+            <a
+                href="student-profile.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◯</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="sidebar-link"
+                id="logoutLink"
+            >
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="dashboard-topbar">
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    AI Skill Gap
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                >
+
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        AS
+                    </div>
+
+                    <div class="topbar-profile-text">
+
+                        <strong id="topbarStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PAGE CONTENT
+             ================================================= -->
+
+        <div class="skill-content">
+
+
+            <!-- =================================================
+                 PAGE INTRO
+                 ================================================= -->
+
+            <section class="skill-intro">
+
+
+                <div class="intro-copy">
+
+                    <span class="skill-eyebrow">
+                        SMARTINTERN AI
+                    </span>
+
+                    <h2>
+                        Understand your
+                        <em>skill gap.</em>
+                    </h2>
+
+                    <p>
+                        Our AI compares your current skills with
+                        internship requirements and shows you what
+                        to improve for your target career.
+                    </p>
+
+                </div>
+
+
+                <div class="intro-visual">
+
+                    <div class="visual-glow"></div>
+
+                    <div class="visual-orbit orbit-one"></div>
+
+                    <div class="visual-orbit orbit-two"></div>
+
+                    <div class="visual-core">
+                        ✦
+                    </div>
+
+                    <div class="visual-badge">
+
+                        <small>
+                            AI ANALYSIS
+                        </small>
+
+                        <strong>
+                            87%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY
+                 ================================================= -->
+
+            <section class="skill-summary">
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            YOUR SKILLS
+                        </span>
+
+                        <strong>
+                            8
+                        </strong>
+
+                        <small>
+                            skills identified
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon pink">
+                        ✦
+                    </div>
+
+                    <div>
+
+                        <span>
+                            MATCHED SKILLS
+                        </span>
+
+                        <strong>
+                            6
+                        </strong>
+
+                        <small>
+                            already aligned
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <div class="summary-icon soft">
+                        !
+                    </div>
+
+                    <div>
+
+                        <span>
+                            SKILL GAPS
+                        </span>
+
+                        <strong>
+                            3
+                        </strong>
+
+                        <small>
+                            areas to improve
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 MAIN GRID
+                 ================================================= -->
+
+            <section class="skill-grid">
+
+
+                <!-- =============================================
+                     CURRENT SKILLS
+                     ============================================= -->
+
+                <div class="skill-card">
+
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span>
+                                YOUR PROFILE
+                            </span>
+
+                            <h3>
+                                Current Skills
+                            </h3>
+
+                        </div>
+
+                        <div class="heading-mark">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <p class="card-description">
+                        Skills detected from your profile and
+                        uploaded resume.
+                    </p>
+
+
+                    <div class="skills-list">
+
+
+                        <div class="skill-item matched">
+
+                            <span class="skill-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    HTML
+                                </strong>
+
+                                <small>
+                                    Strong
+                                </small>
+
+                            </div>
+
+                            <span class="skill-level">
+                                92%
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-item matched">
+
+                            <span class="skill-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    CSS
+                                </strong>
+
+                                <small>
+                                    Strong
+                                </small>
+
+                            </div>
+
+                            <span class="skill-level">
+                                89%
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-item matched">
+
+                            <span class="skill-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    JavaScript
+                                </strong>
+
+                                <small>
+                                    Good
+                                </small>
+
+                            </div>
+
+                            <span class="skill-level">
+                                82%
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-item matched">
+
+                            <span class="skill-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    UI / UX
+                                </strong>
+
+                                <small>
+                                    Good
+                                </small>
+
+                            </div>
+
+                            <span class="skill-level">
+                                78%
+                            </span>
+
+                        </div>
+
+
+                        <div class="skill-item matched">
+
+                            <span class="skill-check">
+                                ✓
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Git
+                                </strong>
+
+                                <small>
+                                    Good
+                                </small>
+
+                            </div>
+
+                            <span class="skill-level">
+                                74%
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =============================================
+                     SKILL GAPS
+                     ============================================= -->
+
+                <div class="skill-card gap-card">
+
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span>
+                                AI RECOMMENDATION
+                            </span>
+
+                            <h3>
+                                Skills to Improve
+                            </h3>
+
+                        </div>
+
+                        <div class="heading-mark pink-mark">
+                            ✦
+                        </div>
+
+                    </div>
+
+
+                    <p class="card-description">
+                        These skills could increase your match
+                        with more internship opportunities.
+                    </p>
+
+
+                    <div class="gap-list">
+
+
+                        <div class="gap-item">
+
+                            <div class="gap-number">
+                                01
+                            </div>
+
+                            <div class="gap-info">
+
+                                <div class="gap-title">
+
+                                    <strong>
+                                        React.js
+                                    </strong>
+
+                                    <span>
+                                        High Priority
+                                    </span>
+
+                                </div>
+
+                                <div class="gap-bar">
+
+                                    <span
+                                        style="width: 35%;"
+                                    ></span>
+
+                                </div>
+
+                                <small>
+                                    Recommended for modern
+                                    frontend internships.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="gap-item">
+
+                            <div class="gap-number">
+                                02
+                            </div>
+
+                            <div class="gap-info">
+
+                                <div class="gap-title">
+
+                                    <strong>
+                                        Python
+                                    </strong>
+
+                                    <span>
+                                        Medium
+                                    </span>
+
+                                </div>
+
+                                <div class="gap-bar">
+
+                                    <span
+                                        style="width: 52%;"
+                                    ></span>
+
+                                </div>
+
+                                <small>
+                                    Useful for AI and data-related
+                                    internship roles.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="gap-item">
+
+                            <div class="gap-number">
+                                03
+                            </div>
+
+                            <div class="gap-info">
+
+                                <div class="gap-title">
+
+                                    <strong>
+                                        SQL
+                                    </strong>
+
+                                    <span>
+                                        Medium
+                                    </span>
+
+                                </div>
+
+                                <div class="gap-bar">
+
+                                    <span
+                                        style="width: 61%;"
+                                    ></span>
+
+                                </div>
+
+                                <small>
+                                    Helps strengthen your
+                                    backend and data skills.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 TARGET INTERNSHIP
+                 ================================================= -->
+
+            <section class="target-card">
+
+
+                <div class="target-left">
+
+                    <div class="target-icon">
+                        ◎
+                    </div>
+
+                    <div>
+
+                        <span>
+                            TARGET ROLE
+                        </span>
+
+                        <h3>
+                            Frontend Developer Intern
+                        </h3>
+
+                        <p>
+                            Your current profile has an
+                            <strong>87% skill match</strong>
+                            with this role.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="target-progress">
+
+                    <div class="progress-circle">
+
+                        <div>
+
+                            <strong>
+                                87%
+                            </strong>
+
+                            <span>
+                                MATCH
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ACTION
+                 ================================================= -->
+
+            <section class="skill-action">
+
+
+                <div>
+
+                    <span>
+                        KEEP IMPROVING
+                    </span>
+
+                    <h3>
+                        Close your skill gaps step by step.
+                    </h3>
+
+                    <p>
+                        Focus on the recommended skills and
+                        update your resume when you gain new
+                        experience.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="student-browse-internships.html"
+                    class="action-button"
+                >
+                    Explore Internships
+                    <span>→</span>
+                </a>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="../js/skill-gap.js"></script>
+    <script src="../js/logout.js"></script>
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/student-data.js"></script>
+    <script src="../js/student-photo.js"></script>
+</body>
+
+</html>

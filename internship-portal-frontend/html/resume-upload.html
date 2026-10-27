@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartIntern — Resume</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Same Dashboard CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+
+    <link rel="stylesheet" href="../css/layout-student.css">
+    <link
+        rel="stylesheet"
+        href="../css/student-dashboard.css"
+    >
+
+    <!-- Only Resume Content CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/resume-upload.css"
+    >
+    <link rel="stylesheet" href="../css/logout-model.css">
+
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <link rel="stylesheet" href="../css/ai-ui.css">
+    <script src="../js/api.js"></script>
+    <script src="../js/ai-ui.js"></script>
+    <script src="../js/student-data.js"></script>
+    <script src="../js/session.js" data-role="student"></script>
+</head>
+
+
+<body class="student-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR — SAME AS STUDENT DASHBOARD
+         ===================================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+        <div class="sidebar-brand">
+
+            <a href="index.html">
+
+                Smart<span>Intern</span>
+
+            </a>
+
+        </div>
+
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AS
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong id="sidebarStudentName">
+                    Student
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="student-dashboard.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a
+                href="student-browse-internships.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌕</span>
+
+                <span>Browse Internships</span>
+
+            </a>
+
+
+            <a
+                href="student-my-applications.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">▣</span>
+
+                <span>My Applications</span>
+
+            </a>
+
+
+            <a
+                href="resume-upload.html"
+                class="sidebar-link active"
+            >
+
+                <span class="nav-icon">↥</span>
+
+                <span>Resume</span>
+
+            </a>
+
+
+            <p class="nav-label nav-label-space">
+                AI TOOLS
+            </p>
+
+
+            <a
+                href="skill-gap.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">✦</span>
+
+                <span>AI Skill Gap</span>
+
+            </a>
+
+
+            <a
+                href="ai-match.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◎</span>
+
+                <span>AI Matches</span>
+
+            </a>
+
+
+            <p class="nav-label nav-label-space">
+                ACCOUNT
+            </p>
+
+
+            <a
+                href="student-profile.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◯</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a
+                href="#"
+                class="sidebar-link"
+                id="logoutLink"
+            >
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOP BAR — SAME AS DASHBOARD
+             ================================================= -->
+
+        <header class="dashboard-topbar">
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    Student Portal
+                </span>
+
+                <h1>
+                    Resume
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                >
+
+                    ♧
+
+                    <span class="notification-dot">
+                    </span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        AS
+                    </div>
+
+                    <div class="topbar-profile-text">
+
+                        <strong id="topbarStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =================================================
+             RESUME CONTENT
+             ================================================= -->
+
+        <div class="resume-content">
+
+
+            <section class="resume-heading">
+
+                <div>
+
+                    <span>
+                        YOUR RESUME
+                    </span>
+
+                    <h2>
+                        Build your
+                        <em>career profile.</em>
+                    </h2>
+
+                    <p>
+                        Upload your latest resume so SmartIntern AI
+                        can analyze your skills and find relevant
+                        internship opportunities.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CURRENT RESUME
+                 ================================================= -->
+
+            <section class="current-resume-card">
+
+
+                <div class="current-resume-icon">
+                    ✓
+                </div>
+
+
+                <div class="current-resume-info">
+
+                    <span>
+                        CURRENT RESUME
+                    </span>
+
+                    <h3 id="currentResumeName">
+                        No resume uploaded
+                    </h3>
+
+                    <p id="currentResumeStatus">
+                        Upload your resume to start AI analysis.
+                    </p>
+
+                </div>
+
+
+                <div class="resume-status">
+                    Not Uploaded
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 UPLOAD AREA
+                 ================================================= -->
+
+            <section class="resume-upload-card">
+
+
+                <div class="upload-top">
+
+                    <div>
+
+                        <span>
+                            UPLOAD RESUME
+                        </span>
+
+                        <h2>
+                            Add your latest resume.
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <label
+                    class="upload-area"
+                    id="uploadArea"
+                    for="resumeFile"
+                >
+
+                    <div class="upload-icon">
+                        ↥
+                    </div>
+
+
+                    <h3>
+                        Drop your resume here
+                    </h3>
+
+
+                    <p>
+                        or click to browse from your computer
+                    </p>
+
+
+                    <span class="upload-format">
+                        PDF, DOC or DOCX · Maximum 5 MB
+                    </span>
+
+
+                    <input
+                        type="file"
+                        id="resumeFile"
+                        accept=".pdf,.doc,.docx"
+                        hidden
+                    >
+
+                </label>
+
+
+                <!-- Selected File -->
+
+                <div
+                    class="selected-file"
+                    id="selectedFile"
+                >
+
+                    <div class="file-icon">
+                        PDF
+                    </div>
+
+                    <div class="file-info">
+
+                        <strong id="fileName">
+                            Resume.pdf
+                        </strong>
+
+                        <span id="fileSize">
+                            0 KB
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="removeFile"
+                        class="remove-file"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <!-- Upload Button -->
+
+                <button
+                    type="button"
+                    class="upload-button"
+                    id="uploadButton"
+                    disabled
+                >
+                    Upload Resume
+                    <span>→</span>
+                </button>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 AI ANALYSIS
+                 ================================================= -->
+
+            <section
+                class="ai-analysis-card"
+                id="aiAnalysisCard"
+            >
+
+                <div class="analysis-icon">
+                    ✦
+                </div>
+
+
+                <div class="analysis-content">
+
+                    <span>
+                        SMARTINTERN AI
+                    </span>
+
+                    <h3>
+                        What happens after upload?
+                    </h3>
+
+                    <p>
+                        AI will analyze your resume, identify your
+                        skills and compare them with internship
+                        requirements to generate relevant matches.
+                    </p>
+
+
+                    <div class="analysis-steps">
+
+                        <div>
+
+                            <strong>
+                                01
+                            </strong>
+
+                            <span>
+                                Resume Analysis
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                02
+                            </strong>
+
+                            <span>
+                                Skill Extraction
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                03
+                            </strong>
+
+                            <span>
+                                AI Matching
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RESUME TIP
+                 ================================================= -->
+
+            <section class="resume-tip">
+
+                <div>
+                    ✦
+                </div>
+
+                <p>
+                    <strong>Resume tip:</strong>
+                    Keep your resume updated with your latest
+                    education, technical skills and projects for
+                    more accurate AI internship matches.
+                </p>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         NOTIFICATION PANEL — SAME AS DASHBOARD
+         ===================================================== -->
+
+    <div
+        class="notification-panel"
+        id="notificationPanel"
+    >
+
+        <div class="notification-panel-head">
+
+            <h3>
+                Notifications
+            </h3>
+
+            <button
+                id="closeNotifications"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="panel-notification">
+
+            <div>
+                ✦
+            </div>
+
+            <section>
+
+                <strong>
+                    New AI Match
+                </strong>
+
+                <p>
+                    You have a new 91% internship match.
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <div class="panel-notification">
+
+            <div>
+                ✓
+            </div>
+
+            <section>
+
+                <strong>
+                    Application shortlisted
+                </strong>
+
+                <p>
+                    Your application at Alpha Labs
+                    was shortlisted.
+                </p>
+
+            </section>
+
+        </div>
+
+
+        <div class="panel-notification">
+
+            <div>
+                ◷
+            </div>
+
+            <section>
+
+                <strong>
+                    Interview reminder
+                </strong>
+
+                <p>
+                    Technical interview scheduled
+                    for tomorrow.
+                </p>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SAME DASHBOARD JS
+         ===================================================== -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+
+    <script src="../js/resume-upload.js"></script>
+    <script src="../js/ai-screens.js"></script>
+    <script src="../js/logout.js"></script>
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/student-photo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,839 @@
+/* =========================================================
+   RESUME PAGE
+   Only Resume Main Content
+   ========================================================= */
+
+
+.resume-content {
+
+    padding: 32px 38px 50px;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.resume-heading {
+
+    margin-bottom: 22px;
+
+}
+
+
+.resume-heading > div {
+
+    max-width: 700px;
+
+}
+
+
+.resume-heading > div > span {
+
+    color: #aaa0ac;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+}
+
+
+.resume-heading h2 {
+
+    margin: 6px 0 8px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    color: var(--plum);
+
+}
+
+
+.resume-heading h2 em {
+
+    color: var(--purple-dark);
+
+    font-style: italic;
+
+}
+
+
+.resume-heading p {
+
+    margin: 0;
+
+    max-width: 600px;
+
+    color: #918590;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   CURRENT RESUME
+   ========================================================= */
+
+.current-resume-card {
+
+    min-height: 82px;
+
+    padding: 16px 18px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    background: white;
+
+    margin-bottom: 18px;
+
+}
+
+
+.current-resume-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #eee3f7;
+
+    color: var(--purple-dark);
+
+    font-size: 16px;
+
+}
+
+
+.current-resume-info {
+
+    flex: 1;
+
+}
+
+
+.current-resume-info > span {
+
+    color: #aaa0ac;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+}
+
+
+.current-resume-info h3 {
+
+    margin: 4px 0 2px;
+
+    font-size: 12px;
+
+}
+
+
+.current-resume-info p {
+
+    margin: 0;
+
+    color: #918590;
+
+    font-size: 8px;
+
+}
+
+
+.resume-status {
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #f1e9f2;
+
+    color: #8d7892;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+}
+
+
+/* =========================================================
+   UPLOAD CARD
+   ========================================================= */
+
+.resume-upload-card {
+
+    padding: 22px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: white;
+
+}
+
+
+.upload-top {
+
+    margin-bottom: 18px;
+
+}
+
+
+.upload-top span {
+
+    color: #aaa0ac;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+}
+
+
+.upload-top h2 {
+
+    margin: 5px 0 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 500;
+
+    color: var(--plum);
+
+}
+
+
+/* =========================================================
+   UPLOAD AREA
+   ========================================================= */
+
+.upload-area {
+
+    min-height: 220px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    border:
+        1px dashed #d9cce0;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fdfbfe,
+            #faf6fb
+        );
+
+    cursor: pointer;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.upload-area:hover {
+
+    border-color:
+        var(--purple);
+
+    background:
+        #fcf8fd;
+
+}
+
+
+.upload-area.dragging {
+
+    border-color:
+        var(--pink-dark);
+
+    transform:
+        scale(.995);
+
+}
+
+
+.upload-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    margin-bottom: 11px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee3f7,
+            #f7e3ed
+        );
+
+    color: var(--purple-dark);
+
+    font-size: 19px;
+
+}
+
+
+.upload-area h3 {
+
+    margin: 0 0 5px;
+
+    font-size: 13px;
+
+    color: var(--plum);
+
+}
+
+
+.upload-area p {
+
+    margin: 0 0 8px;
+
+    color: #918590;
+
+    font-size: 9px;
+
+}
+
+
+.upload-format {
+
+    color: #aaa0ac;
+
+    font-size: 7px;
+
+}
+
+
+/* =========================================================
+   SELECTED FILE
+   ========================================================= */
+
+.selected-file {
+
+    display: none;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 14px;
+
+    padding: 11px 13px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: #fdfbfe;
+
+}
+
+
+.selected-file.show {
+
+    display: flex;
+
+}
+
+
+.file-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #f7e3ed;
+
+    color: var(--pink-dark);
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+}
+
+
+.file-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 2px;
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.file-info strong {
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 9px;
+
+}
+
+
+.file-info span {
+
+    color: #9b909d;
+
+    font-size: 7px;
+
+}
+
+
+.remove-file {
+
+    width: 27px;
+
+    height: 27px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #8d7892;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   UPLOAD BUTTON
+   ========================================================= */
+
+.upload-button {
+
+    margin-top: 16px;
+
+    padding: 11px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--pink)
+        );
+
+    color: white;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.upload-button span {
+
+    font-size: 13px;
+
+}
+
+
+.upload-button:hover:not(:disabled) {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(91, 55, 115, .15);
+
+}
+
+
+.upload-button:disabled {
+
+    opacity: .45;
+
+    cursor: not-allowed;
+
+}
+
+
+/* =========================================================
+   AI ANALYSIS
+   ========================================================= */
+
+.ai-analysis-card {
+
+    margin-top: 18px;
+
+    padding: 20px;
+
+    display: flex;
+
+    gap: 16px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fdfaff,
+            #fff9fc
+        );
+
+}
+
+
+.analysis-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: #eee3f7;
+
+    color: var(--purple-dark);
+
+}
+
+
+.analysis-content > span {
+
+    color: #aaa0ac;
+
+    font-size: 7px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+}
+
+
+.analysis-content h3 {
+
+    margin: 5px 0 6px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
+
+}
+
+
+.analysis-content p {
+
+    margin: 0;
+
+    max-width: 700px;
+
+    color: #918590;
+
+    font-size: 9px;
+
+    line-height: 1.7;
+
+}
+
+
+.analysis-steps {
+
+    margin-top: 15px;
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.analysis-steps div {
+
+    padding: 8px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: white;
+
+}
+
+
+.analysis-steps strong {
+
+    color: var(--purple-dark);
+
+    font-size: 7px;
+
+}
+
+
+.analysis-steps span {
+
+    color: #817582;
+
+    font-size: 7px;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================================
+   TIP
+   ========================================================= */
+
+.resume-tip {
+
+    margin-top: 14px;
+
+    padding: 13px 15px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    border-radius: 13px;
+
+    background: #f5eef6;
+
+}
+
+
+.resume-tip > div {
+
+    color: var(--purple-dark);
+
+    font-size: 12px;
+
+}
+
+
+.resume-tip p {
+
+    margin: 0;
+
+    color: #817582;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+
+}
+
+
+.resume-tip strong {
+
+    color: var(--plum);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .resume-content {
+
+        padding:
+            25px 15px 40px;
+
+    }
+
+
+    .resume-heading h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .current-resume-card {
+
+        align-items: flex-start;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .resume-status {
+
+        margin-left: 56px;
+
+    }
+
+
+    .resume-upload-card {
+
+        padding: 17px;
+
+    }
+
+
+    .ai-analysis-card {
+
+        flex-direction: column;
+
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .upload-area {
+
+        min-height: 190px;
+
+    }
+
+
+    .analysis-steps {
+
+        flex-direction: column;
+
+    }
+
+
+    .analysis-steps div {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+    }
+
+}

@@ -1,0 +1,1049 @@
+/* =========================================================
+   SMARTINTERN — APPLICANTS
+   Uses the same company dashboard foundation.
+========================================================= */
+
+.applicants-page {
+    --app-bg: #fffdfb;
+    --app-card: #ffffff;
+    --app-plum: #38283f;
+    --app-text: #4b3b51;
+    --app-muted: #887b91;
+    --app-purple: #b38bd7;
+    --app-purple-dark: #9165ad;
+    --app-pink: #e8a8c7;
+    --app-border: #eee3f0;
+    --app-soft: #f8f1fa;
+
+    background:
+        radial-gradient(circle at 85% 7%, rgba(179,139,215,.07), transparent 25%),
+        var(--app-bg);
+    color: var(--app-plum);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+.applicants-page *,
+.applicants-page *::before,
+.applicants-page *::after {
+    box-sizing: border-box;
+}
+
+.applicants-page [hidden] {
+    display: none !important;
+}
+
+.applicants-content {
+    padding-top: 24px;
+    padding-bottom: 42px;
+}
+
+/* ---------------- HERO ---------------- */
+
+.applicants-page .applicants-welcome {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    min-height: 0;
+    padding: 34px 42px;
+    margin: 0 0 34px;
+    overflow: hidden;
+    border: 1px solid #eadcf1;
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,.8), transparent 27%),
+        linear-gradient(115deg, #f7eff9 0%, #f9f2f8 54%, #f5eaf8 100%);
+    box-shadow: 0 14px 38px rgba(70, 43, 78, .035);
+}
+
+.applicants-page .applicants-welcome .welcome-copy {
+    position: relative;
+    z-index: 2;
+    flex: 1 1 580px;
+    max-width: 680px;
+}
+
+.applicants-page .applicants-welcome .welcome-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 13px;
+    color: var(--app-purple-dark);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.applicants-page .applicants-welcome .welcome-small::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--app-purple);
+    box-shadow: 0 0 0 5px rgba(179,139,215,.14);
+}
+
+.applicants-page .applicants-welcome .welcome-copy h2 {
+    margin: 0 0 12px;
+    color: var(--app-plum);
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 2.8vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -.8px;
+}
+
+.applicants-page .applicants-welcome .welcome-copy h2 em {
+    color: #a875c4;
+    font-weight: 500;
+}
+
+.applicants-page .applicants-welcome .welcome-copy p {
+    max-width: 570px;
+    margin: 0 0 20px;
+    color: var(--app-muted);
+    font-size: 13px;
+    line-height: 1.85;
+}
+
+.applicants-page .applicants-welcome .welcome-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.applicants-page .applicants-welcome .primary-dashboard-button,
+.applicants-page .applicants-welcome .secondary-dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    min-height: 44px;
+    padding: 11px 17px;
+    border-radius: 13px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.applicants-page .applicants-welcome .primary-dashboard-button {
+    color: #fff;
+    background: #302632;
+    box-shadow: 0 8px 20px rgba(48,38,50,.10);
+}
+
+.applicants-page .applicants-welcome .secondary-dashboard-button {
+    color: var(--app-plum);
+    border: 1px solid #e5d3ec;
+    background: rgba(255,255,255,.75);
+}
+
+.applicants-page .applicants-welcome .primary-dashboard-button:hover,
+.applicants-page .applicants-welcome .secondary-dashboard-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Hero decorative illustration: deliberately compact */
+.applicants-page .applicants-visual {
+    position: relative;
+    flex: 0 0 285px;
+    width: 285px;
+    height: 220px;
+    min-width: 0;
+    overflow: visible;
+}
+
+.applicants-page .visual-orbit {
+    position: absolute;
+    top: 17px;
+    right: 8px;
+    width: 195px;
+    height: 195px;
+    border: 1px solid rgba(178,137,205,.22);
+    border-radius: 50%;
+}
+
+.applicants-page .orbit-two {
+    top: 34px;
+    right: 25px;
+    width: 160px;
+    height: 160px;
+    border-style: dashed;
+    opacity: .7;
+}
+
+.applicants-page .applicant-hero-card {
+    position: absolute;
+    top: 9px;
+    right: 33px;
+    width: 188px;
+    min-height: 184px;
+    padding: 19px 20px;
+    border: 1px solid rgba(255,255,255,.85);
+    border-radius: 20px;
+    background: rgba(255,255,255,.93);
+    box-shadow: 0 16px 35px rgba(67,43,75,.08);
+    transform: rotate(2deg);
+}
+
+.applicants-page .applicant-hero-icon {
+    display: grid;
+    place-items: center;
+    width: 37px;
+    height: 37px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    color: var(--app-purple-dark);
+    background: #f1e4f6;
+    font-size: 19px;
+}
+
+.applicants-page .applicant-hero-card > span {
+    color: #9a7daa;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.applicants-page .applicant-hero-card h3 {
+    margin: 8px 0 13px;
+    color: #47314f;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 1.13;
+}
+
+.applicants-page .applicant-hero-card h3 em {
+    color: #a875c4;
+}
+
+.applicants-page .hero-line {
+    width: 100%;
+    height: 6px;
+    margin-top: 7px;
+    border-radius: 99px;
+    background: #eee4f0;
+}
+
+.applicants-page .hero-line.short {
+    width: 78%;
+}
+
+.applicants-page .hero-line.shorter {
+    width: 56%;
+}
+
+.applicants-page .applicant-floating-note {
+    position: absolute;
+    right: -3px;
+    bottom: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid #f0e5f0;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 25px rgba(67,43,75,.08);
+}
+
+.applicants-page .applicant-floating-note > span {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    color: #a16e9c;
+    background: #f8eaf2;
+    font-size: 17px;
+}
+
+.applicants-page .applicant-floating-note strong,
+.applicants-page .applicant-floating-note small {
+    display: block;
+    white-space: nowrap;
+}
+
+.applicants-page .applicant-floating-note strong {
+    color: #49364e;
+    font-size: 10px;
+}
+
+.applicants-page .applicant-floating-note small {
+    margin-top: 4px;
+    color: #9a8ba1;
+    font-size: 9px;
+}
+
+/* ---------------- SECTION HEADING ---------------- */
+
+.applicants-page .applicants-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 0 22px;
+}
+
+.applicants-page .section-eyebrow {
+    color: #a276b8;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.applicants-page .applicants-section-heading h2 {
+    margin: 8px 0 6px;
+    color: var(--app-plum);
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.applicants-page .applicants-section-heading h2 em {
+    color: #a875c4;
+    font-weight: 500;
+}
+
+.applicants-page .applicants-section-heading p {
+    margin: 0;
+    color: var(--app-muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.applicants-page .demo-label {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    border: 1px solid #eadcf0;
+    border-radius: 99px;
+    color: #9871ac;
+    background: #fbf5fc;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* ---------------- STATS ---------------- */
+
+.applicants-page .applicant-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.applicants-page .applicant-stat-card {
+    min-width: 0;
+    padding: 19px 20px;
+    border: 1px solid var(--app-border);
+    border-radius: 19px;
+    background: var(--app-card);
+    box-shadow: 0 8px 25px rgba(60,39,67,.025);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.applicants-page .applicant-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(60,39,67,.055);
+}
+
+.applicants-page .applicant-stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    color: var(--app-muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.applicants-page .applicant-stat-icon {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    font-size: 16px;
+}
+
+.applicants-page .applicant-stat-icon.purple {
+    color: #9669b2;
+    background: #f0e6f6;
+}
+
+.applicants-page .applicant-stat-icon.pink {
+    color: #bc7b9c;
+    background: #faeaf2;
+}
+
+.applicants-page .applicant-stat-icon.plum {
+    color: #72547f;
+    background: #eee6f1;
+}
+
+.applicants-page .applicant-stat-icon.soft {
+    color: #a2769d;
+    background: #f7eaf5;
+}
+
+.applicants-page .applicant-stat-card > strong {
+    display: block;
+    margin: 13px 0 3px;
+    color: var(--app-plum);
+    font-family: "Playfair Display", serif;
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+.applicants-page .applicant-stat-card > small {
+    color: #a094a8;
+    font-size: 10px;
+}
+
+/* ---------------- TOOLBAR ---------------- */
+
+.applicants-page .applicant-toolbar {
+    margin-bottom: 18px;
+    padding: 20px;
+    border: 1px solid var(--app-border);
+    border-radius: 20px;
+    background: #fff;
+}
+
+.applicants-page .applicant-toolbar-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 17px;
+}
+
+.applicants-page .applicant-toolbar-heading h3 {
+    margin: 0 0 5px;
+    color: var(--app-plum);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.applicants-page .applicant-toolbar-heading p {
+    margin: 0;
+    color: var(--app-muted);
+    font-size: 11px;
+}
+
+.applicants-page .result-count {
+    color: #9874ac;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.applicants-page .applicant-filters {
+    display: grid;
+    grid-template-columns: minmax(220px, 1.7fr) repeat(3, minmax(135px, 1fr)) auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.applicants-page .applicant-search {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    min-height: 43px;
+    padding: 0 12px;
+    border: 1px solid #eee4f0;
+    border-radius: 12px;
+    background: #fffdfd;
+}
+
+.applicants-page .applicant-search > span {
+    color: #a47ab9;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.applicants-page .applicant-search input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 0;
+    border: 0;
+    outline: 0;
+    color: var(--app-plum);
+    background: transparent;
+    font: inherit;
+    font-size: 11px;
+}
+
+.applicants-page .applicant-search input::placeholder {
+    color: #a69aaa;
+}
+
+.applicants-page .applicant-filters select {
+    width: 100%;
+    min-width: 0;
+    min-height: 43px;
+    padding: 0 10px;
+    border: 1px solid #eee4f0;
+    border-radius: 12px;
+    outline-color: #c6a5d9;
+    color: #67566e;
+    background: #fff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+}
+
+.applicants-page .clear-filters-button {
+    min-height: 41px;
+    padding: 0 13px;
+    border: 1px solid #e9d9ee;
+    border-radius: 11px;
+    color: #8c63a4;
+    background: #faf5fc;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ---------------- APPLICANT CARDS ---------------- */
+
+.applicants-page .applicant-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.applicants-page .applicant-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--app-border);
+    border-radius: 19px;
+    background: #fff;
+    box-shadow: 0 7px 23px rgba(60,39,67,.025);
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.applicants-page .applicant-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 27px rgba(60,39,67,.055);
+}
+
+.applicants-page .applicant-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.applicants-page .applicant-card-main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.applicants-page .applicant-avatar {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #eadcf0;
+    border-radius: 14px;
+    color: #88649d;
+    background: linear-gradient(145deg, #f4e9f8, #faeaf2);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.applicants-page .applicant-identity {
+    min-width: 0;
+}
+
+.applicants-page .applicant-identity h3 {
+    overflow-wrap: anywhere;
+    margin: 0 0 5px;
+    color: var(--app-plum);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.applicants-page .applicant-identity p {
+    overflow-wrap: anywhere;
+    margin: 0;
+    color: #95869c;
+    font-size: 10px;
+}
+
+.applicants-page .applicant-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 7px 9px;
+    border-radius: 99px;
+    font-size: 9px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.applicants-page .status-review {
+    color: #9a75a9;
+    background: #f3eafa;
+}
+
+.applicants-page .status-shortlisted {
+    color: #a26788;
+    background: #fbeaf2;
+}
+
+.applicants-page .status-interview {
+    color: #896c9c;
+    background: #eee8f8;
+}
+
+.applicants-page .status-selected {
+    color: #7e628e;
+    background: #eae3f0;
+}
+
+.applicants-page .status-rejected {
+    color: #a36678;
+    background: #f9e9ed;
+}
+
+.applicants-page .applicant-card-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 13px;
+    padding: 14px 0;
+    border-top: 1px solid #f2eaf3;
+    border-bottom: 1px solid #f2eaf3;
+    color: #817387;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.applicants-page .applicant-card-meta span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.applicants-page .applicant-card-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 15px;
+}
+
+.applicants-page .applicant-match {
+    width: 125px;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+.applicants-page .applicant-match > span {
+    display: inline-block;
+    margin-right: 7px;
+    color: #9889a0;
+    font-size: 10px;
+}
+
+.applicants-page .applicant-match > strong {
+    color: #9168a8;
+    font-size: 13px;
+}
+
+.applicants-page .match-track {
+    height: 5px;
+    margin-top: 8px;
+    overflow: hidden;
+    border-radius: 99px;
+    background: #f0e8f2;
+}
+
+.applicants-page .match-track > span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #c59cda, #e5a9c8);
+}
+
+.applicants-page .applicant-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.applicants-page .applicant-action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 33px;
+    padding: 7px 10px;
+    border: 1px solid #eadcf0;
+    border-radius: 10px;
+    color: #80628e;
+    background: #fff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.applicants-page .applicant-action-button:hover {
+    transform: translateY(-1px);
+    background: #faf4fc;
+}
+
+.applicants-page .applicant-action-button.primary {
+    color: #fff;
+    border-color: #38283f;
+    background: #38283f;
+}
+
+.applicants-page .applicant-action-button.danger {
+    color: #a36c7d;
+    border-color: #f0dce4;
+    background: #fff9fb;
+}
+
+/* ---------------- EMPTY STATE ---------------- */
+
+.applicants-page .applicants-empty {
+    padding: 48px 20px;
+    border: 1px dashed #e5d6ec;
+    border-radius: 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.applicants-page .empty-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 13px;
+    border-radius: 15px;
+    color: #a078b8;
+    background: #f5eafa;
+    font-size: 25px;
+}
+
+.applicants-page .applicants-empty h3 {
+    margin: 0 0 7px;
+    color: var(--app-plum);
+    font-family: "Playfair Display", serif;
+    font-size: 23px;
+}
+
+.applicants-page .applicants-empty p {
+    margin: 0 0 17px;
+    color: var(--app-muted);
+    font-size: 12px;
+}
+
+.applicants-page .applicants-empty button {
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    background: #38283f;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ---------------- NOTIFICATIONS ---------------- */
+
+.applicants-page .notification-panel {
+    z-index: 1000;
+}
+
+.applicants-page .notification-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.applicants-page .notification-panel-head button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 9px;
+    color: #80648c;
+    background: #f7eff9;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ---------------- MODAL ---------------- */
+
+.applicants-page .applicant-modal-backdrop {
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background: rgba(39,27,43,.38);
+    backdrop-filter: blur(4px);
+}
+
+.applicants-page .applicant-confirm-modal {
+    width: min(100%, 410px);
+    padding: 28px;
+    border: 1px solid #eee0f0;
+    border-radius: 22px;
+    background: #fffdfd;
+    box-shadow: 0 24px 70px rgba(37,22,42,.19);
+    text-align: center;
+}
+
+.applicants-page .modal-symbol {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+    color: #986eb0;
+    background: #f3e7f8;
+    font-size: 22px;
+}
+
+.applicants-page .applicant-confirm-modal h3 {
+    margin: 0 0 10px;
+    color: var(--app-plum);
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+}
+
+.applicants-page .applicant-confirm-modal p {
+    margin: 0;
+    color: var(--app-muted);
+    font-size: 12px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.applicants-page .modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 23px;
+}
+
+.applicants-page .modal-actions button {
+    min-height: 42px;
+    padding: 10px 17px;
+    border-radius: 11px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.applicants-page .modal-cancel {
+    border: 1px solid #eadcf0;
+    color: #7d6986;
+    background: #fff;
+}
+
+.applicants-page .modal-confirm {
+    border: 1px solid #38283f;
+    color: #fff;
+    background: #38283f;
+}
+
+.applicants-page .modal-confirm.is-danger {
+    border-color: #a55f78;
+    background: #a55f78;
+}
+
+/* ---------------- TOAST ---------------- */
+
+.applicants-page .applicant-toast {
+    position: fixed;
+    z-index: 2100;
+    right: 24px;
+    bottom: 24px;
+    max-width: min(390px, calc(100vw - 32px));
+    padding: 14px 18px;
+    border: 1px solid #e9d9ef;
+    border-radius: 13px;
+    color: #503c59;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(50,32,58,.12);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 1250px) {
+    .applicants-page .applicant-filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .applicants-page .applicant-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1000px) {
+    .applicants-page .applicants-welcome {
+        padding: 29px;
+    }
+
+    .applicants-page .applicants-visual {
+        flex-basis: 235px;
+        width: 235px;
+        transform: scale(.88);
+        transform-origin: center right;
+        margin-left: -15px;
+    }
+
+    .applicants-page .applicants-welcome .welcome-copy h2 {
+        font-size: 33px;
+    }
+
+    .applicants-page .applicant-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .applicants-page .applicants-content {
+        padding: 17px 15px 28px;
+    }
+
+    .applicants-page .applicants-welcome {
+        padding: 25px 22px;
+        margin-bottom: 27px;
+        border-radius: 22px;
+    }
+
+    .applicants-page .applicants-welcome .welcome-copy h2 {
+        font-size: 29px;
+    }
+
+    .applicants-page .applicants-welcome .welcome-copy p {
+        font-size: 12px;
+    }
+
+    .applicants-page .applicants-welcome .welcome-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .applicants-page .applicants-welcome .primary-dashboard-button,
+    .applicants-page .applicants-welcome .secondary-dashboard-button {
+        width: 100%;
+    }
+
+    .applicants-page .applicants-visual {
+        display: none;
+    }
+
+    .applicants-page .applicants-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .applicants-page .applicants-section-heading h2 {
+        font-size: 28px;
+    }
+
+    .applicants-page .applicant-stats {
+        gap: 11px;
+    }
+
+    .applicants-page .applicant-stat-card {
+        padding: 15px;
+    }
+
+    .applicants-page .applicant-stat-top {
+        align-items: flex-start;
+        font-size: 10px;
+    }
+
+    .applicants-page .applicant-stat-icon {
+        width: 29px;
+        height: 29px;
+    }
+
+    .applicants-page .applicant-stat-card > strong {
+        font-size: 26px;
+    }
+
+    .applicants-page .applicant-toolbar {
+        padding: 15px;
+    }
+
+    .applicants-page .applicant-toolbar-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .applicants-page .applicant-filters {
+        grid-template-columns: 1fr;
+    }
+
+    .applicants-page .applicant-card {
+        padding: 16px;
+    }
+
+    .applicants-page .applicant-card-top {
+        align-items: flex-start;
+    }
+
+    .applicants-page .applicant-card-meta {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .applicants-page .applicant-card-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .applicants-page .applicant-match {
+        width: 100%;
+    }
+
+    .applicants-page .applicant-actions {
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .applicants-page *,
+    .applicants-page *::before,
+    .applicants-page *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}

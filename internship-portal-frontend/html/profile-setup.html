@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartIntern - Profile Setup</title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/auth.css"
+    >
+    <link 
+        rel="stylesheet"
+        href="../css/autofill-fix.css">
+
+    <!-- Profile CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/profile.css"
+    >
+
+</head>
+
+
+<body class="profile-page">
+
+    <!-- BACK TO HOME -->
+    <a href="index.html" class="page-back">
+        <span aria-hidden="true">←</span> Back to home
+    </a>
+
+
+
+    <!-- Corner Background -->
+
+    <div class="corner-glow corner-glow-left"></div>
+
+    <div class="corner-glow corner-glow-right"></div>
+
+
+    <!-- Main -->
+
+    <main class="profile-wrapper">
+
+        <section class="profile-card">
+
+
+            <!-- Heading -->
+
+            <div class="profile-heading">
+
+                <h1>
+                    Create your <em>Account.</em>
+                </h1>
+
+                <p id="profileSubtitle">
+                    Start your journey with SmartIntern.
+                </p>
+
+            </div>
+
+
+            <!-- Role Switch -->
+
+            <div class="profile-role">
+
+                <button
+                    type="button"
+                    class="profile-role-btn active"
+                    data-role="student"
+                >
+                    Student
+                </button>
+
+                <button
+                    type="button"
+                    class="profile-role-btn"
+                    data-role="company"
+                >
+                    Company
+                </button>
+
+            </div>
+
+
+            <!-- Form -->
+
+            <form id="profileForm">
+
+
+                <!-- =================================================
+                     STUDENT
+                ================================================== -->
+
+                <div
+                    id="studentFields"
+                    class="profile-fields"
+                >
+
+
+                    <!-- Full Name -->
+
+                    <div class="profile-input">
+
+                        <label for="studentName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter your full name"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="studentNameError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="profile-input">
+
+                        <label for="studentEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            placeholder="Enter your email address"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="studentEmailError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="profile-input">
+
+                        <label for="studentPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="studentPassword"
+                            placeholder="Create your password"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="studentPasswordError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="profile-input">
+
+                        <label for="studentPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="studentPhone"
+                            placeholder="Enter your phone number"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="studentPhoneError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- University -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="university">
+                            University / Institution
+                        </label>
+
+                        <input
+                            type="text"
+                            id="university"
+                            placeholder="Enter your university"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="universityError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Degree -->
+
+                    <div class="profile-input">
+
+                        <label for="degree">
+                            Degree / Program
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="degree">
+
+                                <option value="">
+                                    Select degree
+                                </option>
+
+                                <option value="BS Computer Science">
+                                    BS Computer Science
+                                </option>
+
+                                <option value="BS Software Engineering">
+                                    BS Software Engineering
+                                </option>
+
+                                <option value="BS Information Technology">
+                                    BS Information Technology
+                                </option>
+
+                                <option value="BS Artificial Intelligence">
+                                    BS Artificial Intelligence
+                                </option>
+
+                                <option value="BBA">
+                                    BBA
+                                </option>
+
+                                <option value="Engineering">
+                                    Engineering
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <span
+                            class="profile-error"
+                            id="degreeError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Graduation Status -->
+
+                    <div class="profile-input">
+
+                        <label for="graduationStatus">
+                            Are you graduated?
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="graduationStatus">
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="yes">
+                                    Yes
+                                </option>
+
+                                <option value="no">
+                                    No
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <span
+                            class="profile-error"
+                            id="graduationStatusError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Current Semester -->
+
+                    <div
+                        class="profile-input hidden"
+                        id="semesterField"
+                    >
+
+                        <label for="semester">
+                            Current Semester
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="semester">
+
+                                <option value="">
+                                    Select semester
+                                </option>
+
+                                <option value="1st Semester">
+                                    1st Semester
+                                </option>
+
+                                <option value="2nd Semester">
+                                    2nd Semester
+                                </option>
+
+                                <option value="3rd Semester">
+                                    3rd Semester
+                                </option>
+
+                                <option value="4th Semester">
+                                    4th Semester
+                                </option>
+
+                                <option value="5th Semester">
+                                    5th Semester
+                                </option>
+
+                                <option value="6th Semester">
+                                    6th Semester
+                                </option>
+
+                                <option value="7th Semester">
+                                    7th Semester
+                                </option>
+
+                                <option value="8th Semester">
+                                    8th Semester
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <span
+                            class="profile-error"
+                            id="semesterError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Graduation Year -->
+
+                    <div
+                        class="profile-input conditional-field hidden"
+                        id="graduationYearField"
+                    >
+
+                        <label for="graduationYear">
+                            Graduation Year
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="graduationYear">
+
+                                <option value="">
+                                    Select year
+                                </option>
+
+                                <option value="2026">
+                                    2026
+                                </option>
+
+                                <option value="2025">
+                                    2025
+                                </option>
+
+                                <option value="2024">
+                                    2024
+                                </option>
+
+                                <option value="2023">
+                                    2023
+                                </option>
+
+                                <option value="2022">
+                                    2022
+                                </option>
+
+                                <option value="2021">
+                                    2021
+                                </option>
+
+                                <option value="2020">
+                                    2020
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <span
+                            class="profile-error"
+                            id="graduationYearError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Graduation Date -->
+
+                    <div
+                        class="profile-input conditional-field hidden"
+                        id="graduationDateField"
+                    >
+
+                        <label for="graduationDate">
+                            Graduation Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="graduationDate"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="graduationDateError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Skills -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="skills">
+                            Skills
+                        </label>
+
+                        <input
+                            type="text"
+                            id="skills"
+                            placeholder="e.g. JavaScript, React, Python"
+                        >
+
+                        <small>
+                            Separate multiple skills with commas
+                        </small>
+                        <span class="profile-error" id="skillsError"></span>
+
+                    </div>
+
+
+                    <!-- Location -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="studentLocation">
+                            Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentLocation"
+                            placeholder="City, Country"
+                        >
+                        <span class="profile-error" id="studentLocationError"></span>
+
+                    </div>
+
+
+                    <!-- Professional Links -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="professionalLinks">
+                            Professional Links
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="professionalLinks">
+
+                                <option value="">
+                                    Add your professional links
+                                </option>
+
+                                <option value="show">
+                                    Show LinkedIn, GitHub & Portfolio
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Links -->
+
+                    <div
+                        id="professionalLinksFields"
+                        class="links-container hidden"
+                    >
+
+                        <div class="profile-input">
+
+                            <label for="linkedin">
+                                LinkedIn
+                            </label>
+
+                            <input
+                                type="url"
+                                id="linkedin"
+                                placeholder="https://linkedin.com/in/yourname"
+                            >
+
+                        </div>
+
+
+                        <div class="profile-input">
+
+                            <label for="github">
+                                GitHub
+                            </label>
+
+                            <input
+                                type="url"
+                                id="github"
+                                placeholder="https://github.com/yourname"
+                            >
+
+                        </div>
+
+
+                        <div class="profile-input full-width">
+
+                            <label for="portfolio">
+                                Portfolio
+                            </label>
+
+                            <input
+                                type="url"
+                                id="portfolio"
+                                placeholder="https://yourportfolio.com"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CV / Resume -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="resume">
+                            CV / Resume
+                        </label>
+
+                        <div class="document-upload">
+
+                            <input
+                                type="file"
+                                id="resume"
+                                accept=".pdf,.doc,.docx"
+                            >
+
+                            <label
+                                for="resume"
+                                class="document-upload-label"
+                            >
+                                Choose CV / Resume
+                            </label>
+
+                            <span id="resumeName">
+                                No file selected
+                            </span>
+
+                        </div>
+
+                        <small>
+                            PDF, DOC or DOCX — maximum 5MB
+                        </small>
+
+                        <span
+                            class="profile-error"
+                            id="resumeError"
+                        ></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     COMPANY
+                ================================================== -->
+
+                <div
+                    id="companyFields"
+                    class="profile-fields hidden"
+                >
+
+
+                    <!-- Company Name -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="companyName">
+                            Company Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="companyName"
+                            placeholder="Enter company name"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="companyNameError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="profile-input">
+
+                        <label for="companyEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="companyEmail"
+                            placeholder="Enter your company email"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="companyEmailError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="profile-input">
+
+                        <label for="companyPassword">
+                            Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="companyPassword"
+                            placeholder="Create your password"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="companyPasswordError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Industry -->
+
+                    <div class="profile-input">
+
+                        <label for="industry">
+                            Industry
+                        </label>
+
+                        <div class="select-wrapper">
+
+                            <select id="industry">
+
+                                <option value="">
+                                    Select industry
+                                </option>
+
+                                <option value="Information Technology">
+                                    Information Technology
+                                </option>
+
+                                <option value="Software Development">
+                                    Software Development
+                                </option>
+
+                                <option value="Artificial Intelligence">
+                                    Artificial Intelligence
+                                </option>
+
+                                <option value="Finance">
+                                    Finance
+                                </option>
+
+                                <option value="Healthcare">
+                                    Healthcare
+                                </option>
+
+                                <option value="Education">
+                                    Education
+                                </option>
+
+                                <option value="E-Commerce">
+                                    E-Commerce
+                                </option>
+
+                                <option value="Marketing">
+                                    Marketing
+                                </option>
+
+                                <option value="Engineering">
+                                    Engineering
+                                </option>
+
+                                <option value="Other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <span
+                            class="profile-error"
+                            id="industryError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Contact Person -->
+
+                    <div class="profile-input">
+
+                        <label for="contactPerson">
+                            Contact Person
+                        </label>
+
+                        <input
+                            type="text"
+                            id="contactPerson"
+                            placeholder="Enter contact person's name"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="contactPersonError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Contact Number -->
+
+                    <div class="profile-input">
+
+                        <label for="companyPhone">
+                            Contact Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="companyPhone"
+                            placeholder="Enter company contact number"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="companyPhoneError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Location -->
+
+                    <div class="profile-input">
+
+                        <label for="companyLocation">
+                            Company Location
+                        </label>
+
+                        <input
+                            type="text"
+                            id="companyLocation"
+                            placeholder="City, Country"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="companyLocationError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Website -->
+
+                    <div class="profile-input">
+
+                        <label for="companyWebsite">
+                            Company Website
+                        </label>
+
+                        <input
+                            type="url"
+                            id="companyWebsite"
+                            placeholder="https://yourcompany.com"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="companyWebsiteError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="companyDescription">
+                            Company Description
+                        </label>
+
+                        <textarea
+                            id="companyDescription"
+                            placeholder="Briefly describe your company"
+                        ></textarea>
+                       <span class="profile-error" id="companyDescriptionError"></span>
+                    </div>
+
+
+                    <!-- Trade License Document -->
+
+                    <div class="profile-input full-width">
+
+                        <label for="tradeLicenseDocument">
+                            Trade License Document
+                        </label>
+
+                        <div class="document-upload">
+
+                            <input
+                                type="file"
+                                id="tradeLicenseDocument"
+                                accept=".pdf,.jpg,.jpeg,.png"
+                            >
+
+                            <label
+                                for="tradeLicenseDocument"
+                                class="document-upload-label"
+                            >
+                                Choose Trade License
+                            </label>
+
+                            <span id="tradeLicenseDocumentName">
+                                No file selected
+                            </span>
+
+                        </div>
+
+                        <small>
+                            PDF, JPG, JPEG or PNG — maximum 5MB
+                        </small>
+
+                        <span
+                            class="profile-error"
+                            id="tradeLicenseDocumentError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Issue Date -->
+
+                    <div class="profile-input">
+
+                        <label for="licenseIssueDate">
+                            License Issue Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="licenseIssueDate"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="licenseIssueDateError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- Expiry Date -->
+
+                    <div class="profile-input">
+
+                        <label for="licenseExpiryDate">
+                            License Expiry Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="licenseExpiryDate"
+                        >
+
+                        <span
+                            class="profile-error"
+                            id="licenseExpiryDateError"
+                        ></span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="profile-submit"
+                >
+
+                    <span>
+                        Save & Continue
+                    </span>
+
+                    <span class="profile-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- GSAP -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+
+
+    <!-- Profile JS -->
+    <script src="../js/api.js"></script>
+    <script src="../js/profile.js"></script>
+
+
+</body>
+
+</html>

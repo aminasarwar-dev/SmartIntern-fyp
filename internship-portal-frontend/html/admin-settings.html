@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartIntern — Settings</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Shared Admin CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../css/admin-settings.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="admin"></script>
+</head>
+
+<body class="admin-dashboard-page settings-page">
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================================================
+         SIDEBAR
+    ========================================================== -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+        <div class="sidebar-brand">
+            <a href="index.html">
+                Smart<span>Intern</span>
+            </a>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="sidebar-avatar">AD</div>
+
+            <div class="sidebar-profile-info">
+                <strong>Admin</strong>
+                <span>Administrator</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">MAIN</p>
+
+            <a href="admin-dashboard.html" class="sidebar-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="admin-students.html" class="sidebar-link">
+                <span class="nav-icon">◉</span>
+                <span>Students</span>
+            </a>
+
+            <a href="admin-companies.html" class="sidebar-link">
+                <span class="nav-icon">◇</span>
+                <span>Companies</span>
+            </a>
+
+            <a href="admin-internships.html" class="sidebar-link">
+                <span class="nav-icon">▣</span>
+                <span>Internships</span>
+            </a>
+
+            <a href="admin-applications.html" class="sidebar-link">
+                <span class="nav-icon">▤</span>
+                <span>Applications</span>
+            </a>
+
+            <p class="nav-label nav-label-space">MANAGEMENT</p>
+
+
+            <a href="admin-analytics.html" class="sidebar-link">
+                <span class="nav-icon">◎</span>
+                <span>Analytics</span>
+            </a>
+
+            <a href="admin-settings.html" class="sidebar-link active">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+    </aside>
+
+
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+        <header class="dashboard-topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <span>Admin Portal</span>
+                <h1>Settings</h1>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                    aria-label="Notifications"
+                >
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+                    <div class="topbar-avatar">AD</div>
+
+                    <div class="topbar-profile-text">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+
+        <!-- =====================================================
+             NOTIFICATION PANEL
+        ====================================================== -->
+        <div class="notification-panel" id="notificationPanel">
+
+            <div class="notification-panel-header">
+                <div>
+                    <span>ADMIN PORTAL</span>
+                    <h3>Notifications</h3>
+                </div>
+
+                <button
+                    class="notification-close"
+                    id="notificationClose"
+                    type="button"
+                    aria-label="Close notifications"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="notification-list">
+
+                <div class="notification-item unread">
+                    <div class="notification-icon">✓</div>
+
+                    <div class="notification-content">
+                        <strong>Verification pending</strong>
+                        <p>04 company verification requests need review.</p>
+                        <span>12 min ago</span>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">◉</div>
+
+                    <div class="notification-content">
+                        <strong>New student registered</strong>
+                        <p>A new student account was created.</p>
+                        <span>1 hour ago</span>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">◇</div>
+
+                    <div class="notification-content">
+                        <strong>New company added</strong>
+                        <p>A company has submitted its profile.</p>
+                        <span>3 hours ago</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- =====================================================
+             SETTINGS CONTENT
+        ====================================================== -->
+        <div class="settings-content">
+
+            <!-- PAGE INTRO -->
+            <section class="settings-intro">
+
+                <div class="settings-intro-text">
+                    <span class="settings-eyebrow">
+                        SYSTEM CONFIGURATION
+                    </span>
+
+                    <h2>
+                        Manage your <em>settings.</em>
+                    </h2>
+
+                    <p>
+                        Configure your SmartIntern admin account,
+                        platform preferences, notifications, and
+                        security settings from one place.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- SETTINGS LAYOUT -->
+            <section class="settings-layout">
+
+                <!-- SETTINGS NAV -->
+                <aside class="settings-menu">
+
+                    <button
+                        class="settings-menu-item active"
+                        type="button"
+                        data-section="account"
+                    >
+                        <span class="settings-menu-icon">◎</span>
+
+                        <span>
+                            <strong>Account</strong>
+                            <small>Admin profile</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="settings-menu-item"
+                        type="button"
+                        data-section="notifications"
+                    >
+                        <span class="settings-menu-icon">♧</span>
+
+                        <span>
+                            <strong>Notifications</strong>
+                            <small>Alerts & updates</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="settings-menu-item"
+                        type="button"
+                        data-section="security"
+                    >
+                        <span class="settings-menu-icon">✓</span>
+
+                        <span>
+                            <strong>Security</strong>
+                            <small>Password & access</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="settings-menu-item"
+                        type="button"
+                        data-section="platform"
+                    >
+                        <span class="settings-menu-icon">⚙</span>
+
+                        <span>
+                            <strong>Platform</strong>
+                            <small>System preferences</small>
+                        </span>
+                    </button>
+
+                </aside>
+
+
+                <!-- SETTINGS PANELS -->
+                <div class="settings-panels">
+
+                    <!-- ACCOUNT -->
+                    <section
+                        class="settings-card settings-section active"
+                        id="account"
+                    >
+
+                        <div class="settings-card-heading">
+                            <div>
+                                <span>ADMIN ACCOUNT</span>
+                                <h3>Account information</h3>
+                            </div>
+                        </div>
+
+                        <div class="settings-profile">
+                            <div class="settings-profile-avatar">
+                                AD
+                            </div>
+
+                            <div>
+                                <strong>Admin</strong>
+                                <p>Administrator</p>
+                            </div>
+
+                            <button
+                                class="secondary-action"
+                                type="button"
+                                id="changeAvatarBtn"
+                            >
+                                Change
+                            </button>
+                        </div>
+
+                        <div class="settings-fields">
+
+                            <div class="settings-field">
+                                <label for="adminName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="adminName"
+                                    value="Admin"
+                                >
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="adminEmail">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="adminEmail"
+                                    value="admin@smartintern.com"
+                                >
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="adminRole">
+                                    Role
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="adminRole"
+                                    value="Administrator"
+                                    disabled
+                                >
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="adminPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="adminPhone"
+                                    placeholder="+92 XXX XXXXXXX"
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="settings-card-footer">
+                            <button
+                                class="primary-action"
+                                type="button"
+                                id="saveAccountBtn"
+                            >
+                                Save Changes
+                            </button>
+                        </div>
+
+                    </section>
+
+
+                    <!-- NOTIFICATIONS -->
+                    <section
+                        class="settings-card settings-section"
+                        id="notifications"
+                    >
+
+                        <div class="settings-card-heading">
+                            <div>
+                                <span>NOTIFICATION PREFERENCES</span>
+                                <h3>Manage notifications</h3>
+                            </div>
+                        </div>
+
+                        <div class="preference-list">
+
+                            <div class="preference-row">
+                                <div>
+                                    <strong>Verification alerts</strong>
+                                    <p>
+                                        Get notified when a company or
+                                        document needs verification.
+                                    </p>
+                                </div>
+
+                                <label class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                        data-setting="verification"
+                                    >
+                                    <span></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-row">
+                                <div>
+                                    <strong>New registration alerts</strong>
+                                    <p>
+                                        Receive alerts when new students
+                                        or companies register.
+                                    </p>
+                                </div>
+
+                                <label class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                        data-setting="registration"
+                                    >
+                                    <span></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-row">
+                                <div>
+                                    <strong>Application activity</strong>
+                                    <p>
+                                        Receive updates about platform
+                                        application activity.
+                                    </p>
+                                </div>
+
+                                <label class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                        data-setting="applications"
+                                    >
+                                    <span></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-row">
+                                <div>
+                                    <strong>System updates</strong>
+                                    <p>
+                                        Get important SmartIntern
+                                        system notifications.
+                                    </p>
+                                </div>
+
+                                <label class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                        data-setting="system"
+                                    >
+                                    <span></span>
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- SECURITY -->
+                    <section
+                        class="settings-card settings-section"
+                        id="security"
+                    >
+
+                        <div class="settings-card-heading">
+                            <div>
+                                <span>SECURITY</span>
+                                <h3>Account security</h3>
+                            </div>
+                        </div>
+
+                        <div class="security-status">
+
+                            <div class="security-status-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <strong>Your account is secure</strong>
+                                <p>
+                                    Your administrator account is
+                                    currently protected.
+                                </p>
+                            </div>
+
+                            <span class="security-badge">
+                                Protected
+                            </span>
+
+                        </div>
+
+                        <div class="settings-fields">
+
+                            <div class="settings-field full-field">
+                                <label for="currentPassword">
+                                    Current Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="currentPassword"
+                                    placeholder="Enter current password"
+                                >
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="newPassword">
+                                    New Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="newPassword"
+                                    placeholder="Enter new password"
+                                >
+                            </div>
+
+                            <div class="settings-field">
+                                <label for="confirmPassword">
+                                    Confirm Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    placeholder="Confirm new password"
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="settings-card-footer">
+                            <button
+                                class="primary-action"
+                                type="button"
+                                id="updatePasswordBtn"
+                            >
+                                Update Password
+                            </button>
+                        </div>
+
+                    </section>
+
+
+                    <!-- PLATFORM -->
+                    <section
+                        class="settings-card settings-section"
+                        id="platform"
+                    >
+
+                        <div class="settings-card-heading">
+                            <div>
+                                <span>PLATFORM SETTINGS</span>
+                                <h3>System preferences</h3>
+                            </div>
+                        </div>
+
+                        <div class="preference-list">
+
+                            <div class="preference-row">
+                                <div>
+                                    <strong>Company verification</strong>
+                                    <p>
+                                        Require admin verification before
+                                        company accounts become active.
+                                    </p>
+                                </div>
+
+                                <label class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                        data-setting="companyVerification"
+                                    >
+                                    <span></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-row">
+                                <div>
+                                    <strong>Student account approval</strong>
+                                    <p>
+                                        Allow registered students to access
+                                        the platform automatically.
+                                    </p>
+                                </div>
+
+                                <label class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                        data-setting="studentApproval"
+                                    >
+                                    <span></span>
+                                </label>
+                            </div>
+
+                            <div class="preference-row">
+                                <div>
+                                    <strong>Internship review</strong>
+                                    <p>
+                                        Review new internship posts before
+                                        they appear publicly.
+                                    </p>
+                                </div>
+
+                                <label class="toggle">
+                                    <input
+                                        type="checkbox"
+                                        checked
+                                        data-setting="internshipReview"
+                                    >
+                                    <span></span>
+                                </label>
+                            </div>
+
+                        </div>
+
+                        <div class="settings-card-footer">
+                            <button
+                                class="primary-action"
+                                type="button"
+                                id="savePlatformBtn"
+                            >
+                                Save Preferences
+                            </button>
+                        </div>
+
+                    </section>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Page JS -->
+    <script src="../js/admin-settings.js"></script>
+
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

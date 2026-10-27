@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartIntern — Students</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/admin-students.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="admin"></script>
+</head>
+
+<body class="admin-dashboard-page students-page">
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <!-- =====================================================
+     SIDEBAR
+     ===================================================== -->
+
+<aside
+    class="dashboard-sidebar"
+    id="dashboardSidebar"
+>
+
+    <!-- Brand -->
+
+    <div class="sidebar-brand">
+
+        <a href="index.html">
+            Smart<span>Intern</span>
+        </a>
+
+    </div>
+
+
+    <!-- Admin Profile -->
+
+    <div class="sidebar-profile">
+
+        <div class="sidebar-avatar">
+            AD
+        </div>
+
+        <div class="sidebar-profile-info">
+
+            <strong>
+                Admin
+            </strong>
+
+            <span>
+                Administrator
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="sidebar-nav">
+
+
+        <p class="nav-label">
+            MAIN
+        </p>
+
+
+        <a
+            href="admin-dashboard.html"
+            class="sidebar-link"
+        >
+
+            <span class="nav-icon">
+                ⌂
+            </span>
+
+            <span>
+                Dashboard
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-students.html"
+            class="sidebar-link active"
+        >
+
+            <span class="nav-icon">
+                ◉
+            </span>
+
+            <span>
+                Students
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-companies.html"
+            class="sidebar-link"
+        >
+
+            <span class="nav-icon">
+                ◇
+            </span>
+
+            <span>
+                Companies
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-internships.html"
+            class="sidebar-link"
+        >
+
+            <span class="nav-icon">
+                ▣
+            </span>
+
+            <span>
+                Internships
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-applications.html"
+            class="sidebar-link"
+        >
+
+            <span class="nav-icon">
+                ▤
+            </span>
+
+            <span>
+                Applications
+            </span>
+
+        </a>
+
+
+        <p class="nav-label nav-label-space">
+            MANAGEMENT
+        </p>
+
+
+
+
+        <a
+            href="admin-analytics.html"
+            class="sidebar-link"
+        >
+
+            <span class="nav-icon">
+                ◎
+            </span>
+
+            <span>
+                Analytics
+            </span>
+
+        </a>
+
+
+        <a
+            href="admin-settings.html"
+            class="sidebar-link"
+        >
+
+            <span class="nav-icon">
+                ⚙
+            </span>
+
+            <span>
+                Settings
+            </span>
+
+        </a>
+
+
+    </nav>
+
+</aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main class="dashboard-main">
+
+        <!-- TOPBAR -->
+        <header class="dashboard-topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <span>Admin Portal</span>
+                <h1>Students</h1>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                    aria-label="Notifications"
+                >
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+                    <div class="topbar-avatar">AD</div>
+
+                    <div class="topbar-profile-text">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             NOTIFICATION PANEL
+        ========================== -->
+        <div class="notification-panel" id="notificationPanel">
+
+            <div class="notification-panel-header">
+                <div>
+                    <span>Admin Portal</span>
+                    <h3>Notifications</h3>
+                </div>
+
+                <button
+                    type="button"
+                    id="closeNotification"
+                    aria-label="Close notifications"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div class="notification-list">
+
+                <div class="notification-item unread">
+                    <div class="notification-icon">♙</div>
+
+                    <div>
+                        <strong>New student registered</strong>
+                        <p>A new student account needs review.</p>
+                        <span>10 minutes ago</span>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">✓</div>
+
+                    <div>
+                        <strong>Profile completed</strong>
+                        <p>A student has completed their profile.</p>
+                        <span>1 hour ago</span>
+                    </div>
+                </div>
+
+                <div class="notification-item">
+                    <div class="notification-icon">✦</div>
+
+                    <div>
+                        <strong>AI matching updated</strong>
+                        <p>Student matching data has been updated.</p>
+                        <span>3 hours ago</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PAGE CONTENT
+        ========================== -->
+        <section class="students-content">
+
+            <!-- PAGE INTRO -->
+            <div class="students-page-header">
+
+                <div class="students-heading">
+
+                    <span class="eyebrow">
+                        STUDENT MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Manage your
+                        <em>students.</em>
+                    </h2>
+
+                    <p>
+                        View registered students, monitor their profiles,
+                        and manage student accounts across the platform.
+                    </p>
+
+                </div>
+
+                <div class="students-header-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-action"
+                        id="exportStudentsBtn"
+                    >
+                        <span>↓</span>
+                        Export
+                    </button>
+
+                    <button
+                        type="button"
+                        class="primary-action"
+                        id="refreshStudentsBtn"
+                    >
+                        <span>↻</span>
+                        Refresh
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SUMMARY CARDS
+            ========================== -->
+            <div class="student-stat-grid">
+
+                <div class="student-stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">
+                            Total Students
+                        </span>
+
+                        <div class="stat-icon purple-icon">
+                            ♙
+                        </div>
+                    </div>
+
+                    <strong class="stat-number" data-count="248">
+                        248
+                    </strong>
+
+                    <div class="stat-footer">
+                        <span class="stat-positive">+12%</span>
+                        <span>this month</span>
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">
+                            Active Students
+                        </span>
+
+                        <div class="stat-icon pink-icon">
+                            ✓
+                        </div>
+                    </div>
+
+                    <strong class="stat-number" data-count="226">
+                        226
+                    </strong>
+
+                    <div class="stat-footer">
+                        <span class="stat-positive">91.1%</span>
+                        <span>of total</span>
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">
+                            New This Month
+                        </span>
+
+                        <div class="stat-icon lavender-icon">
+                            ＋
+                        </div>
+                    </div>
+
+                    <strong class="stat-number" data-count="24">
+                        24
+                    </strong>
+
+                    <div class="stat-footer">
+                        <span class="stat-positive">+8.4%</span>
+                        <span>growth</span>
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat-card">
+
+                    <div class="stat-card-top">
+                        <span class="stat-label">
+                            Pending Review
+                        </span>
+
+                        <div class="stat-icon rose-icon">
+                            !
+                        </div>
+                    </div>
+
+                    <strong class="stat-number" data-count="08">
+                        08
+                    </strong>
+
+                    <div class="stat-footer">
+                        <span class="stat-warning">Needs attention</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 STUDENTS MANAGEMENT CARD
+            ========================== -->
+            <div class="students-management-card">
+
+                <div class="management-card-header">
+
+                    <div>
+                        <span class="section-label">
+                            REGISTERED STUDENTS
+                        </span>
+
+                        <h3>Student Directory</h3>
+
+                        <p>
+                            Search and manage all registered student accounts.
+                        </p>
+                    </div>
+
+                    <span class="student-total">
+                        248 Students
+                    </span>
+
+                </div>
+
+
+                <!-- FILTER BAR -->
+                <div class="student-filter-bar">
+
+                    <div class="student-search">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="search"
+                            id="studentSearch"
+                            placeholder="Search by name, email or university..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <select id="universityFilter">
+
+                            <option value="all">
+                                All Universities
+                            </option>
+
+                            <option value="comsats">
+                                COMSATS University
+                            </option>
+
+                            <option value="pu">
+                                University of the Punjab
+                            </option>
+
+                            <option value="nust">
+                                NUST
+                            </option>
+
+                            <option value="fast">
+                                FAST-NUCES
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+                <div class="students-table-wrapper">
+
+                    <table class="students-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Student</th>
+                                <th>University</th>
+                                <th>Applications</th>
+                                <th>Profile</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="studentsTableBody">
+
+                            <tr
+                                data-status="active"
+                                data-university="comsats"
+                                data-search="ayesha khan ayesha@gmail.com comsats computer science"
+                            >
+
+                                <td>
+                                    <div class="student-cell">
+
+                                        <div class="student-avatar">
+                                            AK
+                                        </div>
+
+                                        <div class="student-info">
+                                            <strong>Ayesha Khan</strong>
+                                            <span>ayesha.khan@gmail.com</span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="university-cell">
+                                        <strong>COMSATS University</strong>
+                                        <span>Computer Science</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong class="application-number">08</strong>
+                                </td>
+
+                                <td>
+                                    <div class="profile-progress">
+
+                                        <div class="progress-track">
+                                            <span style="width: 92%;"></span>
+                                        </div>
+
+                                        <strong>92%</strong>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="joined-date">
+                                        Sep 18, 2026
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="view-student-btn"
+                                        data-student="Ayesha Khan"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="active"
+                                data-university="nust"
+                                data-search="hamza ali hamza@gmail.com nust software engineering"
+                            >
+
+                                <td>
+                                    <div class="student-cell">
+
+                                        <div class="student-avatar avatar-pink">
+                                            HA
+                                        </div>
+
+                                        <div class="student-info">
+                                            <strong>Hamza Ali</strong>
+                                            <span>hamza.ali@gmail.com</span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="university-cell">
+                                        <strong>NUST</strong>
+                                        <span>Software Engineering</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong class="application-number">05</strong>
+                                </td>
+
+                                <td>
+                                    <div class="profile-progress">
+
+                                        <div class="progress-track">
+                                            <span style="width: 84%;"></span>
+                                        </div>
+
+                                        <strong>84%</strong>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="joined-date">
+                                        Sep 16, 2026
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="view-student-btn"
+                                        data-student="Hamza Ali"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="pending"
+                                data-university="pu"
+                                data-search="sara malik sara@gmail.com university punjab information technology"
+                            >
+
+                                <td>
+                                    <div class="student-cell">
+
+                                        <div class="student-avatar avatar-lavender">
+                                            SM
+                                        </div>
+
+                                        <div class="student-info">
+                                            <strong>Sara Malik</strong>
+                                            <span>sara.malik@gmail.com</span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="university-cell">
+                                        <strong>University of the Punjab</strong>
+                                        <span>Information Technology</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong class="application-number">03</strong>
+                                </td>
+
+                                <td>
+                                    <div class="profile-progress">
+
+                                        <div class="progress-track">
+                                            <span style="width: 68%;"></span>
+                                        </div>
+
+                                        <strong>68%</strong>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="joined-date">
+                                        Sep 14, 2026
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="view-student-btn"
+                                        data-student="Sara Malik"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="active"
+                                data-university="fast"
+                                data-search="zain ahmed zain@gmail.com fast nuces artificial intelligence"
+                            >
+
+                                <td>
+                                    <div class="student-cell">
+
+                                        <div class="student-avatar avatar-rose">
+                                            ZA
+                                        </div>
+
+                                        <div class="student-info">
+                                            <strong>Zain Ahmed</strong>
+                                            <span>zain.ahmed@gmail.com</span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="university-cell">
+                                        <strong>FAST-NUCES</strong>
+                                        <span>Artificial Intelligence</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong class="application-number">11</strong>
+                                </td>
+
+                                <td>
+                                    <div class="profile-progress">
+
+                                        <div class="progress-track">
+                                            <span style="width: 96%;"></span>
+                                        </div>
+
+                                        <strong>96%</strong>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge active">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="joined-date">
+                                        Sep 12, 2026
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="view-student-btn"
+                                        data-student="Zain Ahmed"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="suspended"
+                                data-university="comsats"
+                                data-search="maria iqbal maria@gmail.com comsats data science"
+                            >
+
+                                <td>
+                                    <div class="student-cell">
+
+                                        <div class="student-avatar avatar-dark">
+                                            MI
+                                        </div>
+
+                                        <div class="student-info">
+                                            <strong>Maria Iqbal</strong>
+                                            <span>maria.iqbal@gmail.com</span>
+                                        </div>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="university-cell">
+                                        <strong>COMSATS University</strong>
+                                        <span>Data Science</span>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <strong class="application-number">02</strong>
+                                </td>
+
+                                <td>
+                                    <div class="profile-progress">
+
+                                        <div class="progress-track">
+                                            <span style="width: 74%;"></span>
+                                        </div>
+
+                                        <strong>74%</strong>
+
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <span class="status-badge suspended">
+                                        Suspended
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <span class="joined-date">
+                                        Sep 09, 2026
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button
+                                        type="button"
+                                        class="view-student-btn"
+                                        data-student="Maria Iqbal"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- EMPTY STATE -->
+                    <div
+                        class="students-empty"
+                        id="studentsEmpty"
+                    >
+                        <div class="empty-icon">⌕</div>
+                        <h3>No students found</h3>
+                        <p>
+                            Try changing your search or filter.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div class="students-pagination">
+
+                    <span class="pagination-info">
+                        Showing <strong>1–5</strong> of <strong>248</strong> students
+                    </span>
+
+                    <div class="pagination-buttons">
+
+                        <button
+                            type="button"
+                            class="pagination-btn disabled"
+                            aria-label="Previous page"
+                        >
+                            ←
+                        </button>
+
+                        <button
+                            type="button"
+                            class="pagination-btn active"
+                        >
+                            1
+                        </button>
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                        >
+                            2
+                        </button>
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                        >
+                            3
+                        </button>
+
+                        <span class="pagination-dots">...</span>
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                        >
+                            50
+                        </button>
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                            aria-label="Next page"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         STUDENT DETAIL DRAWER
+    ========================== -->
+    <div class="student-drawer-overlay" id="studentDrawerOverlay"></div>
+
+    <aside class="student-drawer" id="studentDrawer">
+
+        <div class="drawer-header">
+
+            <div>
+                <span>STUDENT PROFILE</span>
+                <h2>Student Details</h2>
+            </div>
+
+            <button
+                type="button"
+                id="closeStudentDrawer"
+                aria-label="Close student details"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="drawer-content">
+
+            <div class="drawer-profile">
+
+                <div
+                    class="drawer-avatar"
+                    id="drawerAvatar"
+                >
+                    AK
+                </div>
+
+                <div>
+                    <h3 id="drawerStudentName">
+                        Ayesha Khan
+                    </h3>
+
+                    <p id="drawerStudentEmail">
+                        ayesha.khan@gmail.com
+                    </p>
+
+                    <span class="status-badge active">
+                        Active
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="drawer-section">
+
+                <span class="drawer-section-label">
+                    EDUCATION
+                </span>
+
+                <div class="drawer-info-row">
+                    <span>University</span>
+                    <strong id="drawerUniversity">
+                        COMSATS University
+                    </strong>
+                </div>
+
+                <div class="drawer-info-row">
+                    <span>Program</span>
+                    <strong id="drawerProgram">
+                        Computer Science
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="drawer-section">
+
+                <span class="drawer-section-label">
+                    SMARTINTERN ACTIVITY
+                </span>
+
+                <div class="drawer-mini-grid">
+
+                    <div>
+                        <strong id="drawerApplications">08</strong>
+                        <span>Applications</span>
+                    </div>
+
+                    <div>
+                        <strong id="drawerMatches">12</strong>
+                        <span>AI Matches</span>
+                    </div>
+
+                    <div>
+                        <strong id="drawerProfile">92%</strong>
+                        <span>Profile</span>
+                    </div>
+
+                    <div>
+                        <strong id="drawerInterviews">02</strong>
+                        <span>Interviews</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="drawer-section">
+
+                <span class="drawer-section-label">
+                    ACCOUNT ACTION
+                </span>
+
+                <button
+                    type="button"
+                    class="drawer-action"
+                    id="viewFullProfileBtn"
+                >
+                    <span>View Full Profile</span>
+                    <span>→</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="drawer-action danger-action"
+                    id="suspendStudentBtn"
+                >
+                    <span>Suspend Student</span>
+                    <span>×</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="../js/admin-students.js"></script>
+
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

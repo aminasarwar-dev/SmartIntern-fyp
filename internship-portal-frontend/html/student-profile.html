@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartIntern — My Profile</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Only this CSS -->
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout-student.css">
+    <link
+        rel="stylesheet"
+        href="../css/student-profile.css"
+    >
+    <link rel="stylesheet" href="../css/logout-model.css">
+
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <link rel="stylesheet" href="../css/ai-ui.css">
+    <script src="../js/api.js"></script>
+    <script src="../js/ai-ui.js"></script>
+    <script src="../js/student-data.js"></script>
+    <script src="../js/session.js" data-role="student"></script>
+</head>
+
+
+<body class="student-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <a href="index.html">
+
+                Smart<span>Intern</span>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- Student Profile -->
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+
+                AS
+
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong id="sidebarStudentName">
+
+                    Student
+
+                </strong>
+
+                <span>
+
+                    Student
+
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-label">
+
+                MAIN
+
+            </p>
+
+
+            <a
+                href="student-dashboard.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a
+                href="student-browse-internships.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌕</span>
+
+                <span>Browse Internships</span>
+
+            </a>
+
+
+            <a
+                href="student-my-applications.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">▣</span>
+
+                <span>My Applications</span>
+
+            </a>
+
+
+            <a
+                href="resume-upload.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">↥</span>
+
+                <span>Resume</span>
+
+            </a>
+
+
+
+            <p class="nav-label nav-label-space">
+
+                AI TOOLS
+
+            </p>
+
+
+            <a
+                href="skill-gap.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">✦</span>
+
+                <span>AI Skill Gap</span>
+
+            </a>
+
+
+            <a
+                href="ai-match.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◎</span>
+
+                <span>AI Matches</span>
+
+            </a>
+
+
+
+            <p class="nav-label nav-label-space">
+
+                ACCOUNT
+
+            </p>
+
+
+            <a
+                href="student-profile.html"
+                class="sidebar-link active"
+            >
+
+                <span class="nav-icon">◯</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="sidebar-link"
+                id="logoutLink"
+            >
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="dashboard-topbar">
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+            >
+
+                ☰
+
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+
+                    STUDENT PORTAL
+
+                </span>
+
+                <h1>
+
+                    My Profile
+
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                >
+
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+
+                        AS
+
+                    </div>
+
+
+                    <div class="topbar-profile-text">
+
+                        <strong id="topbarStudentName">
+
+                            Student
+
+                        </strong>
+
+                        <span>
+
+                            Student
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             PROFILE CONTENT
+             ================================================= -->
+
+        <div class="profile-content">
+
+
+            <!-- =================================================
+                 PROFILE HEADER
+                 ================================================= -->
+
+            <section class="profile-header-card">
+
+
+                <div class="profile-main">
+
+
+                    <div class="profile-large-avatar">
+
+                        AS
+
+                    </div>
+
+
+                    <div class="profile-heading">
+
+                        <span class="profile-eyebrow">
+
+                            STUDENT PROFILE
+
+                        </span>
+
+                        <h2>
+
+                            Student
+
+                        </h2>
+
+                        <p>
+
+                            Computer Science Student
+
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="profile-completion">
+
+                    <span>
+
+                        PROFILE COMPLETION
+
+                    </span>
+
+                    <strong>
+
+                        85%
+
+                    </strong>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PERSONAL INFORMATION
+                 ================================================= -->
+
+            <section class="profile-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span>
+
+                            PERSONAL INFORMATION
+
+                        </span>
+
+                        <h3>
+
+                            Basic Details
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-fields">
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Full Name
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            value="Student"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Email Address
+
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            value="student@example.com"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Phone Number
+
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter your phone number"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Location
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Enter your location"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 EDUCATION
+                 ================================================= -->
+
+            <section class="profile-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span>
+
+                            EDUCATION
+
+                        </span>
+
+                        <h3>
+
+                            Academic Information
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-fields">
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Degree
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="degree"
+                            value="BS Computer Science"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            University
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="university"
+                            placeholder="Enter your university"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Graduation Year
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="graduationYear"
+                            placeholder="e.g. 2027"
+                        >
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            CGPA
+
+                        </label>
+
+                        <input
+                            type="text"
+                            id="cgpa"
+                            placeholder="Enter your CGPA"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PROFESSIONAL INFORMATION
+                 ================================================= -->
+
+            <section class="profile-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span>
+
+                            PROFESSIONAL INFORMATION
+
+                        </span>
+
+                        <h3>
+
+                            Career Details
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-fields">
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Career Interest
+
+                        </label>
+
+                        <select id="careerInterest">
+
+                            <option value="Frontend Development">
+
+                                Frontend Development
+
+                            </option>
+
+                            <option value="Backend Development">
+
+                                Backend Development
+
+                            </option>
+
+                            <option value="AI / Machine Learning">
+
+                                AI / Machine Learning
+
+                            </option>
+
+                            <option value="UI / UX Design">
+
+                                UI / UX Design
+
+                            </option>
+
+                            <option value="Data Science">
+
+                                Data Science
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="profile-field">
+
+                        <label>
+
+                            Experience Level
+
+                        </label>
+
+                        <select id="experienceLevel">
+
+                            <option value="Beginner">
+
+                                Beginner
+
+                            </option>
+
+                            <option value="Intermediate">
+
+                                Intermediate
+
+                            </option>
+
+                            <option value="Advanced">
+
+                                Advanced
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="profile-field full-field">
+
+                        <label>
+
+                            About You
+
+                        </label>
+
+                        <textarea
+                            id="about"
+                            rows="4"
+                            placeholder="Write a short introduction about yourself..."
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SKILLS
+                 ================================================= -->
+
+            <section class="profile-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span>
+
+                            SKILLS
+
+                        </span>
+
+                        <h3>
+
+                            Your Skills
+
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="skills-box">
+
+
+                    <span class="profile-skill">
+
+                        HTML
+
+                    </span>
+
+
+                    <span class="profile-skill">
+
+                        CSS
+
+                    </span>
+
+
+                    <span class="profile-skill">
+
+                        JavaScript
+
+                    </span>
+
+
+                    <span class="profile-skill">
+
+                        Git
+
+                    </span>
+
+
+                    <span class="profile-skill">
+
+                        UI / UX
+
+                    </span>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SAVE
+                 ================================================= -->
+
+            <div class="profile-save">
+
+                <button
+                    type="button"
+                    id="saveProfile"
+                >
+
+                    Save Changes
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <script src="../js/student-profile.js"></script>
+    <script src="../js/ai-screens.js"></script>
+    <script src="../js/logout.js"></script>
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/student-photo.js"></script>
+</body>
+
+</html>

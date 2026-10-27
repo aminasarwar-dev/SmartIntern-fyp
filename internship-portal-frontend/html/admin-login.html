@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartIntern — Admin Login</title>
+
+
+    <!-- Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- SAME CSS AS NORMAL LOGIN -->
+
+    <link rel="stylesheet" href="../css/variables.css">
+
+    <link rel="stylesheet" href="../css/base.css">
+
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <link rel="stylesheet" href="../css/autofill-fix.css">
+
+</head>
+
+
+<body class="login-page">
+
+    <!-- BACK TO HOME -->
+    <a href="index.html" class="page-back">
+        <span aria-hidden="true">←</span> Back to home
+    </a>
+
+
+
+    <!-- SAME BACKGROUND AS LOGIN -->
+
+    <div class="signup-bg bg-one"></div>
+
+    <div class="signup-bg bg-two"></div>
+
+
+    <!-- ADMIN LOGIN -->
+
+    <main class="signup-wrapper">
+
+        <section class="signup-card login-card">
+
+
+            <!-- HEADING -->
+
+            <div class="signup-heading">
+
+                <h1>
+                    Welcome
+                    <em>back.</em>
+                </h1>
+
+            </div>
+
+
+            <!-- ADMIN -->
+
+            <div class="role-switch admin-role-switch">
+
+                <button
+                    type="button"
+                    class="role-option active"
+                >
+                    Admin
+                </button>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form
+                id="adminLoginForm"
+                novalidate
+            >
+
+
+                <!-- EMAIL -->
+
+                <div class="input-group">
+
+                    <label for="adminEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="adminEmail"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                    >
+
+                    <span
+                        class="error"
+                        id="adminEmailError"
+                    ></span>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="input-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="adminPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="adminPasswordToggle"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <span
+                        class="error"
+                        id="adminPasswordError"
+                    ></span>
+
+                </div>
+
+
+                <!-- LOGIN ERROR -->
+
+                <span
+                    class="error admin-form-error"
+                    id="adminFormError"
+                ></span>
+
+
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="submit"
+                    class="signup-button"
+                    id="adminLoginButton"
+                >
+
+                    <span>
+                        Login
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+            <!-- BACK TO LANDING -->
+
+            <div class="login-text">
+
+                <a href="index.html">
+                    ← Back to SmartIntern
+                </a>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- SUCCESS -->
+
+    <div
+        class="success-overlay"
+        id="adminSuccessOverlay"
+    >
+
+        <div class="success-box">
+
+            <div class="success-mark">
+                ✓
+            </div>
+
+            <h2>
+                Welcome <em>Admin.</em>
+            </h2>
+
+            <p>
+                Login successful. Redirecting...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- ADMIN JS -->
+    <script src="../js/api.js"></script>
+    <script src="../js/admin-login.js"></script>
+
+</body>
+
+</html>

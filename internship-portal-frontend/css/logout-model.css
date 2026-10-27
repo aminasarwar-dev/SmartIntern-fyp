@@ -1,0 +1,439 @@
+/* =========================================================
+   SMARTINTERN LOGOUT MODAL
+   ========================================================= */
+
+.logout-modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 24px;
+
+    box-sizing: border-box;
+
+    background:
+        rgba(
+            41,
+            35,
+            43,
+            0.28
+        );
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+}
+
+
+/* =========================================================
+   SHOW MODAL
+   ========================================================= */
+
+.logout-modal.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   MODAL BOX
+   ========================================================= */
+
+.logout-modal-box {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    box-sizing: border-box;
+
+    padding:
+        34px 34px 30px;
+
+    border:
+        1px solid #eee5ed;
+
+    border-radius: 22px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.97
+        );
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            50,
+            35,
+            55,
+            0.18
+        );
+
+    transform:
+        translateY(14px)
+        scale(0.98);
+
+    transition:
+        transform 0.28s ease;
+
+}
+
+
+/* =========================================================
+   SHOW BOX
+   ========================================================= */
+
+.logout-modal.show
+.logout-modal-box {
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.logout-modal-content {
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.logout-modal-box h2 {
+
+    margin: 0;
+
+    color: #29232b;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 25px;
+
+    line-height: 1.25;
+
+    font-weight: 500;
+
+    letter-spacing: -0.01em;
+
+}
+
+
+.logout-modal-box h2 em {
+
+    color: #8d63ad;
+
+    font-style: italic;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.logout-modal-box p {
+
+    margin:
+        12px auto 0;
+
+    max-width: 320px;
+
+    color: #756a78;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.logout-modal-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    margin-top: 27px;
+
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+   ========================================================= */
+
+.logout-modal-btn {
+
+    min-width: 120px;
+
+    height: 43px;
+
+    padding:
+        0 20px;
+
+    border-radius: 11px;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.01em;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        background 0.22s ease,
+        border-color 0.22s ease;
+
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.logout-cancel-btn {
+
+    border:
+        1px solid #e7dce8;
+
+    background:
+        #ffffff;
+
+    color:
+        #756a78;
+
+}
+
+
+.logout-cancel-btn:hover {
+
+    border-color:
+        #d6c1dc;
+
+    background:
+        #faf6fb;
+
+    color:
+        #29232b;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 7px 18px
+        rgba(
+            50,
+            35,
+            55,
+            0.07
+        );
+
+}
+
+
+/* =========================================================
+   CONFIRM LOGOUT BUTTON
+   ========================================================= */
+
+.logout-confirm-btn {
+
+    border:
+        1px solid #8d63ad;
+
+    background:
+        #8d63ad;
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 8px 18px
+        rgba(
+            141,
+            99,
+            173,
+            0.18
+        );
+
+}
+
+
+.logout-confirm-btn:hover {
+
+    background:
+        #7f56a1;
+
+    border-color:
+        #7f56a1;
+
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 11px 24px
+        rgba(
+            141,
+            99,
+            173,
+            0.25
+        );
+
+}
+
+
+/* =========================================================
+   ACTIVE / FOCUS
+   ========================================================= */
+
+.logout-modal-btn:focus {
+
+    outline:
+        none;
+
+}
+
+
+.logout-modal-btn:focus-visible {
+
+    box-shadow:
+        0 0 0 3px
+        rgba(
+            179,
+            139,
+            215,
+            0.18
+        );
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .logout-modal {
+
+        padding:
+            18px;
+
+    }
+
+
+    .logout-modal-box {
+
+        max-width: 100%;
+
+        padding:
+            30px 23px 25px;
+
+        border-radius: 19px;
+
+    }
+
+
+    .logout-modal-box h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .logout-modal-box p {
+
+        font-size: 12px;
+
+        max-width: 280px;
+
+    }
+
+
+    .logout-modal-actions {
+
+        gap: 9px;
+
+        margin-top: 23px;
+
+    }
+
+
+    .logout-modal-btn {
+
+        min-width: 0;
+
+        flex: 1;
+
+        height: 42px;
+
+        padding:
+            0 14px;
+
+        font-size: 11px;
+
+    }
+
+}

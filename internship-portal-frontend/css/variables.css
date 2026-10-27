@@ -1,0 +1,17 @@
+/* SmartIntern — shared design tokens
+   Based on the supplied landing-page reference. */
+:root {
+    --bg: #fffdfb;
+    --text: #242126;
+    --dark: #29232b;
+    --muted: #777078;
+    --muted-2: #918891;
+    --purple: #b38bd7;
+    --purple-deep: #9a6fc4;
+    --purple-soft: #eee3f7;
+    --pink: #e8a8c7;
+    --pink-soft: #f5dff0;
+    --peach-soft: #fae6df;
+    --section-bg: #faf5f8;
+    --border: #eadfe8;
+}

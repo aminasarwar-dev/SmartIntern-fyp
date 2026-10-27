@@ -1,0 +1,126 @@
+/* =========================================================
+   SMARTINTERN — NOTIFICATIONS (same on every page)
+   Built by js/notifications.js. Closes only with the × button.
+========================================================= */
+
+.si-notify {
+    position: fixed;
+    top: 84px;
+    right: 28px;
+    z-index: 3000;
+    width: 340px;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 16px 18px 8px;
+    border: 1px solid #ebe2eb;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .98);
+    box-shadow: 0 25px 60px rgba(50, 35, 55, .16);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+
+.si-notify.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.si-notify-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0e8f0;
+}
+
+.si-notify-head h3 {
+    margin: 0;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #29232b;
+}
+
+.si-notify-close {
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #958998;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.si-notify-close:hover { background: #f4eaf6; color: #76538d; }
+.si-notify-close:focus-visible { outline: 2px solid #8d63ad; outline-offset: 2px; }
+
+.si-notify-list {
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.si-notify-item {
+    display: flex;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #f3edf3;
+}
+
+.si-notify-item:last-child { border-bottom: 0; }
+
+.si-notify-icon {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #f4eaf6;
+    color: #76538d;
+    font-size: 14px;
+}
+
+.si-notify-item strong {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 13px;
+    color: #29232b;
+}
+
+.si-notify-item p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #8b7f8e;
+}
+
+.si-notify-item small {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #b3a9b5;
+}
+
+/* the little dot on the bell goes away once opened */
+.notification-button.is-read .notification-dot { display: none; }
+
+@media (max-width: 600px) {
+    .si-notify { top: 70px; right: 12px; left: 12px; width: auto; max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .si-notify { transition: none; }
+}

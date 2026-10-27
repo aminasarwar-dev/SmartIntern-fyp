@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartIntern — Internships</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/admin-internships.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="admin"></script>
+</head>
+
+<body class="admin-dashboard-page internships-page">
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+        <div class="sidebar-brand">
+
+            <a href="index.html">
+                Smart<span>Intern</span>
+            </a>
+
+        </div>
+
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AD
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong>
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="admin-dashboard.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-students.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Students
+                </span>
+            </a>
+
+
+            <a
+                href="admin-companies.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">
+                    ◇
+                </span>
+
+                <span>
+                    Companies
+                </span>
+            </a>
+
+
+            <a
+                href="admin-internships.html"
+                class="sidebar-link active"
+            >
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Internships
+                </span>
+            </a>
+
+
+            <a
+                href="admin-applications.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">
+                    ▤
+                </span>
+
+                <span>
+                    Applications
+                </span>
+            </a>
+
+
+            <p class="nav-label nav-label-space">
+                MANAGEMENT
+            </p>
+
+
+
+
+            <a
+                href="admin-analytics.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">
+                    ◎
+                </span>
+
+                <span>
+                    Analytics
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="dashboard-topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    Admin Portal
+                </span>
+
+                <h1>
+                    Internships
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                    aria-label="Notifications"
+                >
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar">
+                        AD
+                    </div>
+
+                    <div class="topbar-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             NOTIFICATION PANEL
+        ========================== -->
+
+        <div
+            class="notification-panel"
+            id="notificationPanel"
+        >
+
+            <div class="notification-panel-header">
+
+                <div>
+
+                    <span>
+                        Admin Portal
+                    </span>
+
+                    <h3>
+                        Notifications
+                    </h3>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="closeNotification"
+                    aria-label="Close notifications"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="notification-list">
+
+
+                <div class="notification-item unread">
+
+                    <div class="notification-icon">
+                        ◇
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            New internship posted
+                        </strong>
+
+                        <p>
+                            A company has posted a new internship.
+                        </p>
+
+                        <span>
+                            10 minutes ago
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Internship approved
+                        </strong>
+
+                        <p>
+                            An internship has been approved successfully.
+                        </p>
+
+                        <span>
+                            1 hour ago
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Internship needs review
+                        </strong>
+
+                        <p>
+                            A newly submitted internship requires review.
+                        </p>
+
+                        <span>
+                            3 hours ago
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PAGE CONTENT
+        ========================== -->
+
+        <section class="internships-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="internships-page-header">
+
+                <div class="internships-heading">
+
+                    <span class="eyebrow">
+                        INTERNSHIP MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Manage your
+                        <em>internships.</em>
+                    </h2>
+
+                    <p>
+                        Review, monitor, and manage all internship
+                        opportunities posted by companies across SmartIntern.
+                    </p>
+
+                </div>
+
+
+                <div class="internships-header-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-action"
+                        id="exportInternshipsBtn"
+                    >
+                        <span>↓</span>
+                        Export
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="primary-action"
+                        id="refreshInternshipsBtn"
+                    >
+                        <span>↻</span>
+                        Refresh
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SUMMARY CARDS
+            ========================== -->
+
+            <div class="internship-stat-grid">
+
+
+                <div class="internship-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Total Internships
+                        </span>
+
+                        <div class="stat-icon purple-icon">
+                            ▣
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="stat-number"
+                        data-count="86"
+                    >
+                        86
+                    </strong>
+
+
+                    <div class="stat-footer">
+
+                        <span class="stat-positive">
+                            +14%
+                        </span>
+
+                        <span>
+                            this month
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="internship-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Active Internships
+                        </span>
+
+                        <div class="stat-icon pink-icon">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="stat-number"
+                        data-count="64"
+                    >
+                        64
+                    </strong>
+
+
+                    <div class="stat-footer">
+
+                        <span class="stat-positive">
+                            74.4%
+                        </span>
+
+                        <span>
+                            of total
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="internship-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Pending Review
+                        </span>
+
+                        <div class="stat-icon lavender-icon">
+                            ＋
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="stat-number"
+                        data-count="14"
+                    >
+                        14
+                    </strong>
+
+
+                    <div class="stat-footer">
+
+                        <span class="stat-positive">
+                            Needs review
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="internship-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span class="stat-label">
+                            Expired
+                        </span>
+
+                        <div class="stat-icon rose-icon">
+                            !
+                        </div>
+
+                    </div>
+
+
+                    <strong
+                        class="stat-number"
+                        data-count="08"
+                    >
+                        08
+                    </strong>
+
+
+                    <div class="stat-footer">
+
+                        <span class="stat-warning">
+                            Requires monitoring
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 MANAGEMENT CARD
+            ========================== -->
+
+            <div class="internships-management-card">
+
+
+                <div class="management-card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            POSTED INTERNSHIPS
+                        </span>
+
+                        <h3>
+                            Internship Directory
+                        </h3>
+
+                        <p>
+                            Search and manage all internship opportunities.
+                        </p>
+
+                    </div>
+
+
+                    <span class="internship-total">
+                        86 Internships
+                    </span>
+
+                </div>
+
+
+                <!-- FILTER BAR -->
+
+                <div class="internship-filter-bar">
+
+
+                    <div class="internship-search">
+
+                        <span class="search-icon">
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="internshipSearch"
+                            placeholder="Search by internship, company or category..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="active">
+                                Active
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="expired">
+                                Expired
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <select id="typeFilter">
+
+                            <option value="all">
+                                All Types
+                            </option>
+
+                            <option value="hybrid">
+                                Hybrid
+                            </option>
+
+                            <option value="remote">
+                                Remote
+                            </option>
+
+                            <option value="onsite">
+                                On-site
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+
+                <div class="internships-table-wrapper">
+
+                    <table class="internships-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Internship
+                                </th>
+
+                                <th>
+                                    Company
+                                </th>
+
+                                <th>
+                                    Applications
+                                </th>
+
+                                <th>
+                                    Type
+                                </th>
+
+                                <th>
+                                    Deadline
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="internshipsTableBody">
+
+
+                            <tr
+                                data-status="active"
+                                data-type="hybrid"
+                                data-search="frontend developer technova software technology"
+                            >
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <div class="internship-icon">
+                                            FD
+                                        </div>
+
+                                        <div class="internship-info">
+
+                                            <strong>
+                                                Frontend Developer
+                                            </strong>
+
+                                            <span>
+                                                Software Development
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <strong>
+                                            TechNova
+                                        </strong>
+
+                                        <span>
+                                            Technology
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <strong class="application-number">
+                                        24
+                                    </strong>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge hybrid">
+                                        Hybrid
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="deadline-date">
+                                        Oct 28, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge active">
+                                        Active
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="view-internship-btn"
+                                        data-internship="Frontend Developer"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="active"
+                                data-type="remote"
+                                data-search="ai machine learning alpha labs artificial intelligence"
+                            >
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <div class="internship-icon icon-pink">
+                                            AI
+                                        </div>
+
+                                        <div class="internship-info">
+
+                                            <strong>
+                                                AI / Machine Learning Intern
+                                            </strong>
+
+                                            <span>
+                                                Artificial Intelligence
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <strong>
+                                            Alpha Labs
+                                        </strong>
+
+                                        <span>
+                                            AI & Technology
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <strong class="application-number">
+                                        31
+                                    </strong>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge remote">
+                                        Remote
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="deadline-date">
+                                        Nov 02, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge active">
+                                        Active
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="view-internship-btn"
+                                        data-internship="AI / Machine Learning Intern"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="pending"
+                                data-type="onsite"
+                                data-search="ui ux designer nova creative studio design"
+                            >
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <div class="internship-icon icon-lavender">
+                                            UX
+                                        </div>
+
+                                        <div class="internship-info">
+
+                                            <strong>
+                                                UI/UX Design Intern
+                                            </strong>
+
+                                            <span>
+                                                Design & Creative
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <strong>
+                                            Nova Creative Studio
+                                        </strong>
+
+                                        <span>
+                                            Creative Agency
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <strong class="application-number">
+                                        17
+                                    </strong>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge onsite">
+                                        On-site
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="deadline-date">
+                                        Oct 24, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="view-internship-btn"
+                                        data-internship="UI/UX Design Intern"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="active"
+                                data-type="hybrid"
+                                data-search="backend developer codecraft software engineering"
+                            >
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <div class="internship-icon icon-rose">
+                                            BE
+                                        </div>
+
+                                        <div class="internship-info">
+
+                                            <strong>
+                                                Backend Developer
+                                            </strong>
+
+                                            <span>
+                                                Software Engineering
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <strong>
+                                            CodeCraft
+                                        </strong>
+
+                                        <span>
+                                            Software House
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <strong class="application-number">
+                                        19
+                                    </strong>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge hybrid">
+                                        Hybrid
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="deadline-date">
+                                        Nov 08, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge active">
+                                        Active
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="view-internship-btn"
+                                        data-internship="Backend Developer"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr
+                                data-status="expired"
+                                data-type="remote"
+                                data-search="data analyst datavision analytics data science"
+                            >
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <div class="internship-icon icon-dark">
+                                            DA
+                                        </div>
+
+                                        <div class="internship-info">
+
+                                            <strong>
+                                                Data Analyst Intern
+                                            </strong>
+
+                                            <span>
+                                                Data Science
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <strong>
+                                            DataVision
+                                        </strong>
+
+                                        <span>
+                                            Analytics
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <strong class="application-number">
+                                        12
+                                    </strong>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge remote">
+                                        Remote
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="deadline-date">
+                                        Sep 30, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge expired">
+                                        Expired
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        type="button"
+                                        class="view-internship-btn"
+                                        data-internship="Data Analyst Intern"
+                                    >
+                                        View
+                                        <span>→</span>
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- EMPTY STATE -->
+
+                    <div
+                        class="internships-empty"
+                        id="internshipsEmpty"
+                    >
+
+                        <div class="empty-icon">
+                            ⌕
+                        </div>
+
+                        <h3>
+                            No internships found
+                        </h3>
+
+                        <p>
+                            Try changing your search or filter.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+
+                <div class="internships-pagination">
+
+                    <span class="pagination-info">
+                        Showing <strong>1–5</strong> of
+                        <strong>86</strong> internships
+                    </span>
+
+
+                    <div class="pagination-buttons">
+
+                        <button
+                            type="button"
+                            class="pagination-btn disabled"
+                            aria-label="Previous page"
+                        >
+                            ←
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="pagination-btn active"
+                        >
+                            1
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                        >
+                            2
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                        >
+                            3
+                        </button>
+
+
+                        <span class="pagination-dots">
+                            ...
+                        </span>
+
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                        >
+                            18
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="pagination-btn"
+                            aria-label="Next page"
+                        >
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         INTERNSHIP DRAWER
+    ========================== -->
+
+    <div
+        class="internship-drawer-overlay"
+        id="internshipDrawerOverlay"
+    ></div>
+
+
+    <aside
+        class="internship-drawer"
+        id="internshipDrawer"
+    >
+
+        <div class="drawer-header">
+
+            <div>
+
+                <span>
+                    INTERNSHIP DETAILS
+                </span>
+
+                <h2>
+                    Internship Details
+                </h2>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeInternshipDrawer"
+                aria-label="Close internship details"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="drawer-content">
+
+
+            <div class="drawer-internship-profile">
+
+                <div
+                    class="drawer-internship-icon"
+                    id="drawerInternshipIcon"
+                >
+                    FD
+                </div>
+
+
+                <div>
+
+                    <h3 id="drawerInternshipName">
+                        Frontend Developer
+                    </h3>
+
+                    <p id="drawerInternshipCompany">
+                        TechNova
+                    </p>
+
+                    <span
+                        class="status-badge active"
+                        id="drawerStatus"
+                    >
+                        Active
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="drawer-section">
+
+                <span class="drawer-section-label">
+                    INTERNSHIP INFORMATION
+                </span>
+
+
+                <div class="drawer-info-row">
+
+                    <span>
+                        Category
+                    </span>
+
+                    <strong id="drawerCategory">
+                        Software Development
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-info-row">
+
+                    <span>
+                        Type
+                    </span>
+
+                    <strong id="drawerType">
+                        Hybrid
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-info-row">
+
+                    <span>
+                        Deadline
+                    </span>
+
+                    <strong id="drawerDeadline">
+                        Oct 28, 2026
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="drawer-section">
+
+                <span class="drawer-section-label">
+                    SMARTINTERN ACTIVITY
+                </span>
+
+
+                <div class="drawer-mini-grid">
+
+                    <div>
+
+                        <strong id="drawerApplications">
+                            24
+                        </strong>
+
+                        <span>
+                            Applications
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="drawerCompany">
+                            TN
+                        </strong>
+
+                        <span>
+                            Company
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="drawerStatusShort">
+                            ON
+                        </strong>
+
+                        <span>
+                            Status
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="drawerTypeShort">
+                            HY
+                        </strong>
+
+                        <span>
+                            Work Type
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="drawer-section">
+
+                <span class="drawer-section-label">
+                    ACCOUNT ACTION
+                </span>
+
+
+                <button
+                    type="button"
+                    class="drawer-action"
+                    id="approveInternshipBtn"
+                >
+
+                    <span>
+                        Approve Internship
+                    </span>
+
+                    <span>
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="drawer-action danger-action"
+                    id="removeInternshipBtn"
+                >
+
+                    <span>
+                        Remove Internship
+                    </span>
+
+                    <span>
+                        ×
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="../js/admin-internships.js"></script>
+
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

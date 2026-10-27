@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartIntern | AI-Powered Internship Platform</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/landing.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="#home" class="logo">
+
+            <img
+                src="../images/smartintern-logo.png"
+                alt="SmartIntern Logo"
+                class="logo-image"
+            >
+
+            <div class="logo-text">
+                <strong>Smart</strong>Intern
+            </div>
+
+        </a>
+
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <a href="login.html" class="login-btn">Login</a>
+
+            <a href="profile-setup.html" class="signup-btn">
+                Get Started
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main id="home">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="mini-badge">
+                    <span class="pulse"></span>
+                    AI-Powered Internship Discovery
+                </div>
+
+                <h1>
+                    Your Skills.
+                    <br>
+                    <span>Your Future.</span>
+                </h1>
+
+                <p class="hero-description">
+                    SmartIntern connects students with the right internship
+                    opportunities using intelligent resume analysis and
+                    AI-powered skill matching.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="profile-setup.html" class="primary-btn">
+                        Find My Internship
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a href="#how-it-works" class="watch-btn">
+                        <span class="play-circle">
+                            <i class="fa-solid fa-play"></i>
+                        </span>
+                        See How It Works
+                    </a>
+
+                </div>
+
+                <div class="hero-trust">
+
+                    <div class="avatars">
+                        <div>A</div>
+                        <div>S</div>
+                        <div>M</div>
+                        <div>+</div>
+                    </div>
+
+                    <div>
+                        <strong>Smart matching</strong>
+                        <small>Built for the next generation</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3D AREA -->
+
+            <div class="hero-visual">
+
+                <canvas id="three-canvas"></canvas>
+
+                <div class="floating-card card-one">
+
+                    <div class="card-icon purple">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div>
+                        <small>Resume Analysis</small>
+                        <strong>Completed</strong>
+                    </div>
+
+                    <i class="fa-solid fa-circle-check check"></i>
+
+                </div>
+
+
+                <div class="floating-card card-two">
+
+                    <div class="match-ring">
+                        <span>92%</span>
+                    </div>
+
+                    <div>
+                        <small>AI Match</small>
+                        <strong>Frontend Intern</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="floating-card card-three">
+
+                    <div class="card-icon peach">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+
+                    <div>
+                        <small>New Opportunity</small>
+                        <strong>Software Intern</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= INTRO ================= -->
+
+        <section class="intro-section">
+
+            <div class="section-label">
+                SMART INTERNSHIP DISCOVERY
+            </div>
+
+            <h2>
+                Stop searching randomly.
+                <br>
+                <span>Start matching intelligently.</span>
+            </h2>
+
+            <p>
+                SmartIntern understands your skills, analyzes your resume,
+                and helps you discover internship opportunities that
+                actually match your profile.
+            </p>
+
+            <div class="scroll-line">
+                <span></span>
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section class="about-section" id="about">
+
+            <div class="about-image">
+
+                <div class="about-orbit orbit-one"></div>
+                <div class="about-orbit orbit-two"></div>
+
+                <div class="about-center">
+                    <div class="sparkle">✦</div>
+                    <strong>SMART</strong>
+                    <span>INTERNSHIP</span>
+                    <small>DISCOVERY</small>
+                </div>
+
+                <div class="about-tag tag-one">
+                    <i class="fa-solid fa-brain"></i>
+                    AI Analysis
+                </div>
+
+                <div class="about-tag tag-two">
+                    <i class="fa-solid fa-bolt"></i>
+                    Smart Match
+                </div>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <div class="section-label">
+                    ABOUT SMARTINTERN
+                </div>
+
+                <h2>
+                    Internship hunting,
+                    <span>reimagined.</span>
+                </h2>
+
+                <p>
+                    Finding an internship shouldn't be about sending your
+                    resume everywhere and hoping someone responds.
+                </p>
+
+                <p>
+                    SmartIntern uses NLP and intelligent matching to
+                    understand your skills and compare them with internship
+                    requirements.
+                </p>
+
+                <div class="about-points">
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>AI-powered resume analysis</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Skill-based internship matching</span>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-check"></i>
+                        <span>Personalized opportunities</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="how-section" id="how-it-works">
+
+            <div class="section-heading">
+
+                <div class="section-label">
+                    HOW IT WORKS
+                </div>
+
+                <h2>
+                    From resume to
+                    <span>opportunity.</span>
+                </h2>
+
+                <p>
+                    Four simple steps. One smarter way to discover
+                    internships.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step-card">
+
+                    <div class="step-number">01</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+
+                    <h3>Create Your Profile</h3>
+
+                    <p>
+                        Tell SmartIntern about your education,
+                        interests and skills.
+                    </p>
+
+                    <div class="step-arrow">→</div>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">02</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-file-arrow-up"></i>
+                    </div>
+
+                    <h3>Upload Your Resume</h3>
+
+                    <p>
+                        Upload your resume and let our NLP system
+                        understand your skills.
+                    </p>
+
+                    <div class="step-arrow">→</div>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">03</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+
+                    <h3>Get AI Matches</h3>
+
+                    <p>
+                        Our system compares your skills with
+                        internship requirements.
+                    </p>
+
+                    <div class="step-arrow">→</div>
+
+                </div>
+
+
+                <div class="step-card">
+
+                    <div class="step-number">04</div>
+
+                    <div class="step-icon">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+
+                    <h3>Apply & Grow</h3>
+
+                    <p>
+                        Apply to suitable opportunities and
+                        move closer to your career goals.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= AI MATCHING ================= -->
+
+        <section class="ai-section">
+
+            <div class="ai-content">
+
+                <div class="section-label">
+                    INTELLIGENT MATCHING
+                </div>
+
+                <h2>
+                    Not every internship
+                    <br>
+                    is <span>your internship.</span>
+                </h2>
+
+                <p>
+                    SmartIntern looks beyond keywords. Your resume is
+                    analyzed to identify relevant skills and compare
+                    them with internship requirements.
+                </p>
+
+                <a href="profile-setup.html" class="primary-btn">
+                    Discover Your Matches
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="ai-demo">
+
+                <div class="resume-mini">
+
+                    <div class="resume-top">
+
+                        <div class="resume-avatar"></div>
+
+                        <div>
+                            <strong>Candidate Profile</strong>
+                            <small>Software Engineering</small>
+                        </div>
+
+                    </div>
+
+                    <div class="skill-line">
+                        <span>JavaScript</span>
+                        <b>95%</b>
+                    </div>
+
+                    <div class="skill-line">
+                        <span>Python</span>
+                        <b>88%</b>
+                    </div>
+
+                    <div class="skill-line">
+                        <span>SQL</span>
+                        <b>82%</b>
+                    </div>
+
+                </div>
+
+
+                <div class="ai-connector">
+                    <div class="connector-dot"></div>
+                    <span>AI</span>
+                    <div class="connector-dot"></div>
+                </div>
+
+
+                <div class="match-result">
+
+                    <div class="big-match">92%</div>
+
+                    <span>PROFILE MATCH</span>
+
+                    <strong>Frontend Developer Intern</strong>
+
+                    <div class="match-status">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Strong Match
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STATS ================= -->
+
+        <section class="stats-section">
+
+            <div class="stat">
+                <strong class="counter">100</strong>
+                <span>%</span>
+                <small>Skill-focused matching</small>
+            </div>
+
+            <div class="stat">
+                <strong class="counter">24</strong>
+                <span>/7</span>
+                <small>Opportunity discovery</small>
+            </div>
+
+            <div class="stat">
+                <strong class="counter">4</strong>
+                <span> Steps</span>
+                <small>From profile to application</small>
+            </div>
+
+            <div class="stat">
+                <strong>AI</strong>
+                <small>Powered recommendations</small>
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA ================= -->
+
+        <section class="cta-section">
+
+            <div class="cta-glow"></div>
+
+            <div class="section-label">
+                YOUR NEXT STEP
+            </div>
+
+            <h2>
+                Your next opportunity
+                <br>
+                <span>could be one match away.</span>
+            </h2>
+
+            <p>
+                Build your profile. Upload your resume.
+                Let SmartIntern find where your skills belong.
+            </p>
+
+            <a href="profile-setup.html" class="cta-button">
+                Get Started with SmartIntern
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+
+        <section class="contact-section" id="contact">
+
+            <div class="contact-head">
+
+                <div class="section-label">
+                    CONTACT US
+                </div>
+
+                <h2>
+                    We would love to
+                    <span>hear from you.</span>
+                </h2>
+
+                <p>
+                    Questions about SmartIntern, a problem with your account,
+                    or an idea to make it better? Send us a message and our
+                    team will reply as soon as possible.
+                </p>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- DETAILS (replace with your real details) -->
+
+                <aside class="contact-info">
+
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <div>
+                            <small>Email</small>
+                            <strong>support@smartintern.com</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        <div>
+                            <small>Phone</small>
+                            <strong>+92 300 0000000</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                        <div>
+                            <small>Office</small>
+                            <strong>Lahore, Pakistan</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fa-solid fa-clock"></i></span>
+                        <div>
+                            <small>Working hours</small>
+                            <strong>Mon - Fri, 9:00 AM - 6:00 PM</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-note">
+                        <i class="fa-solid fa-bolt"></i>
+                        We usually reply within one working day.
+                    </div>
+
+                </aside>
+
+
+                <!-- FORM -->
+
+                <div class="contact-card">
+
+                    <form id="contactForm" novalidate>
+
+                        <div class="contact-row">
+
+                            <label class="contact-field">
+                                <span>Full name *</span>
+                                <input type="text" id="contactName" name="name" autocomplete="name" maxlength="80" placeholder="Your full name">
+                            </label>
+
+                            <label class="contact-field">
+                                <span>Email *</span>
+                                <input type="email" id="contactEmail" name="email" autocomplete="email" maxlength="120" placeholder="you@example.com">
+                            </label>
+
+                        </div>
+
+                        <div class="contact-row">
+
+                            <label class="contact-field">
+                                <span>Phone (optional)</span>
+                                <input type="tel" id="contactPhone" name="phone" autocomplete="tel" maxlength="20" placeholder="03XX XXXXXXX">
+                            </label>
+
+                            <label class="contact-field">
+                                <span>I am a</span>
+                                <select id="contactRole" name="role">
+                                    <option value="student">Student</option>
+                                    <option value="company">Company</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </label>
+
+                        </div>
+
+                        <label class="contact-field">
+                            <span>Topic *</span>
+                            <select id="contactTopic" name="topic">
+                                <option value="">Choose a topic</option>
+                                <option value="general">General question</option>
+                                <option value="account">Account or login problem</option>
+                                <option value="internship">Internships and applications</option>
+                                <option value="company">Company verification</option>
+                                <option value="technical">Report a technical issue</option>
+                                <option value="feedback">Feedback or suggestion</option>
+                            </select>
+                        </label>
+
+                        <label class="contact-field">
+                            <span>Message *</span>
+                            <textarea id="contactMessage" name="message" rows="5" maxlength="1000" placeholder="Tell us how we can help..."></textarea>
+                            <small class="contact-count"><span id="contactCount">0</span> / 1000</small>
+                        </label>
+
+                        <p class="contact-form-error" id="contactError" role="alert"></p>
+
+                        <button type="submit" class="contact-submit" id="contactSubmit">
+                            Send message
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+
+                    </form>
+
+                    <div class="contact-success" id="contactSuccess" hidden>
+                        <div class="contact-success-icon"><i class="fa-solid fa-check"></i></div>
+                        <h3>Message sent</h3>
+                        <p>Thank you for reaching out. We will get back to you at <strong id="contactSuccessEmail"></strong> soon.</p>
+                        <button type="button" class="contact-again" id="contactAgain">Send another message</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+
+            <img
+                src="../images/smartintern-logo.png"
+                alt="SmartIntern Logo"
+                class="footer-logo-image"
+            >
+
+            <strong>
+                <b>Smart</b>Intern
+            </strong>
+
+        </div>
+
+        <p>
+            Connecting skills with opportunities.
+        </p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#contact">Contact Us</a>
+            <a href="login.html">Login</a>
+        </div>
+
+        <div class="copyright">
+            © 2026 SmartIntern. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="../js/hero3d.js"></script>
+    <script src="../js/scroll-animations.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/contact.js"></script>
+
+</body>
+</html>

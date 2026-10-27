@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Internship Details | SmartIntern</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- GSAP -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+
+
+    <!-- ONLY THIS CSS -->
+
+    <link rel="stylesheet" href="../css/layout-student.css">
+    <link rel="stylesheet" href="../css/student-pages.css">
+    <link
+        rel="stylesheet"
+        href="../css/skill-gap.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+    <link rel="stylesheet" href="../css/logout-model.css">
+
+    <link rel="stylesheet" href="../css/ai-ui.css">
+    <link rel="stylesheet" href="../css/apply-flow.css">
+    <script src="../js/api.js"></script>
+    <script src="../js/ai-ui.js"></script>
+    <script src="../js/student-data.js"></script>
+    <script src="../js/session.js" data-role="student"></script>
+</head>
+
+
+<body class="student-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <a href="index.html">
+                Smart<span>Intern</span>
+            </a>
+
+        </div>
+
+
+        <!-- Student Profile -->
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AS
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong id="sidebarStudentName">
+                    Student
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="student-dashboard.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a
+                href="student-browse-internships.html"
+                class="sidebar-link active"
+            >
+
+                <span class="nav-icon">⌕</span>
+
+                <span>Browse Internships</span>
+
+            </a>
+
+
+            <a
+                href="student-my-applications.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">▣</span>
+
+                <span>My Applications</span>
+
+            </a>
+
+
+            <a
+                href="resume-upload.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">↥</span>
+
+                <span>Resume</span>
+
+            </a>
+
+
+
+            <p class="nav-label nav-label-space">
+                AI TOOLS
+            </p>
+
+
+            <a
+                href="skill-gap.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">✦</span>
+
+                <span>AI Skill Gap</span>
+
+            </a>
+
+
+            <a
+                href="ai-match.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◎</span>
+
+                <span>AI Matches</span>
+
+            </a>
+
+
+
+            <p class="nav-label nav-label-space">
+                ACCOUNT
+            </p>
+
+
+            <a
+                href="student-profile.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◯</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="sidebar-link"
+                id="logoutLink"
+            >
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="dashboard-topbar">
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+                <h1>Internship Details</h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                >
+
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div
+                        class="topbar-avatar"
+                        id="topbarAvatar"
+                    >
+                        AS
+                    </div>
+
+                    <div class="topbar-profile-text">
+
+                        <strong id="topbarStudentName">
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+        <!-- =================================================
+             INTERNSHIP DETAILS
+             The data is read from sessionStorage key
+             "smartInternSelectedInternship" (JSON). If nothing is
+             stored, a sample internship is shown. Replace with a
+             real API call (GET /internships/{id}) when the backend
+             endpoint is ready.
+             ================================================= -->
+
+        <div class="detail-content">
+
+            <a href="student-browse-internships.html" class="detail-back">
+                &larr; Back to internships
+            </a>
+
+            <section class="detail-card">
+
+                <span class="detail-eyebrow">INTERNSHIP DETAILS</span>
+
+                <h2 id="detailTitle">Frontend Developer Intern</h2>
+
+                <p class="detail-company" id="detailCompany">
+                    Sample Company &middot; Karachi &middot; Hybrid
+                </p>
+
+                <div class="detail-tags" id="detailTags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <h3>About the role</h3>
+                <p id="detailDescription">
+                    Work with the product team to build responsive pages,
+                    fix UI bugs and learn modern frontend practices under
+                    the guidance of a senior developer.
+                </p>
+
+                <h3>Details</h3>
+                <ul class="detail-list">
+                    <li><strong>Duration:</strong> <span id="detailDuration">3 months</span></li>
+                    <li><strong>Stipend:</strong> <span id="detailStipend">Paid</span></li>
+                    <li><strong>Deadline:</strong> <span id="detailDeadline">To be announced</span></li>
+                </ul>
+
+                <div class="detail-actions">
+                    <a href="student-my-applications.html" class="detail-apply">Apply now</a>
+                    <a href="student-browse-internships.html" class="detail-secondary">Browse more</a>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <style>
+        .detail-content { padding: 24px 32px 48px; max-width: 880px; }
+        .detail-back { display: inline-block; margin-bottom: 18px; color: var(--purple-deep); font-weight: 600; }
+        .detail-card { background: #fff; border: 1px solid var(--border); border-radius: 24px; padding: 32px; box-shadow: 0 20px 40px rgba(70, 40, 70, .06); }
+        .detail-eyebrow { font-size: 12px; letter-spacing: .12em; color: var(--purple-deep); font-weight: 700; }
+        .detail-card h2 { font-size: 32px; margin: 8px 0 6px; }
+        .detail-card h3 { margin: 24px 0 8px; font-size: 18px; }
+        .detail-company { color: var(--muted); margin-bottom: 16px; }
+        .detail-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .detail-tags span { background: var(--purple-soft); color: var(--purple-deep); padding: 6px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+        .detail-list { list-style: none; display: grid; gap: 6px; }
+        .detail-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+        .detail-apply, .detail-secondary { padding: 12px 24px; border-radius: 999px; font-weight: 700; }
+        .detail-apply { background: var(--dark); color: #fff; }
+        .detail-secondary { border: 1px solid var(--border); }
+        @media (max-width: 640px) { .detail-content { padding: 16px; } .detail-card { padding: 20px; } }
+    </style>
+
+
+    <script>
+        (function () {
+            let data = null;
+            try {
+                data = JSON.parse(sessionStorage.getItem("smartInternSelectedInternship") || "null");
+            } catch (error) { data = null; }
+            if (!data) { return; }
+
+            const set = (id, value) => {
+                const el = document.getElementById(id);
+                if (el && value) { el.textContent = value; }
+            };
+
+            set("detailTitle", data.title);
+            set("detailCompany", [data.company, data.location, data.mode].filter(Boolean).join(" · "));
+            set("detailDescription", data.description);
+            set("detailDuration", data.duration);
+            set("detailStipend", data.stipend);
+            set("detailDeadline", data.deadline);
+
+            if (Array.isArray(data.skills) && data.skills.length) {
+                const box = document.getElementById("detailTags");
+                box.replaceChildren();
+                data.skills.forEach(skill => {
+                    const span = document.createElement("span");
+                    span.textContent = skill;
+                    box.appendChild(span);
+                });
+            }
+        })();
+    </script>
+
+    <script>
+        (function () {
+            const menu = document.getElementById("mobileMenu");
+            const sidebar = document.getElementById("dashboardSidebar");
+            const overlay = document.getElementById("sidebarOverlay");
+            if (menu && sidebar && overlay) {
+                menu.addEventListener("click", () => {
+                    sidebar.classList.add("open");
+                    overlay.classList.add("show");
+                });
+                overlay.addEventListener("click", () => {
+                    sidebar.classList.remove("open");
+                    overlay.classList.remove("show");
+                });
+            }
+        })();
+    </script>
+
+    <script src="../js/apply-flow.js"></script>
+    <script>
+        /* Apply now opens the pre-filled form (review, then confirm) */
+        (function () {
+            const button = document.querySelector(".detail-apply");
+            if (!button || !window.SmartApply) { return; }
+
+            button.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                let data = null;
+                try {
+                    data = JSON.parse(sessionStorage.getItem("smartInternSelectedInternship") || "null");
+                } catch (error) { data = null; }
+                data = data || {};
+
+                const text = id => (document.getElementById(id) || {}).textContent || "";
+                const title = data.title || text("detailTitle").trim();
+
+                window.SmartApply.open({
+                    id: data.id || title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+                    title: title,
+                    company: data.company || text("detailCompany").split("·")[0].trim(),
+                    typeLabel: data.mode || "",
+                    location: data.location || "",
+                    duration: text("detailDuration").trim(),
+                    stipend: text("detailStipend").trim(),
+                    deadline: text("detailDeadline").trim(),
+                    about: text("detailDescription").trim(),
+                    skills: Array.from(document.querySelectorAll("#detailTags span")).map(s => s.textContent.trim().toLowerCase())
+                }, { directApply: true });
+            });
+        })();
+    </script>
+    <script src="../js/logout.js"></script>
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/student-photo.js"></script>
+</body>
+</html>

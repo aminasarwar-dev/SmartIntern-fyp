@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Internships | SmartIntern</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/company-dashboard.css">
+    <link rel="stylesheet" href="../css/manage-internships.css">
+    <link rel="stylesheet" href="../css/company-access.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="company"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/company-access.js"></script>
+</head>
+
+<body class="company-dashboard-page manage-internships-page">
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SIDEBAR -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+        <div class="sidebar-brand">
+            <a href="index.html">Smart<span>Intern</span></a>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="sidebar-avatar" id="sidebarCompanyAvatar">C</div>
+            <div class="sidebar-profile-info">
+                <strong id="sidebarCompanyName">Company</strong>
+                <span>Company</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN</p>
+
+            <a href="company-dashboard.html" class="sidebar-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="post-internship.html" class="sidebar-link">
+                <span class="nav-icon">＋</span>
+                <span>Post Internship</span>
+            </a>
+
+            <a href="manage-internships.html" class="sidebar-link active" aria-current="page">
+                <span class="nav-icon">▣</span>
+                <span>Manage Internships</span>
+            </a>
+
+            <a href="view-applicants.html" class="sidebar-link">
+                <span class="nav-icon">◇</span>
+                <span>Applicants</span>
+            </a>
+
+            <p class="nav-label nav-label-space">AI TOOLS</p>
+
+            <a href="ai-candidate-matches.html" class="sidebar-link">
+                <span class="nav-icon">✦</span>
+                <span>AI Candidate Matches</span>
+            </a>
+
+            <a href="hiring-analytics.html" class="sidebar-link">
+                <span class="nav-icon">◎</span>
+                <span>Hiring Analytics</span>
+            </a>
+
+            <p class="nav-label nav-label-space">ACCOUNT</p>
+
+            <a href="company-profile.html" class="sidebar-link">
+                <span class="nav-icon">◯</span>
+                <span>Company Profile</span>
+            </a>
+
+            <a href="login.html" class="sidebar-link" id="logoutLink">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <!-- SAME TOPBAR -->
+        <header class="dashboard-topbar">
+
+            <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open menu">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <span>Company Portal</span>
+                <h1>Manage Internships</h1>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="notification-button" id="notificationButton" type="button" aria-label="Notifications" aria-expanded="false">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+                    <div class="topbar-avatar" id="topbarCompanyAvatar">C</div>
+                    <div class="topbar-profile-text">
+                        <strong id="topbarCompanyName">Company</strong>
+                        <span>Company</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content manage-content">
+
+            <!-- HERO -->
+            <section class="dashboard-welcome manage-welcome">
+
+                <div class="welcome-copy">
+                    <span class="welcome-small">YOUR OPPORTUNITIES</span>
+
+                    <h2>
+                        Manage your
+                        <em>internships.</em>
+                    </h2>
+
+                    <p>
+                        Keep your opportunities organized, monitor applications
+                        and make changes to your open internship listings.
+                    </p>
+
+                    <div class="welcome-actions">
+                        <a href="post-internship.html" class="primary-dashboard-button">
+                            Post New Internship <span>→</span>
+                        </a>
+
+                        <a href="view-applicants.html" class="secondary-dashboard-button">
+                            View Applicants
+                        </a>
+                    </div>
+                </div>
+
+                <div class="welcome-visual manage-welcome-visual" aria-hidden="true">
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+                    <div class="visual-crystal">✦</div>
+
+                    <div class="manage-hero-card">
+                        <div class="manage-hero-top">
+                            <span class="manage-hero-icon">S</span>
+                            <div>
+                                <small>YOUR WORKSPACE</small>
+                                <strong>Internship overview</strong>
+                            </div>
+                        </div>
+
+                        <div class="manage-hero-stat">
+                            <div>
+                                <small>Opportunity status</small>
+                                <strong>Stay organized</strong>
+                            </div>
+                            <span class="hero-check">✓</span>
+                        </div>
+
+                        <div class="manage-hero-lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="manage-hero-floating">
+                        <span>✦</span>
+                        <div>
+                            <strong>Better hiring</strong>
+                            <small>One role at a time</small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE INTRO -->
+            <section class="manage-page-intro">
+                <div>
+                    <span class="section-mini-title">INTERNSHIP WORKSPACE</span>
+                    <h2>Your posted opportunities</h2>
+                    <p>Search your listings and manage their current status.</p>
+                </div>
+            </section>
+
+            <!-- STAT CARDS -->
+            <section class="manage-stats">
+
+                <article class="manage-stat-card">
+                    <div class="manage-stat-icon stat-lilac">▣</div>
+                    <div>
+                        <span>Total internships</span>
+                        <strong id="totalCount">0</strong>
+                    </div>
+                </article>
+
+                <article class="manage-stat-card">
+                    <div class="manage-stat-icon stat-pink">◉</div>
+                    <div>
+                        <span>Active listings</span>
+                        <strong id="activeCount">0</strong>
+                    </div>
+                </article>
+
+                <article class="manage-stat-card">
+                    <div class="manage-stat-icon stat-peach">◇</div>
+                    <div>
+                        <span>Total applicants</span>
+                        <strong id="applicantCount">0</strong>
+                    </div>
+                </article>
+
+                <article class="manage-stat-card">
+                    <div class="manage-stat-icon stat-plum">✓</div>
+                    <div>
+                        <span>Closed listings</span>
+                        <strong id="closedCount">0</strong>
+                    </div>
+                </article>
+
+            </section>
+
+            <!-- LIST PANEL -->
+            <section class="manage-list-panel">
+
+                <div class="manage-list-heading">
+                    <div>
+                        <span class="section-mini-title">YOUR LISTINGS</span>
+                        <h2>Internship <em>management.</em></h2>
+                    </div>
+
+                    <a href="post-internship.html" class="manage-add-button">
+                        <span>＋</span> Add internship
+                    </a>
+                </div>
+
+                <!-- SEARCH AND FILTER -->
+                <div class="manage-toolbar">
+
+                    <div class="manage-search">
+                        <span>⌕</span>
+                        <input id="internshipSearch" type="search" placeholder="Search internship title or category..." aria-label="Search internships">
+                    </div>
+
+                    <select id="statusFilter" aria-label="Filter by status">
+                        <option value="All">All statuses</option>
+                        <option value="Active">Active</option>
+                        <option value="Draft">Draft</option>
+                        <option value="Closed">Closed</option>
+                    </select>
+
+                    <select id="sortFilter" aria-label="Sort internships">
+                        <option value="newest">Newest first</option>
+                        <option value="title">Title A–Z</option>
+                        <option value="applicants">Most applicants</option>
+                    </select>
+                </div>
+
+                <div class="manage-results-line">
+                    <span id="resultsCount">0 internships</span>
+                    <button type="button" id="clearFilters" class="manage-clear-button">Clear filters</button>
+                </div>
+
+                <!-- CARDS RENDER HERE -->
+                <div class="manage-internship-list" id="internshipList"></div>
+
+                <div class="manage-empty-state" id="emptyState" hidden>
+                    <div class="empty-state-icon">⌕</div>
+                    <h3>No internships found</h3>
+                    <p>Try changing your search or status filter.</p>
+                    <button type="button" id="resetEmptySearch" class="manage-add-button">
+                        Reset filters
+                    </button>
+                </div>
+
+            </section>
+
+            <div class="manage-footer-note">
+                <span>✦</span>
+                <p>Keep your listings clear and up to date so candidates know which opportunities are available.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- NOTIFICATIONS -->
+    <div class="notification-panel" id="notificationPanel" hidden>
+        <div class="notification-panel-head">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" type="button" aria-label="Close notifications">×</button>
+        </div>
+
+        <div class="panel-notification">
+            <div>✦</div>
+            <section>
+                <strong>New Applicant</strong>
+                <p>A candidate has applied for an internship.</p>
+            </section>
+        </div>
+
+        <div class="panel-notification">
+            <div>✓</div>
+            <section>
+                <strong>Hiring update</strong>
+                <p>Review your applicant list for recent activity.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- ACTION CONFIRMATION MODAL -->
+    <div class="manage-modal-overlay" id="actionModal" hidden>
+        <section class="manage-confirm-modal" role="dialog" aria-modal="true" aria-labelledby="actionModalTitle">
+            <div class="manage-modal-icon" id="actionModalIcon">✦</div>
+            <h2 id="actionModalTitle">Confirm action</h2>
+            <p id="actionModalMessage">Are you sure you want to continue?</p>
+
+            <div class="manage-modal-actions">
+                <button type="button" id="cancelAction" class="manage-secondary-button">Cancel</button>
+                <button type="button" id="confirmAction" class="manage-danger-button">Confirm</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="manage-toast" id="manageToast" role="status" aria-live="polite" hidden></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="../js/company-dashboard.js"></script>
+    <script src="../js/manage-internships.js"></script>
+
+    <script src="../js/logout.js"></script>
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

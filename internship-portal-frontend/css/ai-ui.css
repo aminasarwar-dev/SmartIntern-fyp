@@ -1,0 +1,311 @@
+/* =========================================================
+   SMARTINTERN — AI UI KIT
+   Skill chips, match badge, gap line, note, empty hint.
+   Same purple palette and rounded style as the rest of the site.
+========================================================= */
+
+:root {
+    --ai-purple: #9a6fc4;
+    --ai-purple-dark: #76538d;
+    --ai-soft: #faf4fa;
+    --ai-line: #eadfe8;
+    --ai-ink: #29232b;
+    --ai-muted: #777078;
+}
+
+/* ---------- EDITABLE SKILL CHIPS ---------- */
+
+.ai-chip-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    min-height: 56px;
+    padding: 12px;
+    border: 1px solid var(--ai-line);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.ai-chip-box:focus-within {
+    border-color: var(--ai-purple);
+    box-shadow: 0 0 0 3px rgba(179, 139, 215, .18);
+}
+
+.ai-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 8px 7px 13px;
+    border: 1px solid #eee4ee;
+    border-radius: 20px;
+    background: var(--ai-soft);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ai-purple-dark);
+    cursor: default;
+    transition: border-color .15s ease, background .15s ease;
+}
+
+.ai-chip:hover,
+.ai-chip:focus-visible {
+    border-color: var(--ai-purple);
+    background: #f3e9f8;
+    outline: none;
+}
+
+.ai-chip-remove {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    font-size: 15px;
+    line-height: 1;
+    color: var(--ai-purple-dark);
+    cursor: pointer;
+}
+
+.ai-chip-remove:hover {
+    background: #e6d3f0;
+}
+
+.ai-chip-input,
+.ai-chip-edit {
+    min-width: 150px;
+    flex: 1;
+    padding: 7px 4px;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 13px;
+    color: var(--ai-ink);
+}
+
+.ai-chip-input:focus,
+.ai-chip-edit:focus {
+    outline: none;
+}
+
+.ai-chip-edit {
+    flex: none;
+    min-width: 110px;
+    padding: 6px 12px;
+    border: 1px solid var(--ai-purple);
+    border-radius: 20px;
+    background: #fff;
+}
+
+.ai-chip-empty {
+    font-size: 12px;
+    color: var(--ai-muted);
+}
+
+/* loading: grey shimmering placeholders while skills are being read */
+.ai-chip-skeleton {
+    height: 30px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #f3ecf5 25%, #ece0f1 50%, #f3ecf5 75%);
+    background-size: 200% 100%;
+    animation: ai-shimmer 1.2s linear infinite;
+}
+
+@keyframes ai-shimmer {
+    from { background-position: 200% 0; }
+    to   { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ai-chip-skeleton { animation: none; }
+}
+
+.ai-chip-status {
+    min-height: 18px;
+    margin: 10px 2px 0;
+    font-size: 12px;
+    color: var(--ai-purple-dark);
+}
+
+.ai-chip-help {
+    margin: 4px 2px 0;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ai-muted);
+}
+
+.ai-chip-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.ai-chip-count {
+    font-size: 12px;
+    color: var(--ai-muted);
+}
+
+/* ---------- BUTTONS ---------- */
+
+.ai-btn {
+    display: inline-block;
+    padding: 11px 20px;
+    border: 1px solid var(--ai-line);
+    border-radius: 999px;
+    background: #fff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ai-ink);
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.ai-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(70, 40, 70, .08);
+}
+
+.ai-btn.primary {
+    border-color: var(--ai-ink);
+    background: var(--ai-ink);
+    color: #fff;
+}
+
+.ai-btn:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ---------- MATCH BADGE + GAP ---------- */
+
+.ai-match-badge {
+    display: inline-block;
+    padding: 7px 11px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: help;
+}
+
+.ai-match-badge.is-high { background: #eaf4ec; color: #3f7a4f; }
+.ai-match-badge.is-mid  { background: #f5edf7; color: var(--ai-purple-dark); }
+.ai-match-badge.is-low  { background: #fbeaec; color: #b0586a; }
+
+.ai-gap-line {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #b0586a;
+}
+
+.ai-gap-line.is-complete {
+    color: #3f7a4f;
+}
+
+/* ---------- NOTE + EMPTY HINT ---------- */
+
+.ai-note-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 0 0 18px;
+    padding: 11px 14px;
+    border: 1px solid var(--ai-line);
+    border-radius: 12px;
+    background: var(--ai-soft);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--ai-muted);
+}
+
+.ai-note-icon {
+    color: var(--ai-purple);
+    font-weight: 700;
+}
+
+.ai-empty-hint {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 18px;
+    padding: 16px 18px;
+    border: 1px dashed var(--ai-purple);
+    border-radius: 16px;
+    background: #fff;
+}
+
+.ai-empty-hint > div:nth-child(2) {
+    flex: 1;
+}
+
+.ai-empty-hint strong {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 14px;
+    color: var(--ai-ink);
+}
+
+.ai-empty-hint span {
+    font-size: 12px;
+    color: var(--ai-muted);
+}
+
+.ai-empty-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+    background: #eee3f7;
+    color: var(--ai-purple-dark);
+}
+
+/* ---------- RESUME PAGE: REVIEW PANEL ---------- */
+
+.ai-review-panel {
+    margin: 0 0 22px;
+    padding: 26px;
+    border: 1px solid var(--ai-line);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .9);
+}
+
+.ai-review-panel h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: var(--ai-ink);
+}
+
+.ai-review-panel > p {
+    margin: 0 0 16px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ai-muted);
+}
+
+@media (max-width: 560px) {
+    .ai-empty-hint { flex-direction: column; align-items: flex-start; }
+    .ai-chip-actions { flex-direction: column; align-items: stretch; }
+}
+
+/* ---------- BROWSE CARDS: colour of the existing .match-score badge ---------- */
+
+.match-score.is-high { background: #eaf4ec; color: #3f7a4f; }
+.match-score.is-mid  { background: #f5edf7; color: var(--ai-purple-dark); }
+.match-score.is-low  { background: #fbeaec; color: #b0586a; }
+.match-score { cursor: help; }
+
+.browse-card .ai-gap-line {
+    margin-top: 0;
+    font-size: 10px;
+}

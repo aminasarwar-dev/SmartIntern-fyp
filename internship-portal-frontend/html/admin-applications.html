@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartIntern — Applications</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Main Project CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+
+    <!-- Applications Page CSS -->
+    <link rel="stylesheet" href="../css/admin-applications.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="admin"></script>
+</head>
+
+<body class="admin-dashboard-page applications-page">
+
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+        <div class="sidebar-brand">
+            <a href="index.html">
+                Smart<span>Intern</span>
+            </a>
+        </div>
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AD
+            </div>
+
+            <div class="sidebar-profile-info">
+                <strong>Admin</strong>
+                <span>Administrator</span>
+            </div>
+
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">MAIN</p>
+
+            <a href="admin-dashboard.html" class="sidebar-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="admin-students.html" class="sidebar-link">
+                <span class="nav-icon">◉</span>
+                <span>Students</span>
+            </a>
+
+            <a href="admin-companies.html" class="sidebar-link">
+                <span class="nav-icon">◇</span>
+                <span>Companies</span>
+            </a>
+
+            <a href="admin-internships.html" class="sidebar-link">
+                <span class="nav-icon">▣</span>
+                <span>Internships</span>
+            </a>
+
+            <a href="admin-applications.html" class="sidebar-link active">
+                <span class="nav-icon">▤</span>
+                <span>Applications</span>
+            </a>
+
+            <p class="nav-label nav-label-space">MANAGEMENT</p>
+
+
+            <a href="admin-analytics.html" class="sidebar-link">
+                <span class="nav-icon">◎</span>
+                <span>Analytics</span>
+            </a>
+
+            <a href="admin-settings.html" class="sidebar-link">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+    <main class="dashboard-main">
+
+        <!-- ================= TOPBAR ================= -->
+        <header class="dashboard-topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <span>Admin Portal</span>
+                <h1>Applications</h1>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                    aria-label="Notifications">
+
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar">
+                        AD
+                    </div>
+
+                    <div class="topbar-profile-text">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= NOTIFICATION PANEL ================= -->
+        <div class="notification-panel" id="notificationPanel">
+
+            <div class="notification-header">
+
+                <div>
+                    <span class="notification-eyebrow">
+                        SMARTINTERN
+                    </span>
+
+                    <h3>Notifications</h3>
+                </div>
+
+                <button
+                    class="close-notification"
+                    id="closeNotification"
+                    type="button"
+                    aria-label="Close notifications">
+                    ×
+                </button>
+
+            </div>
+
+            <div class="notification-list">
+
+                <div class="notification-item unread">
+
+                    <div class="notification-icon purple">
+                        ✓
+                    </div>
+
+                    <div class="notification-text">
+                        <strong>New application received</strong>
+                        <span>A new internship application requires review.</span>
+                        <small>10 minutes ago</small>
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon pink">
+                        ◇
+                    </div>
+
+                    <div class="notification-text">
+                        <strong>Application shortlisted</strong>
+                        <span>A student has been shortlisted by a company.</span>
+                        <small>1 hour ago</small>
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon lavender">
+                        ▣
+                    </div>
+
+                    <div class="notification-text">
+                        <strong>Application status updated</strong>
+                        <span>An application status was recently changed.</span>
+                        <small>3 hours ago</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= APPLICATION CONTENT ================= -->
+        <div class="applications-content">
+
+            <!-- PAGE HEADER -->
+            <section class="applications-page-header">
+
+                <div class="applications-heading">
+
+                    <span class="eyebrow">
+                        APPLICATION MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Manage your <em>applications.</em>
+                    </h2>
+
+                    <p>
+                        Review, monitor, and manage internship applications
+                        submitted by students across the platform.
+                    </p>
+
+                </div>
+
+                <div class="applications-header-actions">
+
+                    <button
+                        class="secondary-action"
+                        id="exportApplicationsBtn"
+                        type="button">
+                        <span>↓</span>
+                        Export
+                    </button>
+
+                    <button
+                        class="primary-action"
+                        id="refreshApplicationsBtn"
+                        type="button">
+                        <span>↻</span>
+                        Refresh
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= STAT CARDS ================= -->
+            <section class="application-stat-grid">
+
+                <div class="application-stat-card">
+
+                    <div class="stat-card-top">
+                        <span>Total Applications</span>
+
+                        <div class="stat-icon purple">
+                            ▤
+                        </div>
+                    </div>
+
+                    <strong>428</strong>
+
+                    <p>
+                        <b>+18.4%</b>
+                        this month
+                    </p>
+
+                </div>
+
+
+                <div class="application-stat-card">
+
+                    <div class="stat-card-top">
+                        <span>Pending Review</span>
+
+                        <div class="stat-icon pink">
+                            ◷
+                        </div>
+                    </div>
+
+                    <strong>64</strong>
+
+                    <p>
+                        <b>15%</b>
+                        of total applications
+                    </p>
+
+                </div>
+
+
+                <div class="application-stat-card">
+
+                    <div class="stat-card-top">
+                        <span>Shortlisted</span>
+
+                        <div class="stat-icon lavender">
+                            ✓
+                        </div>
+                    </div>
+
+                    <strong>127</strong>
+
+                    <p>
+                        <b>29.7%</b>
+                        success rate
+                    </p>
+
+                </div>
+
+
+                <div class="application-stat-card">
+
+                    <div class="stat-card-top">
+                        <span>Selected</span>
+
+                        <div class="stat-icon rose">
+                            ★
+                        </div>
+                    </div>
+
+                    <strong>48</strong>
+
+                    <p>
+                        <b>11.2%</b>
+                        of total applications
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= MANAGEMENT CARD ================= -->
+            <section class="applications-management-card">
+
+                <div class="management-card-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            SUBMITTED APPLICATIONS
+                        </span>
+
+                        <h3>
+                            Application Directory
+                        </h3>
+
+                        <p>
+                            Search and manage internship applications
+                            submitted by students.
+                        </p>
+
+                    </div>
+
+                    <div class="application-total">
+                        428 Applications
+                    </div>
+
+                </div>
+
+
+                <!-- FILTER BAR -->
+                <div class="application-filter-bar">
+
+                    <div class="application-search">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="text"
+                            id="applicationSearch"
+                            placeholder="Search by student, internship or company..."
+                            autocomplete="off">
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <select id="statusFilter">
+
+                            <option value="all">
+                                All Status
+                            </option>
+
+                            <option value="pending">
+                                Pending
+                            </option>
+
+                            <option value="reviewed">
+                                Reviewed
+                            </option>
+
+                            <option value="shortlisted">
+                                Shortlisted
+                            </option>
+
+                            <option value="selected">
+                                Selected
+                            </option>
+
+                            <option value="rejected">
+                                Rejected
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="filter-group">
+
+                        <select id="applicationTypeFilter">
+
+                            <option value="all">
+                                All Types
+                            </option>
+
+                            <option value="hybrid">
+                                Hybrid
+                            </option>
+
+                            <option value="remote">
+                                Remote
+                            </option>
+
+                            <option value="onsite">
+                                Onsite
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TABLE -->
+                <div class="applications-table-wrapper">
+
+                    <table class="applications-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Student
+                                </th>
+
+                                <th>
+                                    Internship
+                                </th>
+
+                                <th>
+                                    Company
+                                </th>
+
+                                <th>
+                                    Applied
+                                </th>
+
+                                <th>
+                                    Type
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="applicationsTableBody">
+
+                            <!-- ROW 1 -->
+                            <tr
+                                data-search="Ayesha Khan Frontend Developer Intern TechNova Solutions"
+                                data-status="pending"
+                                data-type="hybrid"
+                                data-name="Ayesha Khan"
+                                data-internship="Frontend Developer Intern"
+                                data-company="TechNova Solutions"
+                                data-applied="Oct 06, 2026"
+                                data-application-status="Pending">
+
+                                <td>
+
+                                    <div class="student-cell">
+
+                                        <div class="student-icon purple">
+                                            AK
+                                        </div>
+
+                                        <div class="student-info">
+
+                                            <strong>
+                                                Ayesha Khan
+                                            </strong>
+
+                                            <span>
+                                                Computer Science
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <strong>
+                                            Frontend Developer Intern
+                                        </strong>
+
+                                        <span>
+                                            Web Development
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <div class="company-icon">
+                                            T
+                                        </div>
+
+                                        <span>
+                                            TechNova Solutions
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <span class="application-date">
+                                        Oct 06, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <span class="type-badge hybrid">
+                                        Hybrid
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <span class="status-badge pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="view-application-btn"
+                                        type="button">
+                                        View
+                                    </button>
+
+                                    <button
+                                        class="remove-application-btn"
+                                        type="button">
+                                        ×
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- ROW 2 -->
+                            <tr
+                                data-search="Muhammad Hamza AI Machine Learning Intern Alpha Labs"
+                                data-status="shortlisted"
+                                data-type="remote"
+                                data-name="Muhammad Hamza"
+                                data-internship="AI & Machine Learning Intern"
+                                data-company="Alpha Labs"
+                                data-applied="Oct 04, 2026"
+                                data-application-status="Shortlisted">
+
+                                <td>
+
+                                    <div class="student-cell">
+
+                                        <div class="student-icon pink">
+                                            MH
+                                        </div>
+
+                                        <div class="student-info">
+
+                                            <strong>
+                                                Muhammad Hamza
+                                            </strong>
+
+                                            <span>
+                                                Artificial Intelligence
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <strong>
+                                            AI & Machine Learning Intern
+                                        </strong>
+
+                                        <span>
+                                            Artificial Intelligence
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <div class="company-icon">
+                                            A
+                                        </div>
+
+                                        <span>
+                                            Alpha Labs
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <span class="application-date">
+                                        Oct 04, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge remote">
+                                        Remote
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge shortlisted">
+                                        Shortlisted
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="view-application-btn"
+                                        type="button">
+                                        View
+                                    </button>
+
+                                    <button
+                                        class="remove-application-btn"
+                                        type="button">
+                                        ×
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- ROW 3 -->
+                            <tr
+                                data-search="Sara Ahmed UI UX Design Intern Nova Creative Studio"
+                                data-status="reviewed"
+                                data-type="onsite"
+                                data-name="Sara Ahmed"
+                                data-internship="UI/UX Design Intern"
+                                data-company="Nova Creative Studio"
+                                data-applied="Oct 02, 2026"
+                                data-application-status="Reviewed">
+
+                                <td>
+
+                                    <div class="student-cell">
+
+                                        <div class="student-icon lavender">
+                                            SA
+                                        </div>
+
+                                        <div class="student-info">
+
+                                            <strong>
+                                                Sara Ahmed
+                                            </strong>
+
+                                            <span>
+                                                Software Engineering
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <strong>
+                                            UI/UX Design Intern
+                                        </strong>
+
+                                        <span>
+                                            Design
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <div class="company-icon">
+                                            N
+                                        </div>
+
+                                        <span>
+                                            Nova Creative Studio
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <span class="application-date">
+                                        Oct 02, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge onsite">
+                                        Onsite
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge reviewed">
+                                        Reviewed
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="view-application-btn"
+                                        type="button">
+                                        View
+                                    </button>
+
+                                    <button
+                                        class="remove-application-btn"
+                                        type="button">
+                                        ×
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- ROW 4 -->
+                            <tr
+                                data-search="Ali Raza Data Science Intern Insight Analytics"
+                                data-status="selected"
+                                data-type="hybrid"
+                                data-name="Ali Raza"
+                                data-internship="Data Science Intern"
+                                data-company="Insight Analytics"
+                                data-applied="Sep 30, 2026"
+                                data-application-status="Selected">
+
+                                <td>
+
+                                    <div class="student-cell">
+
+                                        <div class="student-icon rose">
+                                            AR
+                                        </div>
+
+                                        <div class="student-info">
+
+                                            <strong>
+                                                Ali Raza
+                                            </strong>
+
+                                            <span>
+                                                Data Science
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <strong>
+                                            Data Science Intern
+                                        </strong>
+
+                                        <span>
+                                            Data & Analytics
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <div class="company-icon">
+                                            I
+                                        </div>
+
+                                        <span>
+                                            Insight Analytics
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <span class="application-date">
+                                        Sep 30, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge hybrid">
+                                        Hybrid
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge selected">
+                                        Selected
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="view-application-btn"
+                                        type="button">
+                                        View
+                                    </button>
+
+                                    <button
+                                        class="remove-application-btn"
+                                        type="button">
+                                        ×
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <!-- ROW 5 -->
+                            <tr
+                                data-search="Hina Malik Backend Developer Intern CodeCraft Technologies"
+                                data-status="rejected"
+                                data-type="remote"
+                                data-name="Hina Malik"
+                                data-internship="Backend Developer Intern"
+                                data-company="CodeCraft Technologies"
+                                data-applied="Sep 28, 2026"
+                                data-application-status="Rejected">
+
+                                <td>
+
+                                    <div class="student-cell">
+
+                                        <div class="student-icon purple">
+                                            HM
+                                        </div>
+
+                                        <div class="student-info">
+
+                                            <strong>
+                                                Hina Malik
+                                            </strong>
+
+                                            <span>
+                                                Computer Science
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="internship-cell">
+
+                                        <strong>
+                                            Backend Developer Intern
+                                        </strong>
+
+                                        <span>
+                                            Software Development
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+
+                                    <div class="company-cell">
+
+                                        <div class="company-icon">
+                                            C
+                                        </div>
+
+                                        <span>
+                                            CodeCraft Technologies
+                                        </span>
+
+                                    </div>
+
+                                </td>
+
+
+                                <td>
+                                    <span class="application-date">
+                                        Sep 28, 2026
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="type-badge remote">
+                                        Remote
+                                    </span>
+                                </td>
+
+
+                                <td>
+                                    <span class="status-badge rejected">
+                                        Rejected
+                                    </span>
+                                </td>
+
+
+                                <td>
+
+                                    <button
+                                        class="view-application-btn"
+                                        type="button">
+                                        View
+                                    </button>
+
+                                    <button
+                                        class="remove-application-btn"
+                                        type="button">
+                                        ×
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- EMPTY STATE -->
+                    <div
+                        class="applications-empty"
+                        id="applicationsEmpty">
+
+                        <div class="empty-icon">
+                            ⌕
+                        </div>
+
+                        <h3>
+                            No applications found
+                        </h3>
+
+                        <p>
+                            Try changing your search or filter.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PAGINATION -->
+                <div class="applications-pagination">
+
+                    <span id="paginationText">
+                        1–5 of 428 applications
+                    </span>
+
+                    <div class="pagination-buttons">
+
+                        <button
+                            class="pagination-arrow"
+                            type="button">
+                            ‹
+                        </button>
+
+                        <button
+                            class="pagination-number active"
+                            type="button">
+                            1
+                        </button>
+
+                        <button
+                            class="pagination-number"
+                            type="button">
+                            2
+                        </button>
+
+                        <button
+                            class="pagination-number"
+                            type="button">
+                            3
+                        </button>
+
+                        <span class="pagination-dots">
+                            ...
+                        </span>
+
+                        <button
+                            class="pagination-number"
+                            type="button">
+                            86
+                        </button>
+
+                        <button
+                            class="pagination-arrow"
+                            type="button">
+                            ›
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- ================= APPLICATION DRAWER ================= -->
+        <div
+            class="application-drawer-overlay"
+            id="applicationDrawerOverlay">
+
+            <aside
+                class="application-drawer"
+                id="applicationDrawer">
+
+                <div class="drawer-header">
+
+                    <div>
+                        <span class="drawer-eyebrow">
+                            APPLICATION DETAILS
+                        </span>
+
+                        <h2>
+                            Application Details
+                        </h2>
+                    </div>
+
+                    <button
+                        class="close-drawer"
+                        id="closeApplicationDrawer"
+                        type="button">
+                        ×
+                    </button>
+
+                </div>
+
+
+                <div class="drawer-student">
+
+                    <div
+                        class="drawer-student-avatar"
+                        id="drawerStudentAvatar">
+                        AK
+                    </div>
+
+                    <div class="drawer-student-info">
+
+                        <strong id="drawerStudentName">
+                            Ayesha Khan
+                        </strong>
+
+                        <span id="drawerStudentProgram">
+                            Computer Science
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="drawer-status" id="drawerStatus">
+                    Pending
+                </div>
+
+
+                <div class="drawer-section">
+
+                    <span class="drawer-section-label">
+                        APPLICATION INFORMATION
+                    </span>
+
+                    <div class="drawer-info-grid">
+
+                        <div class="drawer-info-item">
+                            <span>Internship</span>
+                            <strong id="drawerInternship">
+                                Frontend Developer Intern
+                            </strong>
+                        </div>
+
+                        <div class="drawer-info-item">
+                            <span>Company</span>
+                            <strong id="drawerCompany">
+                                TechNova Solutions
+                            </strong>
+                        </div>
+
+                        <div class="drawer-info-item">
+                            <span>Applied On</span>
+                            <strong id="drawerApplied">
+                                Oct 06, 2026
+                            </strong>
+                        </div>
+
+                        <div class="drawer-info-item">
+                            <span>Application Type</span>
+                            <strong id="drawerType">
+                                Hybrid
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="drawer-section">
+
+                    <span class="drawer-section-label">
+                        SMARTINTERN ACTIVITY
+                    </span>
+
+                    <div class="drawer-mini-grid">
+
+                        <div class="drawer-mini-card">
+                            <span>AI Match</span>
+                            <strong>94%</strong>
+                        </div>
+
+                        <div class="drawer-mini-card">
+                            <span>Profile</span>
+                            <strong>92%</strong>
+                        </div>
+
+                        <div class="drawer-mini-card">
+                            <span>Skills</span>
+                            <strong>08</strong>
+                        </div>
+
+                        <div class="drawer-mini-card">
+                            <span>Resume</span>
+                            <strong>✓</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="drawer-section drawer-actions-section">
+
+                    <span class="drawer-section-label">
+                        ACCOUNT ACTION
+                    </span>
+
+                    <button
+                        class="drawer-primary-action"
+                        id="viewStudentApplicationBtn"
+                        type="button">
+                        View Application
+                    </button>
+
+                    <button
+                        class="drawer-danger-action"
+                        id="removeApplicationBtn"
+                        type="button">
+                        Remove Application
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Applications JS -->
+    <script src="../js/admin-applications.js"></script>
+
+    <script src="../js/notifications.js"></script>
+</body>
+
+</html>

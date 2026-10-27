@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartIntern — AI Candidate Matches</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/company-dashboard.css">
+    <link rel="stylesheet" href="../css/ai-candidate-matches.css">
+    <link rel="stylesheet" href="../css/company-access.css">
+    <link rel="stylesheet" href="../css/ai-ui.css">
+    <script src="../js/session.js" data-role="company"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/company-access.js"></script>
+    <script src="../js/ai-ui.js"></script>
+</head>
+
+<body class="company-dashboard-page ai-matches-page">
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+        <div class="sidebar-brand">
+            <a href="index.html">Smart<span>Intern</span></a>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="sidebar-avatar" id="sidebarCompanyAvatar">C</div>
+            <div class="sidebar-profile-info">
+                <strong id="sidebarCompanyName">Company</strong>
+                <span>Company</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN</p>
+
+            <a href="company-dashboard.html" class="sidebar-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="post-internship.html" class="sidebar-link">
+                <span class="nav-icon">＋</span>
+                <span>Post Internship</span>
+            </a>
+
+            <a href="manage-internships.html" class="sidebar-link">
+                <span class="nav-icon">▣</span>
+                <span>Manage Internships</span>
+            </a>
+
+            <a href="view-applicants.html" class="sidebar-link">
+                <span class="nav-icon">◇</span>
+                <span>Applicants</span>
+            </a>
+
+            <p class="nav-label nav-label-space">AI TOOLS</p>
+
+            <a href="ai-candidate-matches.html" class="sidebar-link active">
+                <span class="nav-icon">✦</span>
+                <span>AI Candidate Matches</span>
+            </a>
+
+            <a href="hiring-analytics.html" class="sidebar-link">
+                <span class="nav-icon">◎</span>
+                <span>Hiring Analytics</span>
+            </a>
+
+            <p class="nav-label nav-label-space">ACCOUNT</p>
+
+            <a href="company-profile.html" class="sidebar-link">
+                <span class="nav-icon">◯</span>
+                <span>Company Profile</span>
+            </a>
+
+            <a href="login.html" class="sidebar-link" id="logoutLink">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+            <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open menu">☰</button>
+
+            <div class="topbar-title">
+                <span>COMPANY WORKSPACE</span>
+                <h1>AI Candidate Matches</h1>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="notification-button" id="notificationButton" type="button" aria-label="Notifications">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+                    <div class="topbar-avatar" id="topbarCompanyAvatar">C</div>
+                    <div class="topbar-profile-text">
+                        <strong id="topbarCompanyName">Company</strong>
+                        <span>Company account</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content ai-matches-content">
+
+            <!-- HERO -->
+            <section class="dashboard-welcome ai-matches-hero">
+                <div class="welcome-copy">
+                    <span class="welcome-small">SMARTINTERN AI</span>
+
+                    <h2>Meet your next <em>great talent.</em></h2>
+
+                    <p>
+                        Discover candidates whose skills and experience
+                        align with your internship requirements.
+                    </p>
+
+                    <div class="welcome-actions">
+                        <a href="#candidateResults" class="primary-dashboard-button">
+                            Explore Matches <span>→</span>
+                        </a>
+
+                        <a href="view-applicants.html" class="secondary-dashboard-button">
+                            View Applicants
+                        </a>
+                    </div>
+                </div>
+
+                <div class="welcome-visual ai-hero-visual" aria-hidden="true">
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+                    <div class="visual-crystal">✦</div>
+
+                    <div class="floating-match-card">
+                        <span>SKILL COMPATIBILITY</span>
+                        <strong>AI</strong>
+                        <small>Find a stronger fit</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE INTRO -->
+            <section class="ai-section-intro">
+                <div>
+                    <span class="ai-eyebrow">INTELLIGENT SHORTLISTING</span>
+                    <h2>Candidate <em>matches.</em></h2>
+                    <p>Review matching scores and compare candidate skills.</p>
+                </div>
+            </section>
+
+            <!-- FILTERS -->
+            <section class="ai-filter-card">
+                <div class="ai-filter-heading">
+                    <div>
+                        <h3>Find the right candidate</h3>
+                        <p>Choose an internship and narrow down your results.</p>
+                    </div>
+                </div>
+
+                <div class="ai-filter-grid">
+                    <div class="ai-field">
+                        <label for="internshipFilter">Internship</label>
+                        <select id="internshipFilter">
+                            <option value="all">All internships</option>
+                            <option value="python">Python Developer Intern</option>
+                            <option value="web">Web Developer Intern</option>
+                            <option value="data">Data Analyst Intern</option>
+                        </select>
+                    </div>
+
+                    <div class="ai-field">
+                        <label for="skillsFilter">Search skill</label>
+                        <input type="search" id="skillsFilter" placeholder="e.g. Python, SQL">
+                    </div>
+
+                    <div class="ai-field">
+                        <label for="scoreFilter">Minimum match</label>
+                        <select id="scoreFilter">
+                            <option value="0">Any match score</option>
+                            <option value="70">70% and above</option>
+                            <option value="80">80% and above</option>
+                            <option value="90">90% and above</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="ai-reset-button" id="resetFilters">
+                        Reset filters
+                    </button>
+                </div>
+            </section>
+
+            <!-- RESULTS -->
+            <section class="ai-results-section" id="candidateResults">
+                <div class="ai-results-heading">
+                    <div>
+                        <span class="ai-eyebrow">YOUR SHORTLIST</span>
+                        <h2>Recommended <em>candidates.</em></h2>
+                    </div>
+                    <span class="ai-result-count" id="resultCount">0 candidates</span>
+                </div>
+
+                <div class="ai-candidate-grid" id="candidateGrid">
+
+                    <article class="ai-candidate-card"
+                        data-name="Ayesha Khan"
+                        data-skills="python django sql machine learning"
+                        data-internships="python data"
+                        data-score="94">
+
+                        <div class="ai-candidate-top">
+                            <div class="ai-candidate-avatar">AK</div>
+                            <span class="ai-score-badge">94% match</span>
+                        </div>
+
+                        <h3>Ayesha Khan</h3>
+                        <p class="ai-candidate-role">Computer Science Student</p>
+
+                        <div class="ai-candidate-tags">
+                            <span>Python</span>
+                            <span>Django</span>
+                            <span>SQL</span>
+                        </div>
+
+                        <div class="ai-match-track">
+                            <div><span>Skill compatibility</span><strong>94%</strong></div>
+                            <div class="ai-progress"><span style="width:94%"></span></div>
+                        </div>
+
+                        <p class="ai-match-note">
+                            Strong overlap with the listed technical skills.
+                        </p>
+
+                        <button class="ai-view-button" type="button"
+                            data-candidate="Ayesha Khan">
+                            Review candidate <span>→</span>
+                        </button>
+                    </article>
+
+                    <article class="ai-candidate-card"
+                        data-name="Usman Ali"
+                        data-skills="javascript react html css node"
+                        data-internships="web"
+                        data-score="89">
+
+                        <div class="ai-candidate-top">
+                            <div class="ai-candidate-avatar avatar-pink">UA</div>
+                            <span class="ai-score-badge">89% match</span>
+                        </div>
+
+                        <h3>Usman Ali</h3>
+                        <p class="ai-candidate-role">Software Engineering Student</p>
+
+                        <div class="ai-candidate-tags">
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>HTML/CSS</span>
+                        </div>
+
+                        <div class="ai-match-track">
+                            <div><span>Skill compatibility</span><strong>89%</strong></div>
+                            <div class="ai-progress"><span style="width:89%"></span></div>
+                        </div>
+
+                        <p class="ai-match-note">
+                            Relevant front-end skills for web development.
+                        </p>
+
+                        <button class="ai-view-button" type="button"
+                            data-candidate="Usman Ali">
+                            Review candidate <span>→</span>
+                        </button>
+                    </article>
+
+                    <article class="ai-candidate-card"
+                        data-name="Sara Ahmed"
+                        data-skills="sql python excel power bi data analysis"
+                        data-internships="data python"
+                        data-score="84">
+
+                        <div class="ai-candidate-top">
+                            <div class="ai-candidate-avatar avatar-plum">SA</div>
+                            <span class="ai-score-badge">84% match</span>
+                        </div>
+
+                        <h3>Sara Ahmed</h3>
+                        <p class="ai-candidate-role">Data Science Student</p>
+
+                        <div class="ai-candidate-tags">
+                            <span>SQL</span>
+                            <span>Python</span>
+                            <span>Power BI</span>
+                        </div>
+
+                        <div class="ai-match-track">
+                            <div><span>Skill compatibility</span><strong>84%</strong></div>
+                            <div class="ai-progress"><span style="width:84%"></span></div>
+                        </div>
+
+                        <p class="ai-match-note">
+                            Useful data analysis skills for entry-level roles.
+                        </p>
+
+                        <button class="ai-view-button" type="button"
+                            data-candidate="Sara Ahmed">
+                            Review candidate <span>→</span>
+                        </button>
+                    </article>
+
+                </div>
+
+                <div class="ai-empty-state" id="emptyState" hidden>
+                    <div>⌕</div>
+                    <h3>No matching candidates found</h3>
+                    <p>Try another internship or change your filters.</p>
+                    <button type="button" class="ai-reset-button" id="emptyReset">
+                        Clear filters
+                    </button>
+                </div>
+
+                <p class="ai-demo-note">
+                    Sample interface records are shown here. Connect the candidate-matching API
+                    to display real applicants and calculated scores.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- NOTIFICATIONS -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-panel-head">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" type="button" aria-label="Close notifications">×</button>
+        </div>
+
+        <div class="panel-notification">
+            <div>✦</div>
+            <section>
+                <strong>AI Candidate Matches</strong>
+                <p>Your candidate recommendations will appear here when available.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- CANDIDATE REVIEW MODAL -->
+    <div class="ai-modal-overlay" id="candidateModal" hidden>
+        <section class="ai-review-modal" role="dialog" aria-modal="true" aria-labelledby="modalCandidateName">
+            <button type="button" class="ai-modal-close" id="closeCandidateModal" aria-label="Close">×</button>
+            <span class="ai-eyebrow">CANDIDATE REVIEW</span>
+            <h2 id="modalCandidateName">Candidate</h2>
+            <p id="modalCandidateDescription">
+                Connect the candidate profile API to show full profile details.
+            </p>
+            <div class="ai-modal-actions">
+                <a href="view-applicants.html" class="primary-dashboard-button">Go to Applicants →</a>
+                <button type="button" class="secondary-dashboard-button" id="modalDone">Close</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/company-dashboard.js"></script>
+    <script src="../js/ai-candidate-matches.js"></script>
+    <script src="../js/ai-screens.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

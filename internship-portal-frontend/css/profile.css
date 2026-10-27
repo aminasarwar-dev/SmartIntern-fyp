@@ -1,0 +1,872 @@
+/* =========================================================
+   SMARTINTERN PROFILE PAGE
+========================================================= */
+
+.profile-page {
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background: #fffdfb;
+
+    color: #29232b;
+
+    font-family: "DM Sans", sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   SIMPLE CORNER BACKGROUND
+========================================================= */
+
+.corner-glow {
+
+    position: fixed;
+
+    width: 600px;
+
+    height: 600px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.corner-glow-left {
+
+    top: -310px;
+
+    left: -300px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(232, 168, 199, 0.38) 0%,
+            rgba(232, 168, 199, 0.16) 40%,
+            transparent 72%
+        );
+}
+
+
+.corner-glow-right {
+
+    right: -310px;
+
+    bottom: -320px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(179, 139, 215, 0.32) 0%,
+            rgba(179, 139, 215, 0.14) 40%,
+            transparent 72%
+        );
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.profile-wrapper {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 60px 20px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.profile-card {
+
+    width: 100%;
+
+    max-width: 675px;
+
+    padding: 45px 55px;
+
+    box-sizing: border-box;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #eee3ed;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 70px rgba(74, 48, 80, 0.08);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    transform: translateY(-40px);
+
+    animation:
+        profileReveal 0.85s ease forwards;
+}
+
+
+@keyframes profileReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.profile-heading {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+
+.profile-heading h1 {
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: clamp(34px, 5vw, 50px);
+
+    line-height: 1.05;
+
+    font-weight: 500;
+
+    color: #29232b;
+}
+
+
+.profile-heading h1 em {
+
+    color: #9a6bb3;
+
+    font-weight: 500;
+}
+
+
+.profile-heading p {
+
+    margin: 13px 0 0;
+
+    color: #8c7f8d;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   ROLE SWITCH
+========================================================= */
+
+.profile-role {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    padding: 5px;
+
+    margin-bottom: 30px;
+
+    background: #f4edf5;
+
+    border: 1px solid #eadfea;
+
+    border-radius: 17px;
+}
+
+
+.profile-role-btn {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    color: #8c7f8d;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.profile-role-btn:hover {
+
+    background: transparent;
+
+    color: #29232b;
+}
+
+
+.profile-role-btn.active {
+
+    background: #ffffff;
+
+    color: #302932;
+
+    box-shadow:
+        0 4px 12px rgba(74, 48, 80, 0.08);
+}
+
+
+/* =========================================================
+   FIELDS
+========================================================= */
+
+.profile-fields {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 21px 16px;
+
+    animation:
+        fieldsReveal 0.4s ease;
+}
+
+
+.profile-fields.hidden {
+
+    display: none;
+}
+
+
+.full-width {
+
+    grid-column: 1 / -1;
+}
+
+
+@keyframes fieldsReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(12px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.profile-input {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+.profile-input label {
+
+    margin-bottom: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #655a68;
+}
+
+
+.profile-input label span {
+
+    color: #a398a5;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.profile-input input,
+.profile-input select,
+.profile-input textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 1px solid #e7dce8;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    padding: 14px 15px;
+
+    outline: none;
+
+    color: #332d35;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.profile-input input::placeholder,
+.profile-input textarea::placeholder {
+
+    color: #b4aab6;
+}
+
+
+/* Hover */
+
+.profile-input input:hover,
+.profile-input select:hover,
+.profile-input textarea:hover {
+
+    border-color: #d7c3dd;
+}
+
+
+/* Focus - NO BLUE */
+
+.profile-input input:focus,
+.profile-input select:focus,
+.profile-input textarea:focus {
+
+    outline: none;
+
+    border-color: #b38bd7;
+
+    box-shadow:
+        0 0 0 3px rgba(179, 139, 215, 0.12);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.select-wrapper {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+.select-wrapper::after {
+
+    content: "⌄";
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 50%;
+
+    transform: translateY(-55%);
+
+    color: #b38bd7;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    pointer-events: none;
+}
+
+
+.profile-input select {
+
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    -moz-appearance: none;
+
+    cursor: pointer;
+
+    padding-right: 42px;
+}
+
+
+/* Dropdown options */
+
+.profile-input select option {
+
+    background: #ffffff;
+
+    color: #332d35;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.profile-input textarea {
+
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   SMALL TEXT
+========================================================= */
+
+.profile-input small {
+
+    margin-top: 6px;
+
+    color: #a398a5;
+
+    font-size: 10px;
+}
+
+/* =========================================================
+   INLINE VALIDATION ERRORS
+   ========================================================= */
+
+.profile-error {
+    display: block;
+    margin-top: 6px;
+    color: #c65f78;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.profile-role-error {
+    display: block;
+    margin: -18px 0 22px;
+    text-align: center;
+    color: #c65f78;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CONDITIONAL FIELDS
+========================================================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+.conditional-field {
+
+    animation:
+        conditionalReveal 0.35s ease;
+}
+
+
+@keyframes conditionalReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   PROFESSIONAL LINKS
+========================================================= */
+
+.links-container {
+
+    grid-column: 1 / -1;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 21px 16px;
+
+    padding: 18px;
+
+    background: #fcf8fd;
+
+    border: 1px solid #eee1ef;
+
+    border-radius: 15px;
+
+    animation:
+        linksReveal 0.4s ease;
+}
+
+
+.links-container.hidden {
+
+    display: none;
+}
+
+
+@keyframes linksReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   DOCUMENT UPLOAD
+   SAME STYLE FOR CV + TRADE LICENSE
+========================================================= */
+
+.document-upload {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 52px;
+
+    padding: 6px;
+
+    box-sizing: border-box;
+
+    border: 1px dashed #cdb2d7;
+
+    border-radius: 12px;
+
+    background: #fcf8fd;
+}
+
+
+/* Hide native file */
+
+.document-upload input[type="file"] {
+
+    display: none;
+}
+
+
+/* Choose button */
+
+.document-upload-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin: 0 !important;
+
+    padding: 10px 14px;
+
+    border-radius: 9px;
+
+    background: #29232b;
+
+    color: #ffffff !important;
+
+    font-size: 11px !important;
+
+    font-weight: 700 !important;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* Hover does NOT change color */
+
+.document-upload-label:hover {
+
+    background: #29232b;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+}
+
+
+.document-upload span {
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    color: #8b758f;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.profile-submit {
+
+    width: 100%;
+
+    margin-top: 28px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    padding: 15px 20px;
+
+    background: #29232b;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover color SAME */
+
+.profile-submit:hover {
+
+    background: #29232b;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(41, 35, 43, 0.13);
+}
+
+
+.profile-submit:active {
+
+    transform: translateY(0);
+}
+
+
+.profile-arrow {
+
+    font-size: 18px;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.profile-submit:hover .profile-arrow {
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .profile-wrapper {
+
+        padding: 30px 15px;
+    }
+
+
+    .profile-card {
+
+        padding: 32px 24px;
+
+        border-radius: 22px;
+    }
+
+
+    .profile-heading h1 {
+
+        font-size: 36px;
+    }
+
+
+    .profile-fields {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .full-width {
+
+        grid-column: auto;
+    }
+
+
+    .links-container {
+
+        grid-template-columns: 1fr;
+
+        grid-column: auto;
+    }
+
+
+    .document-upload {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        padding: 10px;
+    }
+
+
+    .document-upload-label {
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .profile-card {
+
+        padding: 28px 18px;
+    }
+
+
+    .profile-heading h1 {
+
+        font-size: 31px;
+    }
+
+}

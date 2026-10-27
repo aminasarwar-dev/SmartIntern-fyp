@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartIntern — Company Profile</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/company-dashboard.css">
+    <link rel="stylesheet" href="../css/company-profile.css">
+    <link rel="stylesheet" href="../css/company-access.css">
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="company"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/company-access.js"></script>
+</head>
+
+<body class="company-dashboard-page company-profile-page">
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+        <div class="sidebar-brand">
+            <a href="index.html">Smart<span>Intern</span></a>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="sidebar-avatar" id="sidebarCompanyAvatar">C</div>
+            <div class="sidebar-profile-info">
+                <strong id="sidebarCompanyName">Company</strong>
+                <span>Company</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN</p>
+
+            <a href="company-dashboard.html" class="sidebar-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="post-internship.html" class="sidebar-link">
+                <span class="nav-icon">＋</span>
+                <span>Post Internship</span>
+            </a>
+
+            <a href="manage-internships.html" class="sidebar-link">
+                <span class="nav-icon">▣</span>
+                <span>Manage Internships</span>
+            </a>
+
+            <a href="view-applicants.html" class="sidebar-link">
+                <span class="nav-icon">◇</span>
+                <span>Applicants</span>
+            </a>
+
+            <p class="nav-label nav-label-space">AI TOOLS</p>
+
+            <a href="ai-candidate-matches.html" class="sidebar-link">
+                <span class="nav-icon">✦</span>
+                <span>AI Candidate Matches</span>
+            </a>
+
+            <a href="hiring-analytics.html" class="sidebar-link">
+                <span class="nav-icon">◎</span>
+                <span>Hiring Analytics</span>
+            </a>
+
+            <p class="nav-label nav-label-space">ACCOUNT</p>
+
+            <a href="company-profile.html" class="sidebar-link active">
+                <span class="nav-icon">◯</span>
+                <span>Company Profile</span>
+            </a>
+
+            <a href="login.html" class="sidebar-link" id="logoutLink">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-topbar">
+            <button class="mobile-menu" id="mobileMenu" type="button" aria-label="Open menu">☰</button>
+
+            <div class="topbar-title">
+                <span>Company Portal</span>
+                <h1>Company Profile</h1>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="notification-button" id="notificationButton" type="button" aria-label="Notifications" aria-expanded="false">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+                    <div class="topbar-avatar" id="topbarCompanyAvatar">C</div>
+                    <div class="topbar-profile-text">
+                        <strong id="topbarCompanyName">Company</strong>
+                        <span>Company</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-content company-profile-content">
+
+            <!-- HERO -->
+            <section class="dashboard-welcome profile-welcome">
+                <div class="welcome-copy">
+                    <span class="welcome-small">YOUR ORGANIZATION</span>
+                    <h2>Build your company's <em>identity.</em></h2>
+                    <p>
+                        Keep your company information accurate, showcase your
+                        organization and keep your trade licence up to date.
+                    </p>
+
+                    <div class="welcome-actions">
+                        <a href="#companyDetails" class="primary-dashboard-button">
+                            Edit Profile <span>→</span>
+                        </a>
+                        <a href="#tradeLicence" class="secondary-dashboard-button">
+                            Trade Licence
+                        </a>
+                    </div>
+                </div>
+
+                <div class="welcome-visual profile-visual">
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+                    <div class="visual-crystal">◯</div>
+
+                    <div class="floating-match-card">
+                        <span>COMPANY ACCOUNT</span>
+                        <strong>✦</strong>
+                        <small>Profile & verification</small>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROFILE SUMMARY -->
+            <section class="company-profile-summary">
+                <div class="company-summary-avatar" id="profileCompanyAvatar">C</div>
+
+                <div class="company-summary-copy">
+                    <span class="profile-eyebrow">COMPANY OVERVIEW</span>
+                    <h2 id="summaryCompanyName">Your Company</h2>
+                    <p id="summaryCompanyIndustry">Add your industry and location</p>
+                </div>
+
+                <span class="profile-status" id="profileStatus">
+                    Profile
+                </span>
+            </section>
+
+            <form id="companyProfileForm" novalidate>
+
+                <!-- COMPANY DETAILS -->
+                <section class="profile-section-card" id="companyDetails">
+                    <div class="profile-section-heading">
+                        <div class="profile-section-icon">◯</div>
+                        <div>
+                            <span class="profile-eyebrow">ORGANIZATION INFORMATION</span>
+                            <h2>Company <em>details.</em></h2>
+                            <p>Update the information candidates see about your company.</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-form-grid">
+                        <div class="profile-field">
+                            <label for="companyName">Company name <span>*</span></label>
+                            <input id="companyName" name="companyName" type="text" required maxlength="150" placeholder="Enter company name">
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="companyEmail">Official email <span>*</span></label>
+                            <input id="companyEmail" name="companyEmail" type="email" required placeholder="careers@company.com">
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="companyPhone">Contact number <span>*</span></label>
+                            <input id="companyPhone" name="companyPhone" type="tel" required maxlength="30" placeholder="Enter contact number">
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="companyWebsite">Company website</label>
+                            <input id="companyWebsite" name="companyWebsite" type="url" placeholder="https://example.com">
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="companyIndustry">Industry <span>*</span></label>
+                            <select id="companyIndustry" name="companyIndustry" required>
+                                <option value="">Select industry</option>
+                                <option>Information Technology</option>
+                                <option>Software Development</option>
+                                <option>Artificial Intelligence</option>
+                                <option>Education</option>
+                                <option>Finance</option>
+                                <option>Healthcare</option>
+                                <option>Marketing and Advertising</option>
+                                <option>E-commerce</option>
+                                <option>Engineering</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="companySize">Company size <span>*</span></label>
+                            <select id="companySize" name="companySize" required>
+                                <option value="">Select company size</option>
+                                <option>1–10 employees</option>
+                                <option>11–50 employees</option>
+                                <option>51–200 employees</option>
+                                <option>201–500 employees</option>
+                                <option>501–1000 employees</option>
+                                <option>1000+ employees</option>
+                            </select>
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="companyCity">City <span>*</span></label>
+                            <input id="companyCity" name="companyCity" type="text" required placeholder="Enter city">
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="companyCountry">Country <span>*</span></label>
+                            <input id="companyCountry" name="companyCountry" type="text" required placeholder="Enter country">
+                        </div>
+
+                        <div class="profile-field full-width">
+                            <label for="companyAddress">Office address <span>*</span></label>
+                            <input id="companyAddress" name="companyAddress" type="text" required maxlength="250" placeholder="Enter complete office address">
+                        </div>
+
+                        <div class="profile-field full-width">
+                            <label for="companyDescription">About your company <span>*</span></label>
+                            <textarea id="companyDescription" name="companyDescription" rows="5" required maxlength="2000" placeholder="Describe your organization, work and company culture..."></textarea>
+                            <div class="field-footnote">Maximum 2000 characters.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TRADE LICENCE -->
+                <section class="profile-section-card licence-section" id="tradeLicence">
+                    <div class="profile-section-heading">
+                        <div class="profile-section-icon licence-icon">✓</div>
+                        <div>
+                            <span class="profile-eyebrow">COMPANY VERIFICATION</span>
+                            <h2>Trade licence <em>details.</em></h2>
+                            <p>Keep your verification document current and readable.</p>
+                        </div>
+                    </div>
+
+                    <div class="licence-notice" id="licenceNotice" role="status">
+                        <span class="licence-notice-icon">!</span>
+                        <div>
+                            <strong id="licenceNoticeTitle">Keep your trade licence up to date</strong>
+                            <p id="licenceNoticeText">
+                                Upload your current trade licence and enter its expiry date.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="profile-form-grid">
+                        <div class="profile-field">
+                            <label for="licenceNumber">Trade licence number <span>*</span></label>
+                            <input id="licenceNumber" name="licenceNumber" type="text" required maxlength="100" placeholder="Enter licence number">
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="licenceIssue">Licence issue date <span>*</span></label>
+                            <input id="licenceIssue" name="licenceIssue" type="date" required>
+                        </div>
+
+                        <div class="profile-field">
+                            <label for="licenceExpiry">Licence expiry date <span>*</span></label>
+                            <input id="licenceExpiry" name="licenceExpiry" type="date" required>
+                        </div>
+
+                        <div class="profile-field full-width">
+                            <label for="licenceFile">Upload new trade licence <span>*</span></label>
+
+                            <label class="licence-upload-box" for="licenceFile" id="licenceUploadBox">
+                                <span class="upload-symbol">↑</span>
+                                <strong id="licenceFileTitle">Choose your trade licence</strong>
+                                <span id="licenceFileDescription">PDF, JPG or PNG · Maximum 5 MB</span>
+                                <span class="upload-browse">Browse file</span>
+                            </label>
+
+                            <input
+                                id="licenceFile"
+                                name="licenceFile"
+                                type="file"
+                                accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+                                required
+                                class="visually-hidden-input"
+                            >
+                            <p class="field-footnote">
+                                Upload a clear, valid document. Your new document must be reviewed before verification can be confirmed.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="licence-current-status">
+                        <div class="licence-status-symbol">▤</div>
+                        <div>
+                            <strong id="licenceCurrentTitle">No new document selected</strong>
+                            <p id="licenceCurrentText">Choose a file above to prepare your licence update.</p>
+                        </div>
+                        <span id="licenceReviewBadge" class="licence-review-badge">Not submitted</span>
+                    </div>
+                </section>
+
+                <div class="profile-form-footer">
+                    <p>Fields marked <span>*</span> are required.</p>
+                    <button class="profile-save-button" type="submit" id="saveProfileButton">
+                        Save Changes <span>→</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="profile-toast" id="profileToast" role="status" aria-live="polite"></div>
+
+        </div>
+    </main>
+
+    <!-- NOTIFICATION PANEL -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="notification-panel-head">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" type="button" aria-label="Close notifications">×</button>
+        </div>
+
+        <div class="panel-notification">
+            <div>✓</div>
+            <section>
+                <strong>Trade licence reminder</strong>
+                <p>Keep your company licence details and expiry date up to date.</p>
+            </section>
+        </div>
+
+        <div class="panel-notification">
+            <div>◯</div>
+            <section>
+                <strong>Company profile</strong>
+                <p>Review your company information to keep it accurate.</p>
+            </section>
+        </div>
+    </div>
+
+    <div class="profile-modal-backdrop" id="profileModal" hidden>
+        <div class="profile-modal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+            <div class="profile-modal-icon">✓</div>
+            <h2 id="profileModalTitle">Review your changes</h2>
+            <p id="profileModalMessage"></p>
+            <button type="button" id="closeProfileModal">Got it</button>
+        </div>
+    </div>
+
+    <script src="../js/company-profile.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

@@ -1,0 +1,942 @@
+/* =========================================================
+   SMARTINTERN
+   CLEAN SIGNUP PAGE
+   ========================================================= */
+
+
+/* ================= PAGE ================= */
+
+.signup-page {
+
+    --cream: #fffdfb;
+    --white: #ffffff;
+
+    --plum: #29232b;
+    --plum-soft: #756a78;
+
+    --purple: #b38bd7;
+    --purple-dark: #8d63ad;
+
+    --pink: #e8a8c7;
+    --border: #eadfe8;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(232,168,199,.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(179,139,215,.15),
+            transparent 30%
+        ),
+        var(--cream);
+
+    color: var(--plum);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+/* ================= BACKGROUND ================= */
+
+.signup-bg {
+
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.bg-one {
+
+    width: 420px;
+    height: 420px;
+
+    top: -180px;
+    left: -150px;
+
+    background:
+        rgba(232,168,199,.20);
+}
+
+
+.bg-two {
+
+    width: 450px;
+    height: 450px;
+
+    right: -180px;
+    bottom: -180px;
+
+    background:
+        rgba(179,139,215,.18);
+}
+
+
+/* ================= THREE CANVAS ================= */
+
+#threeCanvas {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    opacity: .75;
+
+    z-index: 1;
+}
+
+
+/* ================= WRAPPER ================= */
+
+.signup-wrapper {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 5;
+
+    padding: 30px;
+}
+
+
+/* ================= CARD ================= */
+
+.signup-card {
+
+    width: 100%;
+
+    max-width: 440px;
+
+    padding: 42px 42px 35px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    border:
+        1px solid rgba(255,255,255,.9);
+
+    border-radius: 26px;
+
+    box-shadow:
+        0 30px 80px rgba(54,40,58,.10);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+/* ================= HEADING ================= */
+
+.signup-heading {
+
+    text-align: center;
+
+    margin-bottom: 28px;
+}
+
+
+.brand-mini {
+
+    margin-bottom: 20px;
+
+    color: var(--plum);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: -.02em;
+}
+
+
+.brand-mini span {
+
+    color: var(--purple-dark);
+
+    font-weight: 400;
+}
+
+
+.signup-heading h1 {
+
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 45px;
+
+    line-height: 1;
+
+    letter-spacing: -.045em;
+
+    font-weight: 500;
+}
+
+
+.signup-heading h1 em {
+
+    color: var(--purple-dark);
+
+    font-weight: 500;
+}
+
+
+.signup-heading p {
+
+    margin: 12px 0 0;
+
+    color: var(--plum-soft);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= ROLE SWITCH ================= */
+
+.role-switch {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    padding: 4px;
+
+    margin-bottom: 25px;
+
+    border-radius: 13px;
+
+    background: #f5eff5;
+
+    border: 1px solid #eee4ed;
+}
+
+
+.role-option {
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: #887c89;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        .25s ease;
+}
+
+
+.role-option:hover {
+
+    color: var(--plum);
+}
+
+
+.role-option.active {
+
+    color: var(--plum);
+
+    background: white;
+
+    box-shadow:
+        0 5px 15px rgba(50,35,55,.08);
+}
+
+
+/* ================= FORM ================= */
+
+.input-group {
+
+    margin-bottom: 17px;
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #635765;
+
+    font-size: 10px;
+
+    font-weight: 600;
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    height: 46px;
+
+    box-sizing: border-box;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,.75);
+
+    color: var(--plum);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 12px;
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .25s ease;
+}
+
+
+.input-group input::placeholder {
+
+    color: #aaa1aa;
+}
+
+
+.input-group input:focus {
+
+    background: white;
+
+    border-color:
+        #c39bdc;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(179,139,215,.09);
+}
+
+
+.input-group input.invalid {
+
+    border-color:
+        #d58ba8;
+}
+
+
+/* ================= PASSWORD ================= */
+
+.password-box {
+
+    position: relative;
+}
+
+
+.password-box input {
+
+    padding-right: 58px;
+}
+
+
+.password-toggle {
+
+    position: absolute;
+
+    right: 8px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color:
+        var(--purple-dark);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* ================= ERROR ================= */
+
+.error {
+
+    display: block;
+
+    min-height: 11px;
+
+    margin-top: 4px;
+
+    color: #b45777;
+
+    font-size: 8px;
+}
+
+
+/* ================= BUTTON ================= */
+
+.signup-button {
+
+    width: 100%;
+
+    height: 49px;
+
+    margin-top: 3px;
+
+    padding:
+        0 14px 0 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        var(--plum);
+
+    color: white;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 14px 28px
+        rgba(41,35,43,.15);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.signup-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(41,35,43,.20);
+}
+
+
+.button-arrow {
+
+    width: 27px;
+    height: 27px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    font-size: 15px;
+}
+
+
+/* ================= LOGIN ================= */
+
+.login-text {
+
+    margin: 19px 0 0;
+
+    text-align: center;
+
+    color:
+        #8b7e8c;
+
+    font-size: 10px;
+}
+
+
+.login-text a {
+
+    color:
+        var(--purple-dark);
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    margin-left: 3px;
+}
+
+
+.login-text a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ================= SUCCESS ================= */
+
+.success-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(41,35,43,.30);
+
+    backdrop-filter:
+        blur(12px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        .3s ease;
+}
+
+
+.success-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.success-box {
+
+    width: min(360px, 100%);
+
+    padding: 35px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255,253,251,.96);
+
+    box-shadow:
+        0 30px 80px
+        rgba(41,35,43,.20);
+
+    transform:
+        translateY(20px)
+        scale(.97);
+}
+
+
+.success-overlay.show
+.success-box {
+
+    animation:
+        successIn .5s
+        cubic-bezier(.2,.8,.2,1)
+        forwards;
+}
+
+
+.success-mark {
+
+    width: 55px;
+    height: 55px;
+
+    margin:
+        0 auto 17px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f6dce9,
+            #eadcf6
+        );
+
+    color:
+        var(--purple-dark);
+
+    font-size: 23px;
+}
+
+
+.success-box h2 {
+
+    margin: 0 0 8px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 28px;
+
+    font-weight: 500;
+}
+
+
+.success-box p {
+
+    margin:
+        0 0 20px;
+
+    color:
+        var(--plum-soft);
+
+    font-size: 11px;
+}
+
+
+@keyframes successIn {
+
+    to {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 600px) {
+
+    .signup-wrapper {
+
+        padding: 18px;
+    }
+
+
+    .signup-card {
+
+        padding:
+            32px 24px 28px;
+
+        border-radius: 22px;
+    }
+
+
+    .signup-heading h1 {
+
+        font-size: 39px;
+    }
+
+
+    .signup-heading {
+
+        margin-bottom: 24px;
+    }
+
+}
+
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 400px) {
+
+    .signup-card {
+
+        padding:
+            28px 20px 24px;
+    }
+
+
+    .signup-heading h1 {
+
+        font-size: 35px;
+    }
+
+
+    .signup-heading p {
+
+        font-size: 11px;
+    }
+
+}
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(232,168,199,.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(179,139,215,.15),
+            transparent 30%
+        ),
+        #fffdfb;
+
+    color: #29232b;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.login-card {
+    max-width: 420px;
+}
+
+.login-card .signup-heading {
+    margin-bottom: 28px;
+}
+
+.login-card .signup-heading h1 {
+    font-size: 48px;
+}
+
+@media (max-width: 600px) {
+
+    .login-card .signup-heading h1 {
+        font-size: 40px;
+    }
+
+}
+/* =========================================================
+   LOGIN / SIGNUP MAIN BUTTON FIX
+   ========================================================= */
+
+.signup-button {
+    background: #29232b !important;
+    color: #ffffff !important;
+    border: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.signup-button span {
+    color: #ffffff !important;
+}
+
+.signup-button .button-arrow {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #ffffff !important;
+}
+
+.signup-button:hover {
+    background: #29232b !important;
+    color: #ffffff !important;
+}
+/* ==========================================================
+   LOGIN OPTIONS
+========================================================== */
+
+.login-options {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: -4px 0 20px;
+    font-size: 13px;
+}
+
+
+/* Remember Me */
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #756a78;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.remember-me input {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    accent-color: #8d63ad;
+    cursor: pointer;
+}
+
+
+.remember-me span {
+    line-height: 1;
+}
+
+
+/* Forgot Password */
+
+.forgot-password {
+    color: #8d63ad;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+
+.forgot-password:hover {
+    color: #c982a7;
+}
+/* =========================================================
+   ADMIN LOGIN — SINGLE CENTERED ROLE
+========================================================= */
+
+.admin-role-switch {
+    grid-template-columns: 1fr;
+}
+
+
+/* =========================================================
+   BACK TO HOME (login, admin login, create account)
+   ========================================================= */
+
+.page-back {
+    position: fixed;
+    top: 22px;
+    left: 24px;
+    z-index: 60;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 18px;
+    border: 1px solid #eadfe8;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, .92);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(80, 45, 70, .08);
+    color: #5b525d;
+    font-size: 13px;
+    font-weight: 600;
+    transition: transform .25s ease, color .25s ease, border-color .25s ease;
+}
+
+.page-back:hover {
+    transform: translateX(-3px);
+    border-color: #b38bd7;
+    color: #76538d;
+}
+
+.page-back:focus-visible {
+    outline: 2px solid #8d63ad;
+    outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+
+    .page-back {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        height: 36px;
+        padding: 0 14px;
+        font-size: 12px;
+    }
+
+    body .signup-wrapper,
+    body .profile-wrapper {
+        padding-top: 64px;
+    }
+
+}

@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartIntern — Companies</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin-dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin-companies.css"
+    >
+
+    <link rel="stylesheet" href="../css/dialog.css">
+    <script src="../js/dialog.js"></script>
+    <script src="../js/session.js" data-role="admin"></script>
+</head>
+
+
+<body class="admin-dashboard-page admin-companies-page">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+         ===================================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+
+        <!-- Brand -->
+
+        <div class="sidebar-brand">
+
+            <a href="index.html">
+                Smart<span>Intern</span>
+            </a>
+
+        </div>
+
+
+        <!-- Admin Profile -->
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AD
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong>
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="admin-dashboard.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-students.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Students
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-companies.html"
+                class="sidebar-link active"
+            >
+
+                <span class="nav-icon">
+                    ◇
+                </span>
+
+                <span>
+                    Companies
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-internships.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    ▣
+                </span>
+
+                <span>
+                    Internships
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-applications.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    ▤
+                </span>
+
+                <span>
+                    Applications
+                </span>
+
+            </a>
+
+
+            <p class="nav-label nav-label-space">
+                MANAGEMENT
+            </p>
+
+
+
+
+            <a
+                href="admin-analytics.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    ◎
+                </span>
+
+                <span>
+                    Analytics
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             ================================================= -->
+
+        <header class="dashboard-topbar">
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    ADMIN PORTAL
+                </span>
+
+                <h1>
+                    Companies
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <!-- Notification -->
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                >
+
+                    ♧
+
+                    <span class="notification-dot">
+                    </span>
+
+                </button>
+
+
+                <!-- Admin -->
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar">
+                        AD
+                    </div>
+
+                    <div class="topbar-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             NOTIFICATION PANEL
+             ================================================= -->
+
+        <div
+            class="notification-panel"
+            id="notificationPanel"
+        >
+
+            <div class="notification-header">
+
+                <div>
+
+                    <span>
+                        SMARTINTERN
+                    </span>
+
+                    <h3>
+                        Notifications
+                    </h3>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="closeNotifications"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon purple-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Verification Required
+                    </strong>
+
+                    <p>
+                        4 company accounts are waiting
+                        for verification.
+                    </p>
+
+                    <span>
+                        20 min ago
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon pink-icon">
+                    ◉
+                </div>
+
+                <div>
+
+                    <strong>
+                        New Company
+                    </strong>
+
+                    <p>
+                        A new company has registered
+                        on SmartIntern.
+                    </p>
+
+                    <span>
+                        1 hour ago
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="notification-item">
+
+                <div class="notification-icon soft-icon">
+                    ▣
+                </div>
+
+                <div>
+
+                    <strong>
+                        New Internship
+                    </strong>
+
+                    <p>
+                        A new internship posting is
+                        awaiting review.
+                    </p>
+
+                    <span>
+                        Yesterday
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <div class="companies-content">
+
+
+            <!-- =================================================
+                 PAGE HEADER
+                 ================================================= -->
+
+            <section class="companies-page-header">
+
+
+                <div class="companies-heading">
+
+                    <span class="companies-eyebrow">
+                        COMPANY MANAGEMENT
+                    </span>
+
+                    <h2>
+                        Manage your
+                        <em>companies.</em>
+                    </h2>
+
+                    <p>
+                        Review company registrations, verify business
+                        information, and manage approved organizations
+                        across SmartIntern.
+                    </p>
+
+                </div>
+
+
+                <div class="companies-header-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-company-button"
+                        id="exportCompaniesBtn"
+                    >
+
+                        <span>
+                            ↓
+                        </span>
+
+                        Export
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="primary-company-button"
+                        id="refreshCompaniesBtn"
+                    >
+
+                        <span>
+                            ↻
+                        </span>
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 COMPANY STATS
+                 ================================================= -->
+
+            <section class="company-stat-grid">
+
+
+                <!-- Total -->
+
+                <div class="company-stat-card">
+
+                    <div class="company-stat-top">
+
+                        <span>
+                            Total Companies
+                        </span>
+
+                        <div class="company-stat-icon purple-icon-box">
+                            ◇
+                        </div>
+
+                    </div>
+
+                    <strong id="statTotalCompanies">0</strong>
+
+                    <small id="statTotalNote">Registered on SmartIntern</small>
+
+                </div>
+
+
+                <!-- Verified -->
+
+                <div class="company-stat-card">
+
+                    <div class="company-stat-top">
+
+                        <span>
+                            Verified Companies
+                        </span>
+
+                        <div class="company-stat-icon pink-icon-box">
+                            ✓
+                        </div>
+
+                    </div>
+
+                    <strong id="statVerifiedCompanies">0</strong>
+
+                    <small id="statVerifiedNote" class="positive-stat">Approved accounts</small>
+
+                </div>
+
+
+                <!-- Pending -->
+
+                <div class="company-stat-card">
+
+                    <div class="company-stat-top">
+
+                        <span>
+                            Pending Verification
+                        </span>
+
+                        <div class="company-stat-icon lavender-icon-box">
+                            !
+                        </div>
+
+                    </div>
+
+                    <strong id="statPendingCompanies">0</strong>
+
+                    <small id="statPendingNote" class="attention-stat">Waiting for admin review</small>
+
+                </div>
+
+
+                <!-- Suspended -->
+
+                <div class="company-stat-card">
+
+                    <div class="company-stat-top">
+
+                        <span>
+                            Rejected / Frozen / Blocked
+                        </span>
+
+                        <div class="company-stat-icon rose-icon-box">
+                            ×
+                        </div>
+
+                    </div>
+
+                    <strong id="statRejectedCompanies">0</strong>
+
+                    <small id="statRejectedNote">Rejected, frozen or blocked</small>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- =================================================
+                 COMPANY DIRECTORY
+                 ================================================= -->
+
+            <section class="company-management-card">
+
+
+                <!-- Card Header -->
+
+                <div class="company-management-header">
+
+                    <div>
+
+                        <span>
+                            REGISTERED COMPANIES
+                        </span>
+
+                        <h3>
+                            Company Directory
+                        </h3>
+
+                        <p>
+                            Review company accounts and manage
+                            their verification status.
+                        </p>
+
+                    </div>
+
+
+                    <span class="company-total" id="companyTotal">0 Companies</span>
+
+                </div>
+
+
+                <!-- =================================================
+                     FILTER BAR
+                     ================================================= -->
+
+                <div class="company-filter-bar">
+
+
+                    <div class="company-search">
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="companySearch"
+                            placeholder="Search by company, email or industry..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <select id="companyStatusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="verified">
+                            Verified
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="rejected">
+                            Rejected
+                        </option>
+                        <option value="frozen">
+                            Frozen
+                        </option>
+                        <option value="suspended">
+                            Blocked
+                        </option>
+
+                    </select>
+
+
+                    <select id="companyIndustryFilter">
+
+                        <option value="all">
+                            All Industries
+                        </option>
+                    </select>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     TABLE
+                     ================================================= -->
+
+                <div class="companies-table-wrapper">
+
+                    <table class="companies-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Company
+                                </th>
+
+                                <th>
+                                    Industry
+                                </th>
+
+                                <th>
+                                    Internships
+                                </th>
+
+                                <th>
+                                    Applicants
+                                </th>
+
+                                <th>
+                                    Verification
+                                </th>
+
+                                <th>
+                                    Joined
+                                </th>
+
+                                <th>
+                                    Action
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="companiesTableBody">
+                            <tr><td colspan="7" class="companies-loading">Loading companies...</td></tr>
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- EMPTY -->
+
+                    <div
+                        class="companies-empty"
+                        id="companiesEmpty"
+                    >
+
+                        <div>
+                            ⌕
+                        </div>
+
+                        <h3>
+                            No companies found
+                        </h3>
+
+                        <p>
+                            Try changing your search or filters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PAGINATION
+                     ================================================= -->
+
+                <div class="companies-pagination">
+
+                    <span id="companiesSummary">
+                        Showing <strong>0</strong> of <strong>0</strong> companies
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         COMPANY DETAILS DRAWER
+         ===================================================== -->
+
+    <div
+        class="company-drawer-overlay"
+        id="companyDrawerOverlay"
+    ></div>
+
+
+    <aside
+        class="company-drawer"
+        id="companyDrawer"
+    >
+
+
+        <!-- Drawer Header -->
+
+        <div class="company-drawer-header">
+
+            <div>
+
+                <span>
+                    COMPANY REVIEW
+                </span>
+
+                <h2>
+                    Company Details
+                </h2>
+
+            </div>
+
+            <button
+                type="button"
+                id="closeCompanyDrawer"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- Drawer Content -->
+
+        <div class="company-drawer-content">
+
+
+            <!-- Company Profile -->
+
+            <div class="drawer-company-profile">
+
+                <div
+                    class="drawer-company-logo"
+                    id="drawerCompanyLogo"
+                >
+                    T
+                </div>
+
+                <div>
+
+                    <h3 id="drawerCompanyName">
+                        TechNova Solutions
+                    </h3>
+
+                    <p id="drawerCompanyEmail">
+                        technova@gmail.com
+                    </p>
+
+                    <span
+                        class="company-status pending"
+                        id="drawerCompanyStatus"
+                    >
+                        Pending
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Business Information -->
+
+            <div class="company-drawer-section">
+
+                <span>
+                    BUSINESS INFORMATION
+                </span>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        Industry
+                    </span>
+
+                    <strong id="drawerIndustry">
+                        Technology
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        Business Type
+                    </span>
+
+                    <strong id="drawerBusinessType">
+                        Software & IT
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        Registration Date
+                    </span>
+
+                    <strong id="drawerJoinedDate">
+                        Sep 18, 2026
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Information -->
+
+            <div class="company-drawer-section">
+
+                <span>
+                    CONTACT INFORMATION
+                </span>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        Contact Person
+                    </span>
+
+                    <strong id="drawerContactPerson">
+                        Ahmed Khan
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong id="drawerContactEmail">
+                        technova@gmail.com
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        Phone
+                    </span>
+
+                    <strong id="drawerPhone">
+                        +92 300 1234567
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Verification -->
+
+            <div class="company-drawer-section">
+
+                <span>
+                    VERIFICATION
+                </span>
+
+
+                <div class="verification-document">
+
+                    <div class="document-icon">
+                        ▣
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Trade License
+                        </strong>
+
+                        <span>
+                            Submitted for review
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        id="viewLicenseBtn"
+                    >
+                        View
+                    </button>
+
+                </div>
+
+
+                <div class="verification-document">
+
+                    <div class="document-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Company Information
+                        </strong>
+
+                        <span id="companyInfoStatus">
+                            Submitted
+                        </span>
+
+                    </div>
+
+                    <span class="document-check">
+                        ✓
+                    </span>
+
+                </div>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        License Expiry
+                    </span>
+
+                    <strong id="drawerLicenseExpiry">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-company-row">
+
+                    <span>
+                        Account Freezes On
+                    </span>
+
+                    <strong id="drawerGraceEnds">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="drawer-company-row" id="drawerRejectReasonRow" style="display:none">
+
+                    <span>
+                        Rejection Reason
+                    </span>
+
+                    <strong id="drawerRejectReason">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Company Activity -->
+
+            <div class="company-drawer-section">
+
+                <span>
+                    PLATFORM ACTIVITY
+                </span>
+
+
+                <div class="company-mini-grid">
+
+                    <div>
+
+                        <strong id="drawerInternships">
+                            08
+                        </strong>
+
+                        <span>
+                            Internships
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="drawerApplicants">
+                            126
+                        </strong>
+
+                        <span>
+                            Applicants
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="drawerProfileCompletion">
+                            —
+                        </strong>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong id="drawerHires">
+                            —
+                        </strong>
+
+                        <span>
+                            Hires
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Admin Actions -->
+
+            <div class="company-drawer-section admin-company-actions">
+
+                <span>
+                    ADMIN ACTIONS
+                </span>
+
+
+                <button
+                    type="button"
+                    class="verify-company-btn"
+                    id="verifyCompanyBtn"
+                >
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Verify Company
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="reject-company-btn"
+                    id="rejectCompanyBtn"
+                >
+
+                    <span>
+                        ×
+                    </span>
+
+                    Reject Verification
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="suspend-company-btn"
+                    id="suspendCompanyBtn"
+                >
+
+                    <span>
+                        ×
+                    </span>
+
+                    Block Company
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="verify-company-btn"
+                    id="unblockCompanyBtn"
+                    style="display:none"
+                >
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Unblock Company
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         VERIFICATION SUCCESS MODAL
+         ===================================================== -->
+
+    <div
+        class="company-action-modal"
+        id="companyActionModal"
+    >
+
+        <div class="company-action-modal-box">
+
+            <div
+                class="company-action-modal-icon"
+                id="companyActionModalIcon"
+            >
+                ✓
+            </div>
+
+            <h2 id="companyActionModalTitle">
+                Company Verified
+            </h2>
+
+            <p id="companyActionModalText">
+                The company has been successfully verified.
+            </p>
+
+            <button
+                type="button"
+                id="companyActionModalClose"
+            >
+                Done
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- GSAP -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+
+
+    <!-- JS -->
+
+    <script src="../js/api.js"></script>
+    <script src="../js/admin-companies.js"></script>
+
+    <script src="../js/notifications.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartIntern — Admin Dashboard</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+          rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/admin-dashboard.css">
+    <link rel="stylesheet" href="../css/logout-model.css">
+    <script src="../js/session.js" data-role="admin"></script>
+</head>
+
+<body class="admin-dashboard-page">
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+        <div class="sidebar-brand">
+            <a href="index.html">Smart<span>Intern</span></a>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="sidebar-avatar">AD</div>
+
+            <div class="sidebar-profile-info">
+                <strong>Admin</strong>
+                <span>Administrator</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">MAIN</p>
+
+            <a href="admin-dashboard.html" class="sidebar-link active">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="admin-students.html" class="sidebar-link">
+                <span class="nav-icon">◉</span>
+                <span>Students</span>
+            </a>
+
+            <a href="admin-companies.html" class="sidebar-link">
+                <span class="nav-icon">◇</span>
+                <span>Companies</span>
+            </a>
+
+            <a href="admin-internships.html" class="sidebar-link">
+                <span class="nav-icon">▣</span>
+                <span>Internships</span>
+            </a>
+
+            <a href="admin-applications.html" class="sidebar-link">
+                <span class="nav-icon">▤</span>
+                <span>Applications</span>
+            </a>
+
+            <p class="nav-label nav-label-space">MANAGEMENT</p>
+
+
+            <a href="admin-analytics.html" class="sidebar-link">
+                <span class="nav-icon">◎</span>
+                <span>Analytics</span>
+            </a>
+
+            <a href="admin-settings.html" class="sidebar-link">
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="dashboard-main">
+
+        <!-- Topbar -->
+        <header class="dashboard-topbar">
+
+            <button class="mobile-menu"
+                    id="mobileMenu"
+                    type="button"
+                    aria-label="Open navigation">
+                ☰
+            </button>
+
+            <div class="topbar-title">
+                <span>ADMIN PORTAL</span>
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="notification-button"
+                        id="notificationButton"
+                        type="button"
+                        aria-label="Notifications">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+                    <div class="topbar-avatar">AD</div>
+
+                    <div class="topbar-profile-text">
+                        <strong>Admin</strong>
+                        <span>Administrator</span>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- Notifications -->
+        <div class="notification-panel" id="notificationPanel">
+
+            <div class="notification-header">
+                <div>
+                    <span>SMARTINTERN</span>
+                    <h3>Notifications</h3>
+                </div>
+
+                <button type="button" id="closeNotifications"
+                        aria-label="Close notifications">×</button>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon purple-icon">✓</div>
+                <div>
+                    <strong>Company verification</strong>
+                    <p id="verificationNotification">
+                        Loading verification information...
+                    </p>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon pink-icon">◉</div>
+                <div>
+                    <strong>Student registrations</strong>
+                    <p id="studentNotification">
+                        Registration statistics will appear here.
+                    </p>
+                </div>
+            </div>
+
+            <div class="notification-item">
+                <div class="notification-icon soft-icon">▣</div>
+                <div>
+                    <strong>Internships</strong>
+                    <p>Internship notifications are not connected yet.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+
+            <!-- Welcome Section -->
+            <section class="dashboard-welcome admin-welcome">
+
+                <div class="welcome-copy">
+
+                    <span class="welcome-small">
+                        SMARTINTERN ADMINISTRATION
+                    </span>
+
+                    <h2>
+                        Manage your <em>platform.</em>
+                    </h2>
+
+                    <p>
+                        Monitor students, companies, internships and
+                        applications from one central place.
+                    </p>
+
+                    <div class="welcome-actions">
+
+                        <a href="admin-companies.html?status=pending"
+                           class="primary-dashboard-button">
+                            Review Pending Companies
+                            <span>→</span>
+                        </a>
+
+                        <a href="admin-analytics.html"
+                           class="secondary-dashboard-button">
+                            View Analytics
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Decorative Visual -->
+                <div class="welcome-visual">
+
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+
+                    <div class="visual-crystal">✦</div>
+
+                    <div class="floating-admin-card">
+                        <span>PLATFORM HEALTH</span>
+                        <strong>—</strong>
+                        <small>Metrics not connected</small>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Platform Stats -->
+            <section class="dashboard-stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">◉</div>
+
+                    <div>
+                        <span>Students</span>
+                        <strong id="totalStudents">—</strong>
+                    </div>
+
+                    <small id="newStudentsThisMonth">Loading...</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon pink">◇</div>
+
+                    <div>
+                        <span>Companies</span>
+                        <strong id="totalCompanies">—</strong>
+                    </div>
+
+                    <small>
+                        <span id="pendingCompanies">—</span> pending
+                    </small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon plum">▣</div>
+
+                    <div>
+                        <span>Internships</span>
+                        <strong id="totalInternships">—</strong>
+                    </div>
+
+                    <small>Backend not connected</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon soft">▤</div>
+
+                    <div>
+                        <span>Applications</span>
+                        <strong id="totalApplications">—</strong>
+                    </div>
+
+                    <small>Backend not connected</small>
+                </div>
+
+            </section>
+
+            <!-- Main Grid -->
+            <section class="dashboard-grid admin-main-grid">
+
+                <!-- Pending Verification -->
+                <div class="dashboard-section admin-verification-section">
+
+                    <div class="section-heading">
+                        <div>
+                            <span>NEEDS YOUR ATTENTION</span>
+                            <h2>Pending <em>approvals.</em></h2>
+                        </div>
+
+                        <a href="admin-companies.html?status=pending">View all →</a>
+                    </div>
+
+                    <!-- Populated by admin-dashboard.js -->
+                    <div class="pending-companies-list"
+                         id="pendingCompaniesList"
+                         aria-live="polite">
+                        <p>Loading pending companies...</p>
+                    </div>
+
+                </div>
+
+                <!-- Right Column -->
+                <div class="dashboard-right-column">
+
+                    <!-- Platform Overview -->
+                    <div class="admin-overview-card">
+
+                        <div class="section-heading-small">
+                            <span>PLATFORM OVERVIEW</span>
+                            <a href="admin-analytics.html">Analytics</a>
+                        </div>
+
+                        <div class="overview-circle">
+                            <div>
+                                <strong>—</strong>
+                                <span>Active Users</span>
+                            </div>
+                        </div>
+
+                        <p>
+                            Platform activity metrics will appear here
+                            when the relevant backend data is available.
+                        </p>
+
+                        <div class="overview-list">
+
+                            <div>
+                                <span>Active Students</span>
+                                <strong>—</strong>
+                            </div>
+
+                            <div>
+                                <span>Active Companies</span>
+                                <strong>—</strong>
+                            </div>
+
+                            <div>
+                                <span>Open Internships</span>
+                                <strong>—</strong>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="admin-quick-card">
+
+                        <div class="section-heading-small">
+                            <span>QUICK MANAGEMENT</span>
+                        </div>
+
+                        <div class="quick-action-grid">
+
+                            <a href="admin-students.html">
+                                <span>◉</span>
+                                Students
+                            </a>
+
+                            <a href="admin-companies.html">
+                                <span>◇</span>
+                                Companies
+                            </a>
+
+                            <a href="admin-internships.html">
+                                <span>▣</span>
+                                Internships
+                            </a>
+
+                            <a href="admin-applications.html">
+                                <span>▤</span>
+                                Applications
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="admin-activity-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span>PLATFORM ACTIVITY</span>
+                        <h2>Recent <em>activity.</em></h2>
+                    </div>
+
+                    <a href="admin-analytics.html">
+                        View analytics →
+                    </a>
+
+                </div>
+
+                <div class="activity-list" id="recentActivityList">
+                    <div class="activity-row">
+                        <div class="activity-icon purple-icon">◉</div>
+
+                        <div class="activity-info">
+                            <strong>Activity feed not connected</strong>
+                            <span>
+                                Recent student and company events will
+                                appear here when an activity endpoint
+                                is available.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Shared API helpers must load before dashboard JS -->
+    <script src="../js/api.js"></script>
+    <script src="../js/admin-dashboard.js"></script>
+
+    <script src="../js/notifications.js"></script>
+</body>
+</html>

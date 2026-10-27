@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartIntern — My Applications</title>
+
+
+    <!-- Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout-student.css">
+    <link
+        rel="stylesheet"
+        href="../css/student-my-applications.css"
+    >
+    <link rel="stylesheet" href="../css/logout-model.css">
+
+    <script src="../js/session.js" data-role="student"></script>
+</head>
+
+
+<body class="student-dashboard-page">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+         ===================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+         SAME AS STUDENT DASHBOARD
+         ===================================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+
+        <div class="sidebar-brand">
+
+            <a href="index.html">
+
+                Smart<span>Intern</span>
+
+            </a>
+
+        </div>
+
+
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AS
+            </div>
+
+            <div class="sidebar-profile-info">
+
+                <strong>
+                    Student
+                </strong>
+
+                <span>
+                    Student
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="student-dashboard.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a
+                href="student-browse-internships.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">⌕</span>
+
+                <span>Browse Internships</span>
+
+            </a>
+
+
+            <a
+                href="student-my-applications.html"
+                class="sidebar-link active"
+            >
+
+                <span class="nav-icon">▣</span>
+
+                <span>My Applications</span>
+
+            </a>
+
+
+            <a
+                href="resume-upload.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">↥</span>
+
+                <span>Resume</span>
+
+            </a>
+
+
+            <p class="nav-label nav-label-space">
+                AI TOOLS
+            </p>
+
+
+            <a
+                href="skill-gap.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">✦</span>
+
+                <span>AI Skill Gap</span>
+
+            </a>
+
+
+            <a
+                href="ai-match.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◎</span>
+
+                <span>AI Matches</span>
+
+            </a>
+
+
+            <p class="nav-label nav-label-space">
+                ACCOUNT
+            </p>
+
+
+            <a
+                href="student-profile.html"
+                class="sidebar-link"
+            >
+
+                <span class="nav-icon">◯</span>
+
+                <span>My Profile</span>
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="sidebar-link"
+                id="logoutLink"
+            >
+
+                <span class="nav-icon">↪</span>
+
+                <span>Logout</span>
+
+            </a>
+
+
+        </nav>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+             SAME AS DASHBOARD
+             ================================================= -->
+
+        <header class="dashboard-topbar">
+
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+                <h1>
+                    My Applications
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                >
+
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar">
+                        AS
+                    </div>
+
+                    <div class="topbar-profile-text">
+
+                        <strong>
+                            Student
+                        </strong>
+
+                        <span>
+                            Student
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+             ================================================= -->
+
+        <div class="dashboard-content">
+
+
+            <!-- =================================================
+                 PAGE HERO
+                 ================================================= -->
+
+            <section class="applications-hero">
+
+
+                <div class="applications-hero-copy">
+
+                    <span class="welcome-small">
+                        YOUR APPLICATION JOURNEY
+                    </span>
+
+                    <h2>
+                        Track your
+                        <em>applications.</em>
+                    </h2>
+
+                    <p>
+                        Keep an eye on your internship applications,
+                        interview updates and application progress
+                        all in one place.
+                    </p>
+
+
+                    <div class="application-summary">
+
+
+                        <div class="summary-item">
+
+                            <strong>
+                                08
+                            </strong>
+
+                            <span>
+                                Applied
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <strong>
+                                03
+                            </strong>
+
+                            <span>
+                                Shortlisted
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <strong>
+                                02
+                            </strong>
+
+                            <span>
+                                Interviews
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 3D VISUAL -->
+
+                <div class="applications-visual">
+
+                    <div class="application-orbit orbit-a"></div>
+
+                    <div class="application-orbit orbit-b"></div>
+
+                    <div class="application-glow"></div>
+
+
+                    <div class="application-document">
+
+                        <div class="document-line large"></div>
+
+                        <div class="document-line"></div>
+
+                        <div class="document-line short"></div>
+
+
+                        <div class="document-check">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <div class="floating-status-card">
+
+                        <span>
+                            APPLICATION STATUS
+                        </span>
+
+                        <strong>
+                            Active
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FILTER BAR
+                 ================================================= -->
+
+            <section class="applications-toolbar">
+
+
+                <div class="application-filters">
+
+
+                    <button
+                        class="application-filter active"
+                        data-filter="all"
+                    >
+                        All
+                        <span>08</span>
+                    </button>
+
+
+                    <button
+                        class="application-filter"
+                        data-filter="review"
+                    >
+                        Under Review
+                        <span>03</span>
+                    </button>
+
+
+                    <button
+                        class="application-filter"
+                        data-filter="shortlisted"
+                    >
+                        Shortlisted
+                        <span>02</span>
+                    </button>
+
+
+                    <button
+                        class="application-filter"
+                        data-filter="interview"
+                    >
+                        Interview
+                        <span>02</span>
+                    </button>
+
+
+                    <button
+                        class="application-filter"
+                        data-filter="rejected"
+                    >
+                        Closed
+                        <span>01</span>
+                    </button>
+
+
+                </div>
+
+
+                <div class="sort-wrapper">
+
+                    <label for="sortApplications">
+                        Sort
+                    </label>
+
+                    <select id="sortApplications">
+
+                        <option value="recent">
+                            Most Recent
+                        </option>
+
+                        <option value="old">
+                            Oldest
+                        </option>
+
+                        <option value="match">
+                            Highest Match
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 APPLICATION SECTION
+                 ================================================= -->
+
+            <section class="applications-section">
+
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <span>
+                            APPLICATION ACTIVITY
+                        </span>
+
+                        <h2>
+                            Your applications.
+                        </h2>
+
+                    </div>
+
+
+                    <a href="student-browse-internships.html">
+                        Find More Internships →
+                    </a>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     APPLICATION LIST
+                     ================================================= -->
+
+                <div
+                    class="applications-list"
+                    id="applicationsList"
+                >
+
+
+                    <!-- APPLICATION 1 -->
+
+                    <article
+                        class="application-card"
+                        data-status="interview"
+                        data-match="94"
+                        data-order="1"
+                    >
+
+                        <div class="company-logo">
+                            T
+                        </div>
+
+
+                        <div class="application-details">
+
+                            <div class="application-title-row">
+
+                                <div>
+
+                                    <span class="internship-type">
+                                        REMOTE · PAID
+                                    </span>
+
+                                    <h3>
+                                        Frontend Developer Intern
+                                    </h3>
+
+                                    <p>
+                                        TechNova Solutions
+                                    </p>
+
+                                </div>
+
+
+                                <span class="status-pill interview">
+                                    <i></i>
+                                    Interview
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-meta">
+
+                                <span>
+                                    ◉ Remote
+                                </span>
+
+                                <span>
+                                    ◷ 3 Months
+                                </span>
+
+                                <span>
+                                    Applied Sep 28
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-bottom">
+
+
+                                <div class="match-area">
+
+                                    <div class="mini-match-circle">
+
+                                        <svg viewBox="0 0 40 40">
+
+                                            <circle
+                                                class="circle-track"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                            <circle
+                                                class="circle-progress"
+                                                data-progress="94"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                        </svg>
+
+                                        <strong>
+                                            94%
+                                        </strong>
+
+                                    </div>
+
+
+                                    <span>
+                                        AI Match
+                                    </span>
+
+                                </div>
+
+
+                                <button
+                                    class="view-button"
+                                    type="button"
+                                >
+                                    View Details
+                                    <span>→</span>
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- APPLICATION 2 -->
+
+                    <article
+                        class="application-card"
+                        data-status="shortlisted"
+                        data-match="91"
+                        data-order="2"
+                    >
+
+                        <div class="company-logo logo-pink">
+                            A
+                        </div>
+
+
+                        <div class="application-details">
+
+                            <div class="application-title-row">
+
+                                <div>
+
+                                    <span class="internship-type">
+                                        HYBRID · PAID
+                                    </span>
+
+                                    <h3>
+                                        UI/UX Design Intern
+                                    </h3>
+
+                                    <p>
+                                        Alpha Labs
+                                    </p>
+
+                                </div>
+
+
+                                <span class="status-pill shortlisted">
+                                    <i></i>
+                                    Shortlisted
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-meta">
+
+                                <span>
+                                    ◉ Islamabad
+                                </span>
+
+                                <span>
+                                    ◷ 6 Months
+                                </span>
+
+                                <span>
+                                    Applied Sep 25
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-bottom">
+
+
+                                <div class="match-area">
+
+                                    <div class="mini-match-circle">
+
+                                        <svg viewBox="0 0 40 40">
+
+                                            <circle
+                                                class="circle-track"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                            <circle
+                                                class="circle-progress"
+                                                data-progress="91"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                        </svg>
+
+                                        <strong>
+                                            91%
+                                        </strong>
+
+                                    </div>
+
+
+                                    <span>
+                                        AI Match
+                                    </span>
+
+                                </div>
+
+
+                                <button
+                                    class="view-button"
+                                    type="button"
+                                >
+                                    View Details
+                                    <span>→</span>
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- APPLICATION 3 -->
+
+                    <article
+                        class="application-card"
+                        data-status="review"
+                        data-match="88"
+                        data-order="3"
+                    >
+
+                        <div class="company-logo logo-plum">
+                            N
+                        </div>
+
+
+                        <div class="application-details">
+
+                            <div class="application-title-row">
+
+                                <div>
+
+                                    <span class="internship-type">
+                                        ONSITE · PAID
+                                    </span>
+
+                                    <h3>
+                                        AI / Machine Learning Intern
+                                    </h3>
+
+                                    <p>
+                                        Nova Systems
+                                    </p>
+
+                                </div>
+
+
+                                <span class="status-pill review">
+                                    <i></i>
+                                    Under Review
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-meta">
+
+                                <span>
+                                    ◉ Lahore
+                                </span>
+
+                                <span>
+                                    ◷ 6 Months
+                                </span>
+
+                                <span>
+                                    Applied Sep 21
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-bottom">
+
+
+                                <div class="match-area">
+
+                                    <div class="mini-match-circle">
+
+                                        <svg viewBox="0 0 40 40">
+
+                                            <circle
+                                                class="circle-track"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                            <circle
+                                                class="circle-progress"
+                                                data-progress="88"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                        </svg>
+
+                                        <strong>
+                                            88%
+                                        </strong>
+
+                                    </div>
+
+
+                                    <span>
+                                        AI Match
+                                    </span>
+
+                                </div>
+
+
+                                <button
+                                    class="view-button"
+                                    type="button"
+                                >
+                                    View Details
+                                    <span>→</span>
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- APPLICATION 4 -->
+
+                    <article
+                        class="application-card"
+                        data-status="review"
+                        data-match="86"
+                        data-order="4"
+                    >
+
+                        <div class="company-logo logo-soft">
+                            O
+                        </div>
+
+
+                        <div class="application-details">
+
+                            <div class="application-title-row">
+
+                                <div>
+
+                                    <span class="internship-type">
+                                        REMOTE · PAID
+                                    </span>
+
+                                    <h3>
+                                        Backend Developer Intern
+                                    </h3>
+
+                                    <p>
+                                        Orbit Technologies
+                                    </p>
+
+                                </div>
+
+
+                                <span class="status-pill review">
+                                    <i></i>
+                                    Under Review
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-meta">
+
+                                <span>
+                                    ◉ Remote
+                                </span>
+
+                                <span>
+                                    ◷ 3 Months
+                                </span>
+
+                                <span>
+                                    Applied Sep 18
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-bottom">
+
+
+                                <div class="match-area">
+
+                                    <div class="mini-match-circle">
+
+                                        <svg viewBox="0 0 40 40">
+
+                                            <circle
+                                                class="circle-track"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                            <circle
+                                                class="circle-progress"
+                                                data-progress="86"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                        </svg>
+
+                                        <strong>
+                                            86%
+                                        </strong>
+
+                                    </div>
+
+
+                                    <span>
+                                        AI Match
+                                    </span>
+
+                                </div>
+
+
+                                <button
+                                    class="view-button"
+                                    type="button"
+                                >
+                                    View Details
+                                    <span>→</span>
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- APPLICATION 5 -->
+
+                    <article
+                        class="application-card"
+                        data-status="rejected"
+                        data-match="72"
+                        data-order="5"
+                    >
+
+                        <div class="company-logo logo-cream">
+                            C
+                        </div>
+
+
+                        <div class="application-details">
+
+                            <div class="application-title-row">
+
+                                <div>
+
+                                    <span class="internship-type">
+                                        HYBRID
+                                    </span>
+
+                                    <h3>
+                                        Digital Marketing Intern
+                                    </h3>
+
+                                    <p>
+                                        Creative Studio
+                                    </p>
+
+                                </div>
+
+
+                                <span class="status-pill rejected">
+                                    <i></i>
+                                    Closed
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-meta">
+
+                                <span>
+                                    ◉ Karachi
+                                </span>
+
+                                <span>
+                                    ◷ 3 Months
+                                </span>
+
+                                <span>
+                                    Applied Sep 12
+                                </span>
+
+                            </div>
+
+
+                            <div class="application-bottom">
+
+
+                                <div class="match-area">
+
+                                    <div class="mini-match-circle">
+
+                                        <svg viewBox="0 0 40 40">
+
+                                            <circle
+                                                class="circle-track"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                            <circle
+                                                class="circle-progress"
+                                                data-progress="72"
+                                                cx="20"
+                                                cy="20"
+                                                r="17"
+                                            ></circle>
+
+                                        </svg>
+
+                                        <strong>
+                                            72%
+                                        </strong>
+
+                                    </div>
+
+
+                                    <span>
+                                        AI Match
+                                    </span>
+
+                                </div>
+
+
+                                <button
+                                    class="view-button"
+                                    type="button"
+                                >
+                                    View Details
+                                    <span>→</span>
+                                </button>
+
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- NO RESULTS -->
+
+                <div
+                    class="no-applications"
+                    id="noApplications"
+                >
+
+                    <div class="no-applications-icon">
+                        ◌
+                    </div>
+
+                    <h3>
+                        No applications found
+                    </h3>
+
+                    <p>
+                        There are no applications in this category yet.
+                    </p>
+
+                    <a href="student-browse-internships.html">
+                        Browse Internships →
+                    </a>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SMART TIP
+                 ================================================= -->
+
+            <section class="application-tip">
+
+
+                <div class="tip-icon">
+                    ✦
+                </div>
+
+
+                <div>
+
+                    <span>
+                        SMARTINTERN AI TIP
+                    </span>
+
+                    <h3>
+                        Keep your profile updated.
+                    </h3>
+
+                    <p>
+                        A complete profile and updated resume
+                        can help SmartIntern find more relevant
+                        internship matches.
+                    </p>
+
+                </div>
+
+
+                <a href="student-profile.html">
+                    Update Profile →
+                </a>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NOTIFICATION PANEL
+         ===================================================== -->
+
+    <div
+        class="notification-panel"
+        id="notificationPanel"
+    >
+
+        <div class="notification-panel-header">
+
+            <div>
+
+                <span>
+                    STUDENT PORTAL
+                </span>
+
+                <h3>
+                    Notifications
+                </h3>
+
+            </div>
+
+
+            <button
+                id="closeNotifications"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon purple-icon">
+                ✦
+            </div>
+
+            <div>
+
+                <strong>
+                    New AI Match
+                </strong>
+
+                <p>
+                    A new internship matches your skills by 91%.
+                </p>
+
+                <span>
+                    20 min ago
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon pink-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    Application Update
+                </strong>
+
+                <p>
+                    Your application has been shortlisted.
+                </p>
+
+                <span>
+                    2 hours ago
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="notification-item">
+
+            <div class="notification-icon soft-icon">
+                ◷
+            </div>
+
+            <div>
+
+                <strong>
+                    Interview Reminder
+                </strong>
+
+                <p>
+                    Your TechNova interview is tomorrow.
+                </p>
+
+                <span>
+                    Yesterday
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         GSAP
+         ===================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+
+
+    <!-- JS -->
+
+    <script src="../js/student-my-applications.js"></script>
+    <script src="../js/logout.js"></script>
+
+
+    <script src="../js/notifications.js"></script>
+    <script src="../js/student-data.js"></script>
+    <script src="../js/student-photo.js"></script>
+</body>
+
+</html>

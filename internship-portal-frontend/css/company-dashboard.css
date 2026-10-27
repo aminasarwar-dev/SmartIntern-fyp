@@ -1,0 +1,58 @@
+/* =========================================================
+   SMARTINTERN COMPANY DASHBOARD
+   SAME DESIGN AS STUDENT DASHBOARD
+   ========================================================= */
+
+
+/*
+   Student Dashboard ki complete styling reuse ho rahi hai.
+   Is se sidebar, topbar, cards, columns, responsive layout,
+   fonts, spacing aur animations ka visual exactly same rahega.
+*/
+
+@import url("student-dashboard.css");
+
+
+/* =========================================================
+   COMPANY PAGE VARIABLES
+   Same values as Student Dashboard
+   ========================================================= */
+
+.company-dashboard-page {
+
+    --dashboard-bg: #fffdfb;
+    --dashboard-white: #ffffff;
+
+    --plum: #29232b;
+    --plum-soft: #756a78;
+
+    --purple: #b38bd7;
+    --purple-dark: #8d63ad;
+
+    --pink: #e8a8c7;
+    --pink-dark: #c982a7;
+
+    --border: #eee5ed;
+    --soft-bg: #f8f3f8;
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(179,139,215,.07),
+            transparent 25%
+        ),
+        var(--dashboard-bg);
+
+    color: var(--plum);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    overflow-x: hidden;
+
+}

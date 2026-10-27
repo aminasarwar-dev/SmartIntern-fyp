@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SmartIntern — Analytics</title>
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Existing Admin CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/variables.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/base.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/admin-dashboard.css"
+    >
+
+    <!-- Analytics CSS -->
+    <link
+        rel="stylesheet"
+        href="../css/admin-analytics.css"
+    >
+    <script src="../js/session.js" data-role="admin"></script>
+</head>
+
+
+<body class="admin-dashboard-page analytics-page">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY
+    ====================================================== -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="dashboard-sidebar"
+        id="dashboardSidebar"
+    >
+
+        <div class="sidebar-brand">
+            <a href="index.html">
+                Smart<span>Intern</span>
+            </a>
+        </div>
+
+
+        <div class="sidebar-profile">
+
+            <div class="sidebar-avatar">
+                AD
+            </div>
+
+            <div class="sidebar-profile-info">
+                <strong>Admin</strong>
+                <span>Administrator</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-label">
+                MAIN
+            </p>
+
+
+            <a
+                href="admin-dashboard.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+
+            <a
+                href="admin-students.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">◉</span>
+                <span>Students</span>
+            </a>
+
+
+            <a
+                href="admin-companies.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">◇</span>
+                <span>Companies</span>
+            </a>
+
+
+            <a
+                href="admin-internships.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">▣</span>
+                <span>Internships</span>
+            </a>
+
+
+            <a
+                href="admin-applications.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">▤</span>
+                <span>Applications</span>
+            </a>
+
+
+            <p class="nav-label nav-label-space">
+                MANAGEMENT
+            </p>
+
+
+
+
+            <a
+                href="admin-analytics.html"
+                class="sidebar-link active"
+            >
+                <span class="nav-icon">◎</span>
+                <span>Analytics</span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="sidebar-link"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="dashboard-main">
+
+
+        <!-- =================================================
+             TOPBAR
+        ================================================== -->
+
+        <header class="dashboard-topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                type="button"
+                aria-label="Open menu"
+            >
+                ☰
+            </button>
+
+
+            <div class="topbar-title">
+
+                <span>
+                    Admin Portal
+                </span>
+
+                <h1>
+                    Analytics
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <button
+                    class="notification-button"
+                    id="notificationButton"
+                    type="button"
+                    aria-label="Notifications"
+                >
+
+                    ♧
+
+                    <span class="notification-dot"></span>
+
+                </button>
+
+
+                <div class="topbar-profile">
+
+                    <div class="topbar-avatar">
+                        AD
+                    </div>
+
+                    <div class="topbar-profile-text">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Administrator
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             NOTIFICATION PANEL
+        ================================================== -->
+
+        <div
+            class="notification-panel"
+            id="notificationPanel"
+        >
+
+            <div class="notification-header">
+
+                <div>
+
+                    <span class="notification-eyebrow">
+                        ADMIN CENTER
+                    </span>
+
+                    <h3>
+                        Notifications
+                    </h3>
+
+                </div>
+
+
+                <button
+                    class="close-notification"
+                    id="closeNotification"
+                    type="button"
+                    aria-label="Close notifications"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="notification-list">
+
+
+                <div class="notification-item unread">
+
+                    <div class="notification-icon purple">
+                        ✓
+                    </div>
+
+                    <div class="notification-text">
+
+                        <strong>
+                            New verification request
+                        </strong>
+
+                        <span>
+                            A company verification request
+                            needs your review.
+                        </span>
+
+                        <small>
+                            12 min ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon pink">
+                        +
+                    </div>
+
+                    <div class="notification-text">
+
+                        <strong>
+                            New internship posted
+                        </strong>
+
+                        <span>
+                            A new internship opportunity
+                            has been added.
+                        </span>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item">
+
+                    <div class="notification-icon lavender">
+                        ◎
+                    </div>
+
+                    <div class="notification-text">
+
+                        <strong>
+                            Analytics updated
+                        </strong>
+
+                        <span>
+                            Platform performance data
+                            has been refreshed.
+                        </span>
+
+                        <small>
+                            3 hours ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             ANALYTICS CONTENT
+        ================================================== -->
+
+        <div class="analytics-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="analytics-page-header">
+
+                <div class="analytics-heading">
+
+                    <span class="eyebrow">
+                        PLATFORM ANALYTICS
+                    </span>
+
+                    <h2>
+                        Understand your
+                        <em>platform.</em>
+                    </h2>
+
+                    <p>
+                        Monitor platform growth, internship activity,
+                        applications, and student engagement from one
+                        central analytics view.
+                    </p>
+
+                </div>
+
+
+                <div class="analytics-header-actions">
+
+                    <button
+                        class="secondary-action"
+                        id="refreshAnalyticsBtn"
+                        type="button"
+                    >
+                        <span>↻</span>
+                        Refresh
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- STAT CARDS -->
+
+            <section class="analytics-stat-grid">
+
+
+                <article class="analytics-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span>
+                            Total Students
+                        </span>
+
+                        <div class="stat-icon purple">
+                            ◉
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        1,248
+                    </strong>
+
+                    <p>
+                        <b>+18.4%</b>
+                        from last month
+                    </p>
+
+                </article>
+
+
+                <article class="analytics-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span>
+                            Total Companies
+                        </span>
+
+                        <div class="stat-icon pink">
+                            ◇
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        186
+                    </strong>
+
+                    <p>
+                        <b>+12.7%</b>
+                        from last month
+                    </p>
+
+                </article>
+
+
+                <article class="analytics-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span>
+                            Internships
+                        </span>
+
+                        <div class="stat-icon lavender">
+                            ▣
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        186
+                    </strong>
+
+                    <p>
+                        <b>+15.2%</b>
+                        this month
+                    </p>
+
+                </article>
+
+
+                <article class="analytics-stat-card">
+
+                    <div class="stat-card-top">
+
+                        <span>
+                            Applications
+                        </span>
+
+                        <div class="stat-icon rose">
+                            ▤
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        3,842
+                    </strong>
+
+                    <p>
+                        <b>+21.6%</b>
+                        from last month
+                    </p>
+
+                </article>
+
+            </section>
+
+
+            <!-- CHART ROW -->
+
+            <section class="analytics-chart-grid">
+
+
+                <!-- PLATFORM GROWTH -->
+
+                <article class="analytics-card growth-card">
+
+                    <div class="analytics-card-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                PLATFORM GROWTH
+                            </span>
+
+                            <h3>
+                                User Growth
+                            </h3>
+
+                            <p>
+                                Students and companies registered
+                                over the last six months.
+                            </p>
+
+                        </div>
+
+
+                        <div class="chart-legend">
+
+                            <span>
+                                <i class="legend-dot purple-dot"></i>
+                                Students
+                            </span>
+
+                            <span>
+                                <i class="legend-dot pink-dot"></i>
+                                Companies
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="growth-chart">
+
+                        <div class="chart-y-axis">
+
+                            <span>1.4k</span>
+                            <span>1.1k</span>
+                            <span>800</span>
+                            <span>500</span>
+                            <span>200</span>
+                            <span>0</span>
+
+                        </div>
+
+
+                        <div class="chart-area">
+
+                            <div class="chart-grid-lines">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+
+                            <div class="growth-bars">
+
+                                <div class="growth-group">
+
+                                    <div
+                                        class="growth-bar students-bar"
+                                        style="height: 45%;"
+                                    ></div>
+
+                                    <div
+                                        class="growth-bar companies-bar"
+                                        style="height: 25%;"
+                                    ></div>
+
+                                    <span>
+                                        May
+                                    </span>
+
+                                </div>
+
+
+                                <div class="growth-group">
+
+                                    <div
+                                        class="growth-bar students-bar"
+                                        style="height: 54%;"
+                                    ></div>
+
+                                    <div
+                                        class="growth-bar companies-bar"
+                                        style="height: 31%;"
+                                    ></div>
+
+                                    <span>
+                                        Jun
+                                    </span>
+
+                                </div>
+
+
+                                <div class="growth-group">
+
+                                    <div
+                                        class="growth-bar students-bar"
+                                        style="height: 64%;"
+                                    ></div>
+
+                                    <div
+                                        class="growth-bar companies-bar"
+                                        style="height: 39%;"
+                                    ></div>
+
+                                    <span>
+                                        Jul
+                                    </span>
+
+                                </div>
+
+
+                                <div class="growth-group">
+
+                                    <div
+                                        class="growth-bar students-bar"
+                                        style="height: 73%;"
+                                    ></div>
+
+                                    <div
+                                        class="growth-bar companies-bar"
+                                        style="height: 48%;"
+                                    ></div>
+
+                                    <span>
+                                        Aug
+                                    </span>
+
+                                </div>
+
+
+                                <div class="growth-group">
+
+                                    <div
+                                        class="growth-bar students-bar"
+                                        style="height: 84%;"
+                                    ></div>
+
+                                    <div
+                                        class="growth-bar companies-bar"
+                                        style="height: 58%;"
+                                    ></div>
+
+                                    <span>
+                                        Sep
+                                    </span>
+
+                                </div>
+
+
+                                <div class="growth-group">
+
+                                    <div
+                                        class="growth-bar students-bar"
+                                        style="height: 94%;"
+                                    ></div>
+
+                                    <div
+                                        class="growth-bar companies-bar"
+                                        style="height: 70%;"
+                                    ></div>
+
+                                    <span>
+                                        Oct
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- APPLICATION STATUS -->
+
+                <article class="analytics-card application-card">
+
+                    <div class="analytics-card-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                APPLICATION STATUS
+                            </span>
+
+                            <h3>
+                                Applications
+                            </h3>
+
+                            <p>
+                                Current application outcomes
+                                across the platform.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="application-chart">
+
+                        <div class="donut-chart">
+
+                            <div class="donut-center">
+
+                                <strong>
+                                    3,842
+                                </strong>
+
+                                <span>
+                                    Total
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="application-legend">
+
+
+                            <div class="legend-item">
+
+                                <span class="legend-color purple"></span>
+
+                                <div>
+                                    <strong>1,842</strong>
+                                    <span>Applied</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-item">
+
+                                <span class="legend-color pink"></span>
+
+                                <div>
+                                    <strong>864</strong>
+                                    <span>Shortlisted</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-item">
+
+                                <span class="legend-color lavender"></span>
+
+                                <div>
+                                    <strong>496</strong>
+                                    <span>Interview</span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-item">
+
+                                <span class="legend-color rose"></span>
+
+                                <div>
+                                    <strong>640</strong>
+                                    <span>Selected</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- BOTTOM ANALYTICS -->
+
+            <section class="analytics-bottom-grid">
+
+
+                <!-- INTERNSHIP ACTIVITY -->
+
+                <article class="analytics-card activity-card">
+
+                    <div class="analytics-card-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                INTERNSHIP ACTIVITY
+                            </span>
+
+                            <h3>
+                                Popular Categories
+                            </h3>
+
+                            <p>
+                                Most active internship categories
+                                on SmartIntern.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="category-list">
+
+
+                        <div class="category-row">
+
+                            <div class="category-info">
+
+                                <strong>
+                                    Software Development
+                                </strong>
+
+                                <span>
+                                    68 internships
+                                </span>
+
+                            </div>
+
+                            <div class="category-value">
+                                68
+                            </div>
+
+                            <div class="category-progress">
+                                <span
+                                    style="width: 88%;"
+                                ></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-row">
+
+                            <div class="category-info">
+
+                                <strong>
+                                    AI & Machine Learning
+                                </strong>
+
+                                <span>
+                                    42 internships
+                                </span>
+
+                            </div>
+
+                            <div class="category-value">
+                                42
+                            </div>
+
+                            <div class="category-progress">
+                                <span
+                                    style="width: 67%;"
+                                ></span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-row">
+
+                            <div class="category-info">
+
+                                <strong>
+                                    UI / UX Design
+                                </strong>
+
+                                <span>
+                                    31 internships
+                                </span>
+
+                            </div>
+
+                            <div class="category-value">
+                                31
+                            </div>
+
+                            <div class="category-progress">
+                                <span
+                                    style="width: 52%;"
+                                ></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-row">
+
+                            <div class="category-info">
+
+                                <strong>
+                                    Data Science
+                                </strong>
+
+                                <span>
+                                    26 internships
+                                </span>
+
+                            </div>
+
+                            <div class="category-value">
+                                26
+                            </div>
+
+                            <div class="category-progress">
+                                <span
+                                    style="width: 43%;"
+                                ></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="category-row">
+
+                            <div class="category-info">
+
+                                <strong>
+                                    Marketing
+                                </strong>
+
+                                <span>
+                                    19 internships
+                                </span>
+
+                            </div>
+
+                            <div class="category-value">
+                                19
+                            </div>
+
+                            <div class="category-progress">
+                                <span
+                                    style="width: 34%;"
+                                ></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- AI MATCHING -->
+
+                <article class="analytics-card ai-card">
+
+                    <div class="analytics-card-header">
+
+                        <div>
+
+                            <span class="section-label">
+                                AI MATCHING
+                            </span>
+
+                            <h3>
+                                Matching Performance
+                            </h3>
+
+                            <p>
+                                AI-powered internship matching
+                                performance.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ai-performance">
+
+
+                        <div class="ai-score">
+
+                            <div class="ai-circle">
+
+                                <div class="ai-circle-inner">
+
+                                    <strong>
+                                        87%
+                                    </strong>
+
+                                    <span>
+                                        Match Accuracy
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="ai-metrics">
+
+                            <div class="ai-metric">
+
+                                <span>
+                                    AI Matches
+                                </span>
+
+                                <strong>
+                                    2,486
+                                </strong>
+
+                            </div>
+
+
+                            <div class="ai-metric">
+
+                                <span>
+                                    Successful Matches
+                                </span>
+
+                                <strong>
+                                    1,924
+                                </strong>
+
+                            </div>
+
+
+                            <div class="ai-metric">
+
+                                <span>
+                                    Match Rate
+                                </span>
+
+                                <strong>
+                                    77.4%
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- INSIGHT -->
+
+            <section class="analytics-insight-card">
+
+                <div class="insight-icon">
+                    ✦
+                </div>
+
+                <div class="insight-content">
+
+                    <span>
+                        PLATFORM INSIGHT
+                    </span>
+
+                    <h3>
+                        Student engagement is growing steadily.
+                    </h3>
+
+                    <p>
+                        Applications and AI matches are showing
+                        positive month-over-month growth, while
+                        software development remains the most active
+                        internship category.
+                    </p>
+
+                </div>
+
+                <div class="insight-value">
+
+                    <strong>
+                        +21.6%
+                    </strong>
+
+                    <span>
+                        application growth
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- GSAP -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+
+
+    <!-- Analytics JS -->
+
+    <script
+        src="../js/admin-analytics.js"
+    ></script>
+
+    <script src="../js/notifications.js"></script>
+</body>
+
+</html>

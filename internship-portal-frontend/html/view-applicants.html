@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartIntern — Applicants</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/company-dashboard.css">
+    <link rel="stylesheet" href="../css/view-applicants.css">
+    <link rel="stylesheet" href="../css/company-access.css">
+    <script src="../js/session.js" data-role="company"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/company-access.js"></script>
+</head>
+
+<body class="company-dashboard-page applicants-page">
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- SAME COMPANY SIDEBAR -->
+    <aside class="dashboard-sidebar" id="dashboardSidebar">
+
+        <div class="sidebar-brand">
+            <a href="index.html">Smart<span>Intern</span></a>
+        </div>
+
+        <div class="sidebar-profile">
+            <div class="sidebar-avatar" id="sidebarCompanyAvatar">C</div>
+            <div class="sidebar-profile-info">
+                <strong id="sidebarCompanyName">Company</strong>
+                <span>Company</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-label">MAIN</p>
+
+            <a href="company-dashboard.html" class="sidebar-link">
+                <span class="nav-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="post-internship.html" class="sidebar-link">
+                <span class="nav-icon">＋</span>
+                <span>Post Internship</span>
+            </a>
+
+            <a href="manage-internships.html" class="sidebar-link">
+                <span class="nav-icon">▣</span>
+                <span>Manage Internships</span>
+            </a>
+
+            <a href="view-applicants.html" class="sidebar-link active" aria-current="page">
+                <span class="nav-icon">◇</span>
+                <span>Applicants</span>
+            </a>
+
+            <p class="nav-label nav-label-space">AI TOOLS</p>
+
+            <a href="ai-candidate-matches.html" class="sidebar-link">
+                <span class="nav-icon">✦</span>
+                <span>AI Candidate Matches</span>
+            </a>
+
+            <a href="hiring-analytics.html" class="sidebar-link">
+                <span class="nav-icon">◎</span>
+                <span>Hiring Analytics</span>
+            </a>
+
+            <p class="nav-label nav-label-space">ACCOUNT</p>
+
+            <a href="company-profile.html" class="sidebar-link">
+                <span class="nav-icon">◯</span>
+                <span>Company Profile</span>
+            </a>
+
+            <a href="login.html" class="sidebar-link" id="logoutLink">
+                <span class="nav-icon">↪</span>
+                <span>Logout</span>
+            </a>
+        </nav>
+
+    </aside>
+
+    <!-- MAIN -->
+    <main class="dashboard-main">
+
+        <!-- SAME COMPANY NAVBAR -->
+        <header class="dashboard-topbar">
+
+            <button class="mobile-menu" id="mobileMenu" type="button"
+                aria-label="Open navigation">☰</button>
+
+            <div class="topbar-title">
+                <span>COMPANY WORKSPACE</span>
+                <h1>Applicants</h1>
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="notification-button" id="notificationButton"
+                    type="button" aria-label="Notifications" aria-expanded="false">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="topbar-profile">
+                    <div class="topbar-avatar" id="topbarCompanyAvatar">C</div>
+                    <div class="topbar-profile-text">
+                        <strong id="topbarCompanyName">Company</strong>
+                        <span>Company account</span>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <div class="dashboard-content applicants-content">
+
+            <!-- COMPACT DASHBOARD-STYLE HERO -->
+            <section class="dashboard-welcome applicants-welcome">
+
+                <div class="welcome-copy">
+                    <span class="welcome-small">YOUR TALENT PIPELINE</span>
+
+                    <h2>
+                        Meet your next
+                        <em>great talent.</em>
+                    </h2>
+
+                    <p>
+                        Review applications, discover promising candidates
+                        and keep your hiring decisions organized in one place.
+                    </p>
+
+                    <div class="welcome-actions">
+                        <a href="#applicantDirectory" class="primary-dashboard-button">
+                            Explore Applicants <span>→</span>
+                        </a>
+
+                        <a href="ai-candidate-matches.html" class="secondary-dashboard-button">
+                            AI Candidate Matches
+                        </a>
+                    </div>
+                </div>
+
+                <div class="welcome-visual applicants-visual" aria-hidden="true">
+                    <div class="visual-orbit orbit-one"></div>
+                    <div class="visual-orbit orbit-two"></div>
+
+                    <div class="applicant-hero-card">
+                        <div class="applicant-hero-icon">✦</div>
+                        <span>CANDIDATE REVIEW</span>
+                        <h3>Talent<br><em>starts here.</em></h3>
+                        <div class="hero-line"></div>
+                        <div class="hero-line short"></div>
+                        <div class="hero-line shorter"></div>
+                    </div>
+
+                    <div class="applicant-floating-note">
+                        <span>✓</span>
+                        <div>
+                            <strong>Find the right fit</strong>
+                            <small>One candidate at a time</small>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- SECTION HEADING -->
+            <section class="applicants-section" id="applicantDirectory">
+
+                <div class="applicants-section-heading">
+                    <div>
+                        <span class="section-eyebrow">HIRING OVERVIEW</span>
+                        <h2>Your <em>applicants.</em></h2>
+                        <p>Search candidates and review their current application status.</p>
+                    </div>
+
+                    <span class="demo-label">Demo records</span>
+                </div>
+
+                <!-- STATISTICS -->
+                <section class="applicant-stats">
+
+                    <article class="applicant-stat-card">
+                        <div class="applicant-stat-top">
+                            <span>Total Applicants</span>
+                            <span class="applicant-stat-icon purple">◇</span>
+                        </div>
+                        <strong id="totalApplicants">0</strong>
+                        <small>Applications received</small>
+                    </article>
+
+                    <article class="applicant-stat-card">
+                        <div class="applicant-stat-top">
+                            <span>Under Review</span>
+                            <span class="applicant-stat-icon pink">◷</span>
+                        </div>
+                        <strong id="reviewApplicants">0</strong>
+                        <small>Awaiting review</small>
+                    </article>
+
+                    <article class="applicant-stat-card">
+                        <div class="applicant-stat-top">
+                            <span>Shortlisted</span>
+                            <span class="applicant-stat-icon plum">✦</span>
+                        </div>
+                        <strong id="shortlistedApplicants">0</strong>
+                        <small>Promising candidates</small>
+                    </article>
+
+                    <article class="applicant-stat-card">
+                        <div class="applicant-stat-top">
+                            <span>Selected</span>
+                            <span class="applicant-stat-icon soft">✓</span>
+                        </div>
+                        <strong id="selectedApplicants">0</strong>
+                        <small>Marked as selected</small>
+                    </article>
+
+                </section>
+
+                <!-- SEARCH AND FILTERS -->
+                <section class="applicant-toolbar">
+
+                    <div class="applicant-toolbar-heading">
+                        <div>
+                            <h3>Candidate directory</h3>
+                            <p id="applicantResultsText">Loading applicants...</p>
+                        </div>
+                        <span class="result-count" id="filteredApplicantCount">0 applicants</span>
+                    </div>
+
+                    <div class="applicant-filters">
+
+                        <label class="applicant-search">
+                            <span aria-hidden="true">⌕</span>
+                            <input type="search" id="applicantSearch"
+                                placeholder="Search name, skill or email..."
+                                aria-label="Search applicants">
+                        </label>
+
+                        <select id="internshipFilter" aria-label="Filter by internship">
+                            <option value="All">All internships</option>
+                        </select>
+
+                        <select id="applicantStatusFilter" aria-label="Filter by status">
+                            <option value="All">All statuses</option>
+                            <option value="Under Review">Under Review</option>
+                            <option value="Shortlisted">Shortlisted</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Selected">Selected</option>
+                            <option value="Rejected">Rejected</option>
+                        </select>
+
+                        <select id="applicantSort" aria-label="Sort applicants">
+                            <option value="newest">Newest first</option>
+                            <option value="oldest">Oldest first</option>
+                            <option value="name">Name A–Z</option>
+                            <option value="match">Highest match</option>
+                        </select>
+
+                        <button class="clear-filters-button" id="clearApplicantFilters" type="button">
+                            Reset
+                        </button>
+
+                    </div>
+                </section>
+
+                <!-- APPLICANT CARDS -->
+                <section class="applicant-list" id="applicantList"
+                    aria-live="polite"></section>
+
+                <div class="applicants-empty" id="applicantsEmptyState" hidden>
+                    <div class="empty-icon">⌕</div>
+                    <h3>No applicants found</h3>
+                    <p>Try changing your search or filters.</p>
+                    <button type="button" id="resetEmptyApplicants">Clear filters</button>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- NOTIFICATION PANEL -->
+    <div class="notification-panel" id="notificationPanel" hidden>
+        <div class="notification-panel-head">
+            <h3>Notifications</h3>
+            <button id="closeNotifications" type="button"
+                aria-label="Close notifications">×</button>
+        </div>
+
+        <div class="panel-notification">
+            <div>✦</div>
+            <section>
+                <strong>Applicant activity</strong>
+                <p>New application activity will appear here when connected to the backend.</p>
+            </section>
+        </div>
+
+        <div class="panel-notification">
+            <div>✓</div>
+            <section>
+                <strong>Hiring updates</strong>
+                <p>Candidate status updates will appear here.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- CUSTOM CONFIRMATION MODAL -->
+    <div class="applicant-modal-backdrop" id="applicantModal" hidden>
+        <section class="applicant-confirm-modal" role="dialog"
+            aria-modal="true" aria-labelledby="applicantModalTitle"
+            aria-describedby="applicantModalMessage">
+
+            <div class="modal-symbol" id="applicantModalIcon">✦</div>
+            <h3 id="applicantModalTitle">Confirm action</h3>
+            <p id="applicantModalMessage">Are you sure?</p>
+
+            <div class="modal-actions">
+                <button type="button" id="cancelApplicantAction" class="modal-cancel">
+                    Cancel
+                </button>
+                <button type="button" id="confirmApplicantAction" class="modal-confirm">
+                    Confirm
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <div class="applicant-toast" id="applicantToast" role="status" hidden></div>
+
+    <script src="../js/view-applicants.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/notifications.js"></script>
+</body>
+</html>
