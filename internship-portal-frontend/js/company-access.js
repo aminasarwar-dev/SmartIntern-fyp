@@ -188,7 +188,7 @@
 
     function goBlocked() {
         session.clear();
-        window.location.replace("login.html?notice=blocked");
+        window.location.replace("/login?notice=blocked");
     }
 
     if (status === "blocked") {
@@ -201,7 +201,7 @@
             sessionStorage.setItem("smartInternLockedNotice", "1");
         } catch (error) { /* ignore */ }
 
-        window.location.replace("company-dashboard.html");
+        window.location.replace("/company-dashboard");
         return;
     }
 
@@ -294,7 +294,7 @@
 
             if (page !== "company-profile") {
                 const profileLink = el("a", "vb-btn", "View company profile");
-                profileLink.href = "company-profile.html";
+                profileLink.href = "/company-profile";
                 actions.appendChild(profileLink);
             }
 
@@ -548,7 +548,7 @@
             }
 
             if (status !== "approved" && LOCKED_PAGES.includes(page)) {
-                window.location.replace("company-dashboard.html");
+                window.location.replace("/company-dashboard");
                 return;
             }
         }
@@ -586,7 +586,7 @@
         } catch (error) {
             if (error.status === 401) {
                 session.clear();
-                window.location.replace("login.html");
+                window.location.replace("/login");
                 return;
             }
 
@@ -626,7 +626,7 @@
                 sessionStorage.setItem("smartInternLockedNotice", "1");
             } catch (error) { /* ignore */ }
 
-            window.location.replace("company-dashboard.html");
+            window.location.replace("/company-dashboard");
             return;
         }
 
@@ -787,7 +787,7 @@
             } catch (failure) {
                 if (failure.status === 401) {
                     session.clear();
-                    window.location.replace("login.html");
+                    window.location.replace("/login");
                     return;
                 }
 

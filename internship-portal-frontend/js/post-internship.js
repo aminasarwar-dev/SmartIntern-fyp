@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.removeItem("smartInternRole");
         if (window.SmartInternSession) { window.SmartInternSession.clear(); }
 
-        window.location.href = "login.html";
+        window.location.href = "/login";
     });
 
     document.addEventListener("keydown", event => {
@@ -413,7 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 feedback.scrollIntoView({ behavior: "smooth", block: "center" });
 
                 window.setTimeout(() => {
-                    window.location.href = "manage-internships.html";
+                    window.location.href = "/manage-internships";
                 }, 1200);
 
                 return;
@@ -431,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (failure) {
             if (failure.status === 401) {
                 window.SmartInternSession?.clear();
-                window.location.replace("login.html");
+                window.location.replace("/login");
                 return;
             }
 
@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* EDIT MODE: post-internship.html?edit=ID */
+    /* EDIT MODE: /post-internship?edit=ID */
 
     const editParam = new URLSearchParams(window.location.search).get("edit");
     const editId = /^\d+$/.test(editParam || "") ? editParam : "";
@@ -533,7 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearButton.type = "button";
         clearButton.textContent = "Cancel";
         clearButton.addEventListener("click", () => {
-            window.location.href = "manage-internships.html";
+            window.location.href = "/manage-internships";
         });
 
         showFeedback("Loading your internship...", "info");
@@ -554,7 +554,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (failure) {
             if (failure.status === 401) {
                 window.SmartInternSession?.clear();
-                window.location.replace("login.html");
+                window.location.replace("/login");
                 return;
             }
 

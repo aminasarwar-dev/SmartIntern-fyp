@@ -402,7 +402,7 @@ function initLogout() {
 
 
             window.location.href =
-                "login.html";
+                "/login";
 
         }
     );

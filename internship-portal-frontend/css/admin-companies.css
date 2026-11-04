@@ -8,22 +8,13 @@
     --company-bg: #fffdfb;
     --company-white: #ffffff;
 
-    --plum: #29232b;
-    --plum-soft: #756a78;
 
-    --purple: #b38bd7;
-    --purple-dark: #8d63ad;
     --purple-soft: #eee4f6;
 
-    --pink: #e8a8c7;
-    --pink-dark: #c982a7;
     --pink-soft: #faedf4;
 
-    --lavender: #d9c4e8;
-    --rose: #efd0dc;
 
     --border: #eee5ed;
-    --soft-bg: #f8f3f8;
 
     background: var(--company-bg);
 }

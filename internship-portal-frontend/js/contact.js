@@ -4,7 +4,7 @@
 
    BACKEND: when POST /contact exists, set
    CONTACT_API_ENABLED = true and add
-   <script src="../js/api.js"></script> to index.html
+   <script src="../js/api.js"></script> to /
    (the body below is what the route should receive).
    Until then the message is only kept in this browser.
 ===================================================== */

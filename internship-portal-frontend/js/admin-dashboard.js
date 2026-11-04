@@ -10,7 +10,7 @@ async function loadRealDashboardData() {
     const token = sessionStorage.getItem("smartInternAdminToken");
 
     if (!token) {
-        window.location.href = "admin-login.html";
+        window.location.href = "/admin-login";
         return;
     }
 
@@ -117,7 +117,7 @@ function renderPendingCompanies(companies) {
         button.dataset.action = "review";
         button.textContent = "→";
         button.addEventListener("click", () => {
-            window.location.href = "admin-companies.html?status=pending";
+            window.location.href = "/admin-companies?status=pending";
         });
 
         card.append(logo, info, button);

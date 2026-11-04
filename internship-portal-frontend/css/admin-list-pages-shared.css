@@ -1,0 +1,399 @@
+/* =========================================================
+   SMARTINTERN ADMIN — LIST PAGES SHARED STYLES
+   Students and Internships admin pages use the same layout
+   (stat cards, filters, table). These rules were identical in
+   admin-students.css and admin-internships.css.
+   ========================================================= */
+
+.primary-action,
+.secondary-action {
+    height: 43px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        background .2s ease;
+}
+
+.primary-action {
+    border: 1px solid var(--plum);
+    background: var(--plum);
+    color: #fff;
+}
+
+.primary-action:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 10px 22px rgba(41, 35, 43, .14);
+}
+
+.secondary-action {
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--plum);
+}
+
+.secondary-action:hover {
+    transform: translateY(-2px);
+    border-color: var(--purple);
+    background: var(--soft-bg);
+}
+
+.primary-action span,
+.secondary-action span {
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+.stat-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-label {
+    color: var(--plum-soft);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.stat-icon {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    font-size: 16px;
+}
+
+.purple-icon {
+    color: var(--purple-dark);
+    background: var(--purple-soft);
+}
+
+.pink-icon {
+    color: var(--pink-dark);
+    background: var(--pink-soft);
+}
+
+.lavender-icon {
+    color: var(--purple-dark);
+    background: #f0e9f5;
+}
+
+.rose-icon {
+    color: #a76d83;
+    background: #f7e8ee;
+}
+
+.stat-number {
+    display: block;
+    margin-top: 14px;
+    font-family: "Playfair Display", serif;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.stat-footer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 12px;
+    font-size: 11px;
+    color: #958a97;
+}
+
+.stat-positive {
+    color: #8d63ad;
+    font-weight: 700;
+}
+
+.stat-warning {
+    color: #ad7189;
+    font-weight: 600;
+}
+
+.management-card-header {
+    padding: 27px 28px 22px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--purple-dark);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.management-card-header h3 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.management-card-header p {
+    margin: 6px 0 0;
+    color: var(--plum-soft);
+    font-size: 12px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #988c9b;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.filter-group select {
+    padding: 0 12px;
+    cursor: pointer;
+}
+
+.application-number {
+    color: var(--plum);
+    font-size: 13px;
+}
+
+.status-badge.active {
+    color: #806096;
+    background: #eee7f4;
+}
+
+.status-badge.pending {
+    color: #a77487;
+    background: #f8eaf0;
+}
+
+.empty-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: var(--soft-bg);
+    color: var(--purple-dark);
+    font-size: 22px;
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pagination-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e9e1e9;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--plum-soft);
+    font-family: "DM Sans", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.pagination-btn:hover:not(.disabled),
+.pagination-btn.active {
+    border-color: var(--purple);
+    background: var(--purple-soft);
+    color: var(--purple-dark);
+}
+
+.pagination-btn.disabled {
+    opacity: .4;
+    cursor: default;
+}
+
+.drawer-header {
+    min-height: 76px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.drawer-header > div span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--purple-dark);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.drawer-header h2 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.drawer-header button {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fff;
+    color: var(--plum-soft);
+    font-size: 21px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.drawer-header button:hover {
+    background: var(--soft-bg);
+    color: var(--plum);
+}
+
+.drawer-content {
+    padding: 25px;
+    overflow-y: auto;
+}
+
+.drawer-section {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.drawer-section:last-child {
+    border-bottom: 0;
+}
+
+.drawer-section-label {
+    display: block;
+    margin-bottom: 15px;
+    color: #968b98;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.drawer-info-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 8px 0;
+}
+
+.drawer-info-row span {
+    color: #978d99;
+    font-size: 11px;
+}
+
+.drawer-info-row strong {
+    color: var(--plum);
+    font-size: 11px;
+    text-align: right;
+}
+
+.drawer-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+}
+
+.drawer-mini-grid > div {
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fdfafd;
+}
+
+.drawer-mini-grid strong {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+}
+
+.drawer-mini-grid span {
+    display: block;
+    margin-top: 3px;
+    color: #978d99;
+    font-size: 9px;
+}
+
+.drawer-action {
+    width: 100%;
+    min-height: 43px;
+    padding: 0 14px;
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: #fff;
+    color: var(--plum);
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.drawer-action:hover {
+    border-color: var(--purple);
+    background: var(--soft-bg);
+}
+
+.drawer-action.danger-action:hover {
+    border-color: #dfbdca;
+    background: #fdf2f6;
+    color: #9d637b;
+}
+
+.notification-panel {
+    position: fixed;
+    top: 88px;
+    right: 30px;
+    width: min(360px, calc(100vw - 40px));
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow:
+        0 25px 70px rgba(60,40,65,.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+    z-index: 80;
+}
+
+.notification-item:hover {
+    background: #fcf9fc;
+}
+
+.notification-item.unread {
+    background: #fdfafd;
+}

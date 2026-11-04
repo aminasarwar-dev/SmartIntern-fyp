@@ -1,3 +1,5 @@
+@import url("admin-shared.css");
+
 /* =========================================================
    SMARTINTERN ADMIN — ANALYTICS PAGE
    Same Admin Shell / Analytics Content
@@ -5,25 +7,13 @@
 
 .analytics-page {
 
-    --dashboard-bg: #fffdfb;
-    --dashboard-white: #ffffff;
 
-    --plum: #29232b;
-    --plum-soft: #756a78;
-
-    --purple: #b38bd7;
-    --purple-dark: #8d63ad;
     --purple-soft: #eee4f6;
 
-    --pink: #e8a8c7;
-    --pink-dark: #c982a7;
     --pink-soft: #faedf4;
 
-    --lavender: #d9c4e8;
-    --rose: #efd0dc;
 
     --border: #eee5ed;
-    --soft-bg: #f8f3f8;
 
     background: var(--dashboard-bg);
     color: var(--plum);
@@ -68,22 +58,6 @@
 .analytics-heading {
 
     max-width: 720px;
-}
-
-
-.eyebrow {
-
-    display: block;
-
-    margin-bottom: 9px;
-
-    color: var(--purple-dark);
-
-    font-size: 8px;
-
-    font-weight: 700;
-
-    letter-spacing: .15em;
 }
 
 
@@ -1253,117 +1227,6 @@
         transform .2s ease;
 }
 
-.notification-header {
-
-    display: flex;
-
-    align-items: flex-start;
-
-    justify-content: space-between;
-
-    margin-bottom: 13px;
-}
-
-
-.notification-eyebrow {
-
-    display: block;
-
-    margin-bottom: 4px;
-
-    color: var(--purple-dark);
-
-    font-size: 6px;
-
-    font-weight: 700;
-
-    letter-spacing: .13em;
-}
-
-
-.notification-header h3 {
-
-    margin: 0;
-
-    color: var(--plum);
-
-    font-family: "Playfair Display", Georgia, serif;
-
-    font-size: 18px;
-
-    font-weight: 500;
-}
-
-
-.close-notification {
-
-    width: 28px;
-    height: 28px;
-
-    display: grid;
-
-    place-items: center;
-
-    border: 1px solid var(--border);
-
-    border-radius: 8px;
-
-    background: white;
-
-    color: #877b88;
-
-    font-size: 17px;
-
-    cursor: pointer;
-}
-
-
-.notification-list {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 5px;
-}
-
-
-.notification-item {
-
-    display: flex;
-
-    gap: 10px;
-
-    padding: 10px;
-
-    border-radius: 11px;
-}
-
-
-.notification-item.unread {
-
-    background: #faf5fa;
-}
-
-
-.notification-icon {
-
-    width: 29px;
-    height: 29px;
-
-    flex-shrink: 0;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 9px;
-
-    font-size: 10px;
-
-    font-weight: 700;
-}
-
 
 .notification-icon.purple {
 
@@ -1386,42 +1249,6 @@
     background: #f0e8f5;
 
     color: #9271aa;
-}
-
-
-.notification-text {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 3px;
-}
-
-
-.notification-text strong {
-
-    color: var(--plum);
-
-    font-size: 8px;
-}
-
-
-.notification-text span {
-
-    color: #948a96;
-
-    font-size: 7px;
-
-    line-height: 1.45;
-}
-
-
-.notification-text small {
-
-    color: #aaa0ab;
-
-    font-size: 6px;
 }
 
 

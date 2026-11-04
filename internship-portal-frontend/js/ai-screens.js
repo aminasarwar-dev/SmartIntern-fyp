@@ -3,11 +3,11 @@
    ---------------------------------------------------------
    Puts the AI pieces (js/ai-ui.js) on the pages:
 
-     student-profile.html            editable skill chips
-     resume-upload.html              loading -> chips -> confirm
-     student-browse-internships.html match badge, missing skills,
+     /student-profile            editable skill chips
+     /resume-upload              loading -> chips -> confirm
+     /student-browse-internships match badge, missing skills,
                                      sorted by match, empty hint
-     ai-candidate-matches.html       ranked by match + the note
+     /ai-candidate-matches       ranked by match + the note
 
    Until the AI routes exist these screens use SmartAI.config.useMock.
    The match on the browse page is computed in the browser from each

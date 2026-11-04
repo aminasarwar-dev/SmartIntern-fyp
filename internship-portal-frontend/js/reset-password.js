@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
        TOKEN + ROLE FROM URL
-       Link format: reset-password.html?token=XYZ&role=company
+       Link format: /reset-password?token=XYZ&role=company
        ===================================================== */
 
     const urlParams = new URLSearchParams(window.location.search);
     const resetToken = urlParams.get("token");
-    const role = urlParams.get("role") === "company" ? "company" : "student";
+    // (role in the link is no longer needed to choose the endpoint)
 
     /* =====================================================
        SHOW / HIDE PASSWORD
@@ -93,9 +93,9 @@ document.addEventListener("DOMContentLoaded", () => {
            BACKEND CALL
            ================================================= */
 
-        const endpoint = role === "company"
-            ? "/company/reset-password"
-            : "/student/reset-password";
+        // One backend route for both roles: POST /auth/reset-password
+        // (the token in the link already says whose password it is)
+        const endpoint = "/auth/reset-password";
 
         const submitButton = form.querySelector("button[type='submit']");
         const originalButtonHTML = submitButton ? submitButton.innerHTML : "";
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             setTimeout(() => {
-                window.location.href = "login.html";
+                window.location.href = "/login";
             }, 2000);
 
         }

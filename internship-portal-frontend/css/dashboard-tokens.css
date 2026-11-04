@@ -1,0 +1,18 @@
+/* =========================================================
+   SMARTINTERN — DASHBOARD COLOUR TOKENS
+   Used by every student / company / admin page.
+   (These values were repeated inside each page stylesheet.)
+   Linked in the HTML right after variables.css.
+   ========================================================= */
+
+:root {
+    --dashboard-bg: #fffdfb;
+    --dashboard-white: #ffffff;
+    --lavender: #d9c4e8;
+    --pink-dark: #c982a7;
+    --plum: #29232b;
+    --plum-soft: #756a78;
+    --purple-dark: #8d63ad;
+    --rose: #efd0dc;
+    --soft-bg: #f8f3f8;
+}

@@ -534,7 +534,7 @@ document
             () => {
 
                 window.location.href =
-                    "internship-detail.html";
+                    "/internship-detail";
 
             }
         );

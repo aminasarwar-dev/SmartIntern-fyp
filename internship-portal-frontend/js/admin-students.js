@@ -399,7 +399,7 @@ function initStudentDrawer() {
 
             /*
                 Later this can be connected to:
-                student-profile-admin.html?id=...
+                /student-profile-admin?id=...
             */
 
             alert(

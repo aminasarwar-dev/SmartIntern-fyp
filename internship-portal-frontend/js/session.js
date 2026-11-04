@@ -138,11 +138,11 @@
     if (requiredRole) {
 
         let allowed = false;
-        let redirectTo = "login.html";
+        let redirectTo = "/login";
 
         if (requiredRole === "admin") {
             allowed = Boolean(getAdminToken());
-            redirectTo = "admin-login.html";
+            redirectTo = "/admin-login";
         }
         else {
             allowed = Boolean(getToken()) && getRole() === requiredRole;
@@ -154,10 +154,12 @@
             // "Update my license") while logged out is sent to login first
             // and then brought back to this page.
             if (requiredRole === "company") {
-                const current = window.location.pathname.split("/").pop();
+                // "/company-profile" (or an old "company-profile.html")
+                const current = window.location.pathname
+                    .split("/").pop().replace(/\.html$/i, "");
 
-                if (/^[a-z0-9-]+\.html$/i.test(current)) {
-                    redirectTo = "login.html?next=" +
+                if (/^[a-z0-9-]+$/i.test(current)) {
+                    redirectTo = "/login?next=" +
                         encodeURIComponent(current + window.location.hash);
                 }
             }

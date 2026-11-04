@@ -100,13 +100,22 @@
 
         confirmBtn.addEventListener("click", () => {
 
+            const page = window.location.pathname.split("/").pop();
+            const isAdmin = /^admin-/i.test(page);
+
             try {
+                if (window.SmartInternSession) {
+                    window.SmartInternSession.clear();
+                    window.SmartInternSession.clearAdmin();
+                }
                 sessionStorage.clear();
                 localStorage.removeItem("smartInternUser");
                 localStorage.removeItem("smartInternRole");
+                localStorage.removeItem("smartInternAdminToken");
+                localStorage.removeItem("smartInternAdmin");
             } catch (error) { /* ignore */ }
 
-            window.location.href = "login.html";
+            window.location.href = isAdmin ? "/admin-login" : "/login";
 
         });
 

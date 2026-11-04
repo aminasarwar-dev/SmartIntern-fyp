@@ -1,3 +1,5 @@
+@import url("dashboard-shared.css");
+
 /* =========================================================
    SMARTINTERN
    STUDENT — BROWSE INTERNSHIPS
@@ -6,20 +8,8 @@
 
 .student-browse-page {
 
-    --dashboard-bg: #fffdfb;
-    --dashboard-white: #ffffff;
-
-    --plum: #29232b;
-    --plum-soft: #756a78;
-
-    --purple: #b38bd7;
-    --purple-dark: #8d63ad;
-
-    --pink: #e8a8c7;
-    --pink-dark: #c982a7;
 
     --border: #eee5ed;
-    --soft-bg: #f8f3f8;
 
     margin: 0;
 
@@ -47,56 +37,6 @@
 /* =========================================================
    SIDEBAR
    ========================================================= */
-
-.dashboard-sidebar {
-
-    position: fixed;
-
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    width: 245px;
-
-    box-sizing: border-box;
-
-    padding: 28px 17px 20px;
-
-    background:
-        rgba(255,255,255,.88);
-
-    border-right:
-        1px solid var(--border);
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
-
-    z-index: 50;
-
-    display: flex;
-
-    flex-direction: column;
-
-}
-
-
-.nav-label {
-
-    margin:
-        0 12px 8px;
-
-    color: #aaa1aa;
-
-    font-size: 8px;
-
-    font-weight: 700;
-
-    letter-spacing: .14em;
-
-}
 
 
 .nav-label-space {
@@ -135,234 +75,6 @@
 /* =========================================================
    TOPBAR
    ========================================================= */
-
-.dashboard-topbar {
-
-    height: 76px;
-
-    padding:
-        0 38px;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    border-bottom:
-        1px solid var(--border);
-
-    background:
-        rgba(255,255,255,.72);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 40;
-
-}
-
-
-.topbar-title {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 2px;
-
-}
-
-
-.topbar-title span {
-
-    color: #aaa0ac;
-
-    font-size: 8px;
-
-    font-weight: 700;
-
-    letter-spacing: .13em;
-
-}
-
-
-.topbar-title h1 {
-
-    margin: 0;
-
-    font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-    font-size: 22px;
-
-    font-weight: 500;
-
-}
-
-
-.topbar-actions {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-
-}
-
-
-.notification-button {
-
-    position: relative;
-
-    width: 37px;
-
-    height: 37px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 11px;
-
-    background: white;
-
-    color: #817582;
-
-    cursor: pointer;
-
-    font-size: 16px;
-
-    transition: .25s ease;
-
-}
-
-
-.notification-button:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 8px 20px rgba(50,35,55,.08);
-
-}
-
-
-.notification-dot {
-
-    position: absolute;
-
-    top: 7px;
-
-    right: 7px;
-
-    width: 5px;
-
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        var(--pink-dark);
-
-}
-
-
-.topbar-profile {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 9px;
-
-}
-
-
-.topbar-avatar {
-
-    width: 35px;
-    height: 35px;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 10px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eadcf5,
-            #f5dce8
-        );
-
-    color: var(--plum);
-
-    font-size: 9px;
-
-    font-weight: 700;
-
-}
-
-
-.topbar-profile-text {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 2px;
-
-}
-
-
-.topbar-profile-text strong {
-
-    font-size: 10px;
-
-}
-
-
-.topbar-profile-text span {
-
-    color: #9b909d;
-
-    font-size: 8px;
-
-}
-
-
-.mobile-menu {
-
-    display: none;
-
-    width: 37px;
-
-    height: 37px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 10px;
-
-    background: white;
-
-    color: var(--plum);
-
-}
 
 
 /* =========================================================
@@ -1468,14 +1180,6 @@
 }
 
 
-.view-button:hover span {
-
-    transform:
-        translateX(3px);
-
-}
-
-
 /* =========================================================
    NO RESULTS
    ========================================================= */
@@ -1935,4 +1639,53 @@
 
     }
 
+}
+
+
+/* =========================================================
+   LOAD MORE + TRY AGAIN BUTTONS  (cards come from the backend)
+   ========================================================= */
+
+.load-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+}
+
+.load-more-wrap[hidden],
+.load-more-btn[hidden] {
+    display: none;
+}
+
+.load-more-btn {
+    padding: 11px 26px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--dashboard-white);
+    color: var(--plum);
+    font: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.no-results .load-more-btn {
+    margin-top: 16px;
+}
+
+.load-more-btn:hover:not(:disabled) {
+    background: var(--plum);
+    color: #fff;
+    border-color: var(--plum);
+}
+
+.load-more-btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.view-button.is-loading {
+    opacity: .65;
+    pointer-events: none;
 }

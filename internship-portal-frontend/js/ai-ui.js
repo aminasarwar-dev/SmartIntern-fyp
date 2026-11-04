@@ -170,7 +170,7 @@
         );
 
         const link = el("a", "ai-btn primary", "Add skills");
-        link.href = "student-profile.html#skills";
+        link.href = "/student-profile#skills";
 
         hint.append(el("div", "ai-empty-icon", "✦"), text, link);
         return hint;

@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             if (error.status === 401) {
                 window.SmartInternSession?.clear();
-                window.location.replace("login.html");
+                window.location.replace("/login");
                 return;
             }
 
@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                             <a
                                 class="manage-action-button primary-action"
-                                href="view-applicants.html"
+                                href="/view-applicants"
                                 aria-label="View applicants for ${title}"
                             >
                                 View applicants →
@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (loadFailed) {
             loadInternships();
         } else if (internships.length === 0) {
-            window.location.href = "post-internship.html";
+            window.location.href = "/post-internship";
         } else {
             resetFilters();
         }
@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             if (error.status === 401) {
                 window.SmartInternSession?.clear();
-                window.location.replace("login.html");
+                window.location.replace("/login");
                 return;
             }
 
@@ -445,9 +445,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!item) return;
 
         if (action === "edit") {
-            // post-internship.html loads this internship and saves with PUT
+            // /post-internship loads this internship and saves with PUT
             window.location.href =
-                `post-internship.html?edit=${encodeURIComponent(id)}`;
+                `/post-internship?edit=${encodeURIComponent(id)}`;
             return;
         }
 
@@ -566,7 +566,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.removeItem("smartInternRole");
         if (window.SmartInternSession) { window.SmartInternSession.clear(); }
 
-        window.location.href = "login.html";
+        window.location.href = "/login";
     });
 
     document.addEventListener("keydown", event => {

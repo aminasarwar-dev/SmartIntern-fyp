@@ -95,7 +95,7 @@ if (logoutLink) {
             if (confirmLogout) {
 
                 window.location.href =
-                    "login.html";
+                    "/login";
 
             }
 

@@ -551,12 +551,16 @@ function showLoginSuccess(role) {
 
 function getSafeNextPage() {
 
-    // ?next=company-profile.html#tradeLicence  (from reminder emails / guards)
-    // Only plain page names from this folder are accepted.
+    // ?next=company-profile#tradeLicence  (from reminder emails / guards)
+    // Also accepted: a leading "/" and the old form company-profile.html#x.
+    // Only plain page names are allowed (never another website).
+    // Returns a clean path such as "/company-profile#tradeLicence".
 
-    const next = new URLSearchParams(window.location.search).get("next") || "";
+    const raw = new URLSearchParams(window.location.search).get("next") || "";
 
-    return /^[a-z0-9-]+\.html(#[a-z0-9-]+)?$/i.test(next) ? next : "";
+    const next = raw.replace(/^\//, "").replace(/\.html(?=#|$)/i, "");
+
+    return /^[a-z0-9-]+(#[a-z0-9-]+)?$/i.test(next) ? "/" + next : "";
 
 }
 
@@ -571,8 +575,8 @@ function redirectToDashboard(role) {
     }
 
     window.location.href = role === "company"
-        ? "company-dashboard.html"
-        : "student-dashboard.html";
+        ? "/company-dashboard"
+        : "/student-dashboard";
 
 }
 

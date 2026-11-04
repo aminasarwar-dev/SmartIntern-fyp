@@ -38,6 +38,7 @@
         rel="stylesheet"
         href="../css/variables.css"
     >
+    <link rel="stylesheet" href="../css/dashboard-tokens.css">
 
     <link
         rel="stylesheet"
@@ -78,169 +79,10 @@
          SIDEBAR
          ===================================================== -->
 
-    <aside
-        class="dashboard-sidebar"
-        id="dashboardSidebar"
-    >
+    <aside class="dashboard-sidebar" id="dashboardSidebar" data-role="student"></aside>
 
-        <!-- Brand -->
-
-        <div class="sidebar-brand">
-
-            <a href="index.html">
-                Smart<span>Intern</span>
-            </a>
-
-        </div>
-
-
-
-        <!-- Student Profile -->
-
-        <div class="sidebar-profile">
-
-            <div class="sidebar-avatar">
-                AS
-            </div>
-
-            <div class="sidebar-profile-info">
-
-                <strong id="sidebarStudentName">
-                    Student
-                </strong>
-
-                <span>
-                    Student
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Navigation -->
-
-        <nav class="sidebar-nav">
-
-
-            <p class="nav-label">
-                MAIN
-            </p>
-
-
-            <a
-                href="student-dashboard.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">⌂</span>
-
-                <span>Dashboard</span>
-
-            </a>
-
-
-            <a
-                href="student-browse-internships.html"
-                class="sidebar-link active"
-            >
-
-                <span class="nav-icon">⌕</span>
-
-                <span>Browse Internships</span>
-
-            </a>
-
-
-            <a
-                href="student-my-applications.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">▣</span>
-
-                <span>My Applications</span>
-
-            </a>
-
-
-            <a
-                href="resume-upload.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">↥</span>
-
-                <span>Resume</span>
-
-            </a>
-
-
-
-            <p class="nav-label nav-label-space">
-                AI TOOLS
-            </p>
-
-
-            <a
-                href="skill-gap.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">✦</span>
-
-                <span>AI Skill Gap</span>
-
-            </a>
-
-
-            <a
-                href="ai-match.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">◎</span>
-
-                <span>AI Matches</span>
-
-            </a>
-
-
-
-            <p class="nav-label nav-label-space">
-                ACCOUNT
-            </p>
-
-
-            <a
-                href="student-profile.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">◯</span>
-
-                <span>My Profile</span>
-
-            </a>
-
-
-            <a
-                href="index.html"
-                class="sidebar-link"
-                id="logoutLink"
-            >
-
-                <span class="nav-icon">↪</span>
-
-                <span>Logout</span>
-
-            </a>
-
-
-        </nav>
-
-    </aside>
+    <!-- Sidebar menu lives in js/sidebar.js (one place for all pages) -->
+    <script src="../js/sidebar.js"></script>
 
 
 
@@ -570,7 +412,7 @@
 
 
                 <div class="results-count">
-                    <strong id="resultsCount">6</strong>
+                    <strong id="resultsCount">…</strong>
                     <span>internships found</span>
                 </div>
 
@@ -586,506 +428,24 @@
                 class="internship-grid"
                 id="internshipGrid"
             >
-
-
-                <!-- CARD 1 -->
-
-                <article
-                    class="browse-card"
-                    data-category="web"
-                    data-type="remote"
-                    data-location="remote"
-                    data-duration="3"
-                    data-search="frontend developer technova react javascript html css"
-                >
-
-                    <div class="card-top">
-
-                        <div class="company-logo logo-purple">
-                            T
-                        </div>
-
-                        <span class="match-score">
-                            94% Match
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <span class="job-type">
-                            REMOTE · PAID
-                        </span>
-
-                        <h3>
-                            Frontend Developer Intern
-                        </h3>
-
-                        <p class="company-name">
-                            TechNova Solutions
-                        </p>
-
-
-                        <div class="job-meta">
-
-                            <span>
-                                ◉ Remote
-                            </span>
-
-                            <span>
-                                ◷ 3 Months
-                            </span>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-bottom">
-
-                        <span class="ai-note">
-                            ✦ Strong skill match
-                        </span>
-
-                        <a
-                            href="internship-detail.html"
-                            class="view-button"
-                        >
-                            View Details
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- CARD 2 -->
-
-                <article
-                    class="browse-card"
-                    data-category="design"
-                    data-type="hybrid"
-                    data-location="lahore"
-                    data-duration="6"
-                    data-search="ui ux designer alpha labs figma design"
-                >
-
-                    <div class="card-top">
-
-                        <div class="company-logo logo-pink">
-                            A
-                        </div>
-
-                        <span class="match-score">
-                            91% Match
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <span class="job-type">
-                            HYBRID · PAID
-                        </span>
-
-                        <h3>
-                            UI/UX Design Intern
-                        </h3>
-
-                        <p class="company-name">
-                            Alpha Labs
-                        </p>
-
-
-                        <div class="job-meta">
-
-                            <span>
-                                ◉ Lahore
-                            </span>
-
-                            <span>
-                                ◷ 6 Months
-                            </span>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>Figma</span>
-                            <span>UI Design</span>
-                            <span>UX</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-bottom">
-
-                        <span class="ai-note">
-                            ✦ Excellent match
-                        </span>
-
-                        <a
-                            href="internship-detail.html"
-                            class="view-button"
-                        >
-                            View Details
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- CARD 3 -->
-
-                <article
-                    class="browse-card"
-                    data-category="data"
-                    data-type="remote"
-                    data-location="remote"
-                    data-duration="3"
-                    data-search="python machine learning ai nova systems"
-                >
-
-                    <div class="card-top">
-
-                        <div class="company-logo logo-plum">
-                            N
-                        </div>
-
-                        <span class="match-score">
-                            88% Match
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <span class="job-type">
-                            REMOTE · PAID
-                        </span>
-
-                        <h3>
-                            AI / ML Intern
-                        </h3>
-
-                        <p class="company-name">
-                            Nova Systems
-                        </p>
-
-
-                        <div class="job-meta">
-
-                            <span>
-                                ◉ Remote
-                            </span>
-
-                            <span>
-                                ◷ 3 Months
-                            </span>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>Python</span>
-                            <span>ML</span>
-                            <span>AI</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-bottom">
-
-                        <span class="ai-note">
-                            ✦ AI skills aligned
-                        </span>
-
-                        <a
-                            href="internship-detail.html"
-                            class="view-button"
-                        >
-                            View Details
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- CARD 4 -->
-
-                <article
-                    class="browse-card"
-                    data-category="web"
-                    data-type="onsite"
-                    data-location="islamabad"
-                    data-duration="6"
-                    data-search="backend developer software orbit tech python database"
-                >
-
-                    <div class="card-top">
-
-                        <div class="company-logo logo-soft">
-                            O
-                        </div>
-
-                        <span class="match-score">
-                            86% Match
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <span class="job-type">
-                            ON-SITE · PAID
-                        </span>
-
-                        <h3>
-                            Backend Developer Intern
-                        </h3>
-
-                        <p class="company-name">
-                            Orbit Technologies
-                        </p>
-
-
-                        <div class="job-meta">
-
-                            <span>
-                                ◉ Islamabad
-                            </span>
-
-                            <span>
-                                ◷ 6 Months
-                            </span>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>Python</span>
-                            <span>SQL</span>
-                            <span>APIs</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-bottom">
-
-                        <span class="ai-note">
-                            ✦ Good skill match
-                        </span>
-
-                        <a
-                            href="internship-detail.html"
-                            class="view-button"
-                        >
-                            View Details
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- CARD 5 -->
-
-                <article
-                    class="browse-card"
-                    data-category="marketing"
-                    data-type="hybrid"
-                    data-location="karachi"
-                    data-duration="3"
-                    data-search="digital marketing creative studio social media marketing"
-                >
-
-                    <div class="card-top">
-
-                        <div class="company-logo logo-purple">
-                            C
-                        </div>
-
-                        <span class="match-score">
-                            83% Match
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <span class="job-type">
-                            HYBRID · PAID
-                        </span>
-
-                        <h3>
-                            Digital Marketing Intern
-                        </h3>
-
-                        <p class="company-name">
-                            Creative Studio
-                        </p>
-
-
-                        <div class="job-meta">
-
-                            <span>
-                                ◉ Karachi
-                            </span>
-
-                            <span>
-                                ◷ 3 Months
-                            </span>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>Marketing</span>
-                            <span>SEO</span>
-                            <span>Content</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-bottom">
-
-                        <span class="ai-note">
-                            ✦ Skills compatible
-                        </span>
-
-                        <a
-                            href="internship-detail.html"
-                            class="view-button"
-                        >
-                            View Details
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- CARD 6 -->
-
-                <article
-                    class="browse-card"
-                    data-category="data"
-                    data-type="remote"
-                    data-location="remote"
-                    data-duration="6"
-                    data-search="data analyst analytics insight labs sql python excel"
-                >
-
-                    <div class="card-top">
-
-                        <div class="company-logo logo-pink">
-                            I
-                        </div>
-
-                        <span class="match-score">
-                            80% Match
-                        </span>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <span class="job-type">
-                            REMOTE · PAID
-                        </span>
-
-                        <h3>
-                            Data Analyst Intern
-                        </h3>
-
-                        <p class="company-name">
-                            Insight Labs
-                        </p>
-
-
-                        <div class="job-meta">
-
-                            <span>
-                                ◉ Remote
-                            </span>
-
-                            <span>
-                                ◷ 6 Months
-                            </span>
-
-                        </div>
-
-
-                        <div class="skill-list">
-
-                            <span>SQL</span>
-                            <span>Python</span>
-                            <span>Excel</span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-bottom">
-
-                        <span class="ai-note">
-                            ✦ Potential match
-                        </span>
-
-                        <a
-                            href="internship-detail.html"
-                            class="view-button"
-                        >
-                            View Details
-                            <span>→</span>
-                        </a>
-
-                    </div>
-
-                </article>
-
-
+                <!-- Cards are drawn by js/student-browse-internships.js
+                     from GET /student/internships -->
             </section>
+
+            <!-- LOADING -->
+            <div
+                class="no-results"
+                id="browseLoading"
+                style="display:block"
+            >
+                <div>
+                    ✦
+                </div>
+
+                <h3>
+                    Loading internships…
+                </h3>
+            </div>
 
 
 
@@ -1110,6 +470,27 @@
                     Try changing your search or filters.
                 </p>
 
+                <button
+                    type="button"
+                    id="retryButton"
+                    class="load-more-btn"
+                    hidden
+                >
+                    Try again
+                </button>
+
+
+            </div>
+
+            <!-- LOAD MORE (shown only when there is a next page) -->
+            <div class="load-more-wrap" id="loadMoreWrap" hidden>
+                <button
+                    type="button"
+                    id="loadMoreButton"
+                    class="load-more-btn"
+                >
+                    Load more
+                </button>
             </div>
 
 
@@ -1211,6 +592,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
     <script src="../js/apply-flow.js"></script>
+    <script src="../js/student-internship-utils.js"></script>
     <script src="../js/student-browse-internships.js"></script>
     <script src="../js/ai-screens.js"></script>
     <script src="../js/logout.js"></script>

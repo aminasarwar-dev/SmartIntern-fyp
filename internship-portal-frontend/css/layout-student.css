@@ -1,3 +1,5 @@
+@import url("dashboard-shared.css");
+
 /* SmartIntern — shared student sidebar (extracted from the 5 student CSS files).
    Load BEFORE the page css. */
 
@@ -5,113 +7,11 @@
    BRAND
    ========================================================= */
 
-.sidebar-brand {
-
-    padding:
-        0 13px;
-
-    margin-bottom: 32px;
-
-}
-
-.sidebar-brand a {
-
-    color: var(--plum);
-
-    text-decoration: none;
-
-    font-family:
-        "Playfair Display",
-        Georgia,
-        serif;
-
-    font-size: 23px;
-
-    font-weight: 600;
-
-    letter-spacing: -.04em;
-
-}
-
-.sidebar-brand span {
-
-    color: var(--purple-dark);
-
-    font-weight: 500;
-
-}
 
 /* =========================================================
    SIDEBAR PROFILE
    ========================================================= */
 
-.sidebar-profile {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding:
-        11px;
-
-    margin-bottom: 25px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(248,242,249,.9),
-            rgba(255,255,255,.8)
-        );
-
-}
-
-.sidebar-avatar {
-
-    width: 36px;
-
-    height: 36px;
-
-    flex-shrink: 0;
-
-    display: grid;
-
-    place-items: center;
-
-    border-radius: 11px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eadcf5,
-            #f5dce8
-        );
-
-    color: var(--plum);
-
-    font-size: 10px;
-
-    font-weight: 700;
-
-}
-
-.sidebar-profile-info {
-
-    min-width: 0;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 3px;
-
-}
 
 .sidebar-profile-info strong {
 
@@ -125,25 +25,11 @@
 
 }
 
-.sidebar-profile-info span {
-
-    color: #9b909d;
-
-    font-size: 9px;
-
-}
 
 /* =========================================================
    NAV
    ========================================================= */
 
-.sidebar-nav {
-
-    display: flex;
-
-    flex-direction: column;
-
-}
 
 .sidebar-link {
 

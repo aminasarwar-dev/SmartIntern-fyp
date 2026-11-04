@@ -15,6 +15,7 @@
 
     <!-- Existing CSS -->
     <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/dashboard-tokens.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/admin-dashboard.css">
     <link rel="stylesheet" href="../css/logout-model.css">
@@ -27,65 +28,10 @@
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Sidebar -->
-    <aside class="dashboard-sidebar" id="dashboardSidebar">
+    <aside class="dashboard-sidebar" id="dashboardSidebar" data-role="admin"></aside>
 
-        <div class="sidebar-brand">
-            <a href="index.html">Smart<span>Intern</span></a>
-        </div>
-
-        <div class="sidebar-profile">
-            <div class="sidebar-avatar">AD</div>
-
-            <div class="sidebar-profile-info">
-                <strong>Admin</strong>
-                <span>Administrator</span>
-            </div>
-        </div>
-
-        <nav class="sidebar-nav">
-
-            <p class="nav-label">MAIN</p>
-
-            <a href="admin-dashboard.html" class="sidebar-link active">
-                <span class="nav-icon">⌂</span>
-                <span>Dashboard</span>
-            </a>
-
-            <a href="admin-students.html" class="sidebar-link">
-                <span class="nav-icon">◉</span>
-                <span>Students</span>
-            </a>
-
-            <a href="admin-companies.html" class="sidebar-link">
-                <span class="nav-icon">◇</span>
-                <span>Companies</span>
-            </a>
-
-            <a href="admin-internships.html" class="sidebar-link">
-                <span class="nav-icon">▣</span>
-                <span>Internships</span>
-            </a>
-
-            <a href="admin-applications.html" class="sidebar-link">
-                <span class="nav-icon">▤</span>
-                <span>Applications</span>
-            </a>
-
-            <p class="nav-label nav-label-space">MANAGEMENT</p>
-
-
-            <a href="admin-analytics.html" class="sidebar-link">
-                <span class="nav-icon">◎</span>
-                <span>Analytics</span>
-            </a>
-
-            <a href="admin-settings.html" class="sidebar-link">
-                <span class="nav-icon">⚙</span>
-                <span>Settings</span>
-            </a>
-
-        </nav>
-    </aside>
+    <!-- Sidebar menu lives in js/sidebar.js (one place for all pages) -->
+    <script src="../js/sidebar.js"></script>
 
     <!-- Main -->
     <main class="dashboard-main">
@@ -193,13 +139,13 @@
 
                     <div class="welcome-actions">
 
-                        <a href="admin-companies.html?status=pending"
+                        <a href="/admin-companies?status=pending"
                            class="primary-dashboard-button">
                             Review Pending Companies
                             <span>→</span>
                         </a>
 
-                        <a href="admin-analytics.html"
+                        <a href="/admin-analytics"
                            class="secondary-dashboard-button">
                             View Analytics
                         </a>
@@ -287,7 +233,7 @@
                             <h2>Pending <em>approvals.</em></h2>
                         </div>
 
-                        <a href="admin-companies.html?status=pending">View all →</a>
+                        <a href="/admin-companies?status=pending">View all →</a>
                     </div>
 
                     <!-- Populated by admin-dashboard.js -->
@@ -307,7 +253,7 @@
 
                         <div class="section-heading-small">
                             <span>PLATFORM OVERVIEW</span>
-                            <a href="admin-analytics.html">Analytics</a>
+                            <a href="/admin-analytics">Analytics</a>
                         </div>
 
                         <div class="overview-circle">
@@ -351,22 +297,22 @@
 
                         <div class="quick-action-grid">
 
-                            <a href="admin-students.html">
+                            <a href="/admin-students">
                                 <span>◉</span>
                                 Students
                             </a>
 
-                            <a href="admin-companies.html">
+                            <a href="/admin-companies">
                                 <span>◇</span>
                                 Companies
                             </a>
 
-                            <a href="admin-internships.html">
+                            <a href="/admin-internships">
                                 <span>▣</span>
                                 Internships
                             </a>
 
-                            <a href="admin-applications.html">
+                            <a href="/admin-applications">
                                 <span>▤</span>
                                 Applications
                             </a>
@@ -387,7 +333,7 @@
                         <h2>Recent <em>activity.</em></h2>
                     </div>
 
-                    <a href="admin-analytics.html">
+                    <a href="/admin-analytics">
                         View analytics →
                     </a>
 
@@ -418,5 +364,6 @@
     <script src="../js/admin-dashboard.js"></script>
 
     <script src="../js/notifications.js"></script>
+    <script src="../js/logout.js"></script>
 </body>
 </html>

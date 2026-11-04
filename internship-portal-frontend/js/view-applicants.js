@@ -369,7 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const actions = [
                 `<a class="applicant-action-button primary"
-                    href="applicant-detail.html?id=${encodeURIComponent(applicant.id)}">
+                    href="/applicant-detail?id=${encodeURIComponent(applicant.id)}">
                     View details →
                 </a>`
             ];
@@ -567,7 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sessionStorage.removeItem("smartInternToken");
             sessionStorage.removeItem("smartInternLogin");
             sessionStorage.removeItem("smartInternRole");
-            window.location.href = "login.html";
+            window.location.href = "/login";
             return;
         }
 

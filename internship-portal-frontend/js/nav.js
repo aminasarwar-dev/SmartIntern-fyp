@@ -34,12 +34,12 @@
         actions.className = "mobile-actions";
 
         const login = document.createElement("a");
-        login.href = "login.html";
+        login.href = "/login";
         login.className = "mobile-login";
         login.textContent = "Login";
 
         const start = document.createElement("a");
-        start.href = "profile-setup.html";
+        start.href = "/profile-setup";
         start.className = "mobile-start";
         start.textContent = "Get Started";
 

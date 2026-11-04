@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.removeItem("smartInternRole");
         if (window.SmartInternSession) { window.SmartInternSession.clear(); }
 
-        window.location.href = "login.html";
+        window.location.href = "/login";
     });
 
     /* -----------------------------------------

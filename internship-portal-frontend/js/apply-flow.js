@@ -215,7 +215,7 @@
         back.type = "button";
         back.addEventListener("click", close);
 
-        const applied = hasApplied(item.id);
+        const applied = Boolean(item.hasApplied) || hasApplied(item.id);
         const apply = el("button", "apply-btn primary", applied ? "Already applied" : "Apply now");
         apply.type = "button";
         apply.disabled = applied;
@@ -312,7 +312,7 @@
                 '<small>Companies prefer applications with a resume.</small></div>';
         }
         const resumeLink = el("a", "apply-link", values.resumeName ? "Change" : "Upload resume");
-        resumeLink.href = "resume-upload.html";
+        resumeLink.href = "/resume-upload";
         resumeRow.appendChild(resumeLink);
         form.appendChild(resumeRow);
 
@@ -488,7 +488,7 @@
         keep.type = "button";
         keep.addEventListener("click", close);
         const go = el("a", "apply-btn primary", "My applications");
-        go.href = "student-my-applications.html";
+        go.href = "/student-my-applications";
         go.setAttribute("data-autofocus", "");
         foot.append(keep, go);
         panel.appendChild(foot);

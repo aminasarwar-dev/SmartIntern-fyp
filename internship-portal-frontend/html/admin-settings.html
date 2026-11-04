@@ -16,6 +16,7 @@
 
     <!-- Shared Admin CSS -->
     <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/dashboard-tokens.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/admin-dashboard.css">
 
@@ -34,67 +35,10 @@
     <!-- =========================================================
          SIDEBAR
     ========================================================== -->
-    <aside class="dashboard-sidebar" id="dashboardSidebar">
+    <aside class="dashboard-sidebar" id="dashboardSidebar" data-role="admin"></aside>
 
-        <div class="sidebar-brand">
-            <a href="index.html">
-                Smart<span>Intern</span>
-            </a>
-        </div>
-
-        <div class="sidebar-profile">
-            <div class="sidebar-avatar">AD</div>
-
-            <div class="sidebar-profile-info">
-                <strong>Admin</strong>
-                <span>Administrator</span>
-            </div>
-        </div>
-
-        <nav class="sidebar-nav">
-
-            <p class="nav-label">MAIN</p>
-
-            <a href="admin-dashboard.html" class="sidebar-link">
-                <span class="nav-icon">⌂</span>
-                <span>Dashboard</span>
-            </a>
-
-            <a href="admin-students.html" class="sidebar-link">
-                <span class="nav-icon">◉</span>
-                <span>Students</span>
-            </a>
-
-            <a href="admin-companies.html" class="sidebar-link">
-                <span class="nav-icon">◇</span>
-                <span>Companies</span>
-            </a>
-
-            <a href="admin-internships.html" class="sidebar-link">
-                <span class="nav-icon">▣</span>
-                <span>Internships</span>
-            </a>
-
-            <a href="admin-applications.html" class="sidebar-link">
-                <span class="nav-icon">▤</span>
-                <span>Applications</span>
-            </a>
-
-            <p class="nav-label nav-label-space">MANAGEMENT</p>
-
-
-            <a href="admin-analytics.html" class="sidebar-link">
-                <span class="nav-icon">◎</span>
-                <span>Analytics</span>
-            </a>
-
-            <a href="admin-settings.html" class="sidebar-link active">
-                <span class="nav-icon">⚙</span>
-                <span>Settings</span>
-            </a>
-
-        </nav>
-    </aside>
+    <!-- Sidebar menu lives in js/sidebar.js (one place for all pages) -->
+    <script src="../js/sidebar.js"></script>
 
 
     <!-- =========================================================
@@ -674,5 +618,6 @@
     <script src="../js/admin-settings.js"></script>
 
     <script src="../js/notifications.js"></script>
+    <script src="../js/logout.js"></script>
 </body>
 </html>

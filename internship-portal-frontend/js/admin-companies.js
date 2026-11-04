@@ -279,7 +279,7 @@ async function loadCompanies() {
         updateCompanyStats();
         fillIndustryFilter();
 
-        // Opened from the dashboard: admin-companies.html?status=pending
+        // Opened from the dashboard: /admin-companies?status=pending
         const wanted = new URLSearchParams(window.location.search).get("status");
         const statusFilter = document.getElementById("companyStatusFilter");
 

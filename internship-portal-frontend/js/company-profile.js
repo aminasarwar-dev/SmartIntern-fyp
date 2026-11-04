@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
             sessionStorage.removeItem("smartInternLogin");
             sessionStorage.removeItem("smartInternRole");
             if (window.SmartInternSession) { window.SmartInternSession.clear(); }
-            window.location.href = "login.html";
+            window.location.href = "/login";
         });
     });
 
@@ -497,7 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (failure) {
             if (failure.status === 401) {
                 window.SmartInternSession?.clear();
-                window.location.replace("login.html?next=company-profile.html%23tradeLicence");
+                window.location.replace("/login?next=/company-profile%23tradeLicence");
                 return;
             }
 

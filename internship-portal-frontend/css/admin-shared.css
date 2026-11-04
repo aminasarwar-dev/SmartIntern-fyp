@@ -1,0 +1,200 @@
+/* =========================================================
+   SMARTINTERN — ADMIN SHARED STYLES
+   Rules that were copy-pasted in several admin-*.css files.
+   Written once here; the admin css files import this file.
+   ========================================================= */
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.pagination-info {
+    color: #978d99;
+    font-size: 10px;
+}
+
+.pagination-info strong {
+    color: var(--plum);
+}
+
+.pagination-dots {
+    color: #a49aa6;
+    font-size: 11px;
+}
+
+.notification-panel-header {
+    padding: 17px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.notification-panel-header span {
+    display: block;
+    margin-bottom: 2px;
+    color: var(--purple-dark);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.notification-panel-header h3 {
+    margin: 0;
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+}
+
+.notification-panel-header button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--plum-soft);
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.notification-list {
+    padding: 7px 0;
+}
+
+.notification-item {
+    display: flex;
+    gap: 11px;
+    padding: 13px 17px;
+    transition: background .2s ease;
+}
+
+.notification-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--purple-soft);
+    color: var(--purple-dark);
+    font-size: 13px;
+}
+
+.notification-item strong {
+    display: block;
+    color: var(--plum);
+    font-size: 11px;
+}
+
+.notification-item p {
+    margin: 3px 0;
+    color: #8f8592;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.notification-item span {
+    color: #aaa1ad;
+    font-size: 8px;
+}
+
+.eyebrow {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--purple-dark);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .15em;
+}
+
+.notification-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 13px;
+}
+
+.notification-eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--purple-dark);
+    font-size: 6px;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+.notification-header h3 {
+    margin: 0;
+    color: var(--plum);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.close-notification {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+    color: #877b88;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.notification-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 11px;
+}
+
+.notification-item.unread {
+    background: #faf5fa;
+}
+
+.notification-icon {
+    width: 29px;
+    height: 29px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.notification-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.notification-text strong {
+    color: var(--plum);
+    font-size: 8px;
+}
+
+.notification-text span {
+    color: #948a96;
+    font-size: 7px;
+    line-height: 1.45;
+}
+
+.notification-text small {
+    color: #aaa0ab;
+    font-size: 6px;
+}

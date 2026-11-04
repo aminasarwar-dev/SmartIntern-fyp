@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/dashboard-tokens.css">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/company-dashboard.css">
     <link rel="stylesheet" href="../css/ai-candidate-matches.css">
@@ -25,67 +26,10 @@
 
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <aside class="dashboard-sidebar" id="dashboardSidebar">
-        <div class="sidebar-brand">
-            <a href="index.html">Smart<span>Intern</span></a>
-        </div>
+    <aside class="dashboard-sidebar" id="dashboardSidebar" data-role="company"></aside>
 
-        <div class="sidebar-profile">
-            <div class="sidebar-avatar" id="sidebarCompanyAvatar">C</div>
-            <div class="sidebar-profile-info">
-                <strong id="sidebarCompanyName">Company</strong>
-                <span>Company</span>
-            </div>
-        </div>
-
-        <nav class="sidebar-nav">
-            <p class="nav-label">MAIN</p>
-
-            <a href="company-dashboard.html" class="sidebar-link">
-                <span class="nav-icon">⌂</span>
-                <span>Dashboard</span>
-            </a>
-
-            <a href="post-internship.html" class="sidebar-link">
-                <span class="nav-icon">＋</span>
-                <span>Post Internship</span>
-            </a>
-
-            <a href="manage-internships.html" class="sidebar-link">
-                <span class="nav-icon">▣</span>
-                <span>Manage Internships</span>
-            </a>
-
-            <a href="view-applicants.html" class="sidebar-link">
-                <span class="nav-icon">◇</span>
-                <span>Applicants</span>
-            </a>
-
-            <p class="nav-label nav-label-space">AI TOOLS</p>
-
-            <a href="ai-candidate-matches.html" class="sidebar-link active">
-                <span class="nav-icon">✦</span>
-                <span>AI Candidate Matches</span>
-            </a>
-
-            <a href="hiring-analytics.html" class="sidebar-link">
-                <span class="nav-icon">◎</span>
-                <span>Hiring Analytics</span>
-            </a>
-
-            <p class="nav-label nav-label-space">ACCOUNT</p>
-
-            <a href="company-profile.html" class="sidebar-link">
-                <span class="nav-icon">◯</span>
-                <span>Company Profile</span>
-            </a>
-
-            <a href="login.html" class="sidebar-link" id="logoutLink">
-                <span class="nav-icon">↪</span>
-                <span>Logout</span>
-            </a>
-        </nav>
-    </aside>
+    <!-- Sidebar menu lives in js/sidebar.js (one place for all pages) -->
+    <script src="../js/sidebar.js"></script>
 
     <main class="dashboard-main">
 
@@ -132,7 +76,7 @@
                             Explore Matches <span>→</span>
                         </a>
 
-                        <a href="view-applicants.html" class="secondary-dashboard-button">
+                        <a href="/view-applicants" class="secondary-dashboard-button">
                             View Applicants
                         </a>
                     </div>
@@ -364,7 +308,7 @@
                 Connect the candidate profile API to show full profile details.
             </p>
             <div class="ai-modal-actions">
-                <a href="view-applicants.html" class="primary-dashboard-button">Go to Applicants →</a>
+                <a href="/view-applicants" class="primary-dashboard-button">Go to Applicants →</a>
                 <button type="button" class="secondary-dashboard-button" id="modalDone">Close</button>
             </div>
         </section>

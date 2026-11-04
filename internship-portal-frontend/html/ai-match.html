@@ -42,6 +42,7 @@
         rel="stylesheet"
         href="../css/variables.css"
     >
+    <link rel="stylesheet" href="../css/dashboard-tokens.css">
 
     <link
         rel="stylesheet"
@@ -87,189 +88,10 @@
          SAME AS YOUR STUDENT DASHBOARD / SKILL GAP
          ===================================================== -->
 
-    <aside
-        class="dashboard-sidebar"
-        id="dashboardSidebar"
-    >
+    <aside class="dashboard-sidebar" id="dashboardSidebar" data-role="student"></aside>
 
-
-        <!-- Brand -->
-
-        <div class="sidebar-brand">
-
-            <a href="index.html">
-
-                Smart<span>Intern</span>
-
-            </a>
-
-        </div>
-
-
-
-        <!-- Student Profile -->
-
-        <div class="sidebar-profile">
-
-            <div class="sidebar-avatar">
-                AS
-            </div>
-
-            <div class="sidebar-profile-info">
-
-                <strong id="sidebarStudentName">
-                    Student
-                </strong>
-
-                <span>
-                    Student
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Navigation -->
-
-        <nav class="sidebar-nav">
-
-
-            <p class="nav-label">
-                MAIN
-            </p>
-
-
-            <a
-                href="student-dashboard.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">⌂</span>
-
-                <span>
-                    Dashboard
-                </span>
-
-            </a>
-
-
-            <a
-                href="student-browse-internships.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">⌕</span>
-
-                <span>
-                    Browse Internships
-                </span>
-
-            </a>
-
-
-            <a
-                href="student-my-applications.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">▣</span>
-
-                <span>
-                    My Applications
-                </span>
-
-            </a>
-
-
-            <a
-                href="resume-upload.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">↥</span>
-
-                <span>
-                    Resume
-                </span>
-
-            </a>
-
-
-
-            <p class="nav-label nav-label-space">
-                AI TOOLS
-            </p>
-
-
-            <a
-                href="skill-gap.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">✦</span>
-
-                <span>
-                    AI Skill Gap
-                </span>
-
-            </a>
-
-
-            <a
-                href="ai-match.html"
-                class="sidebar-link active"
-            >
-
-                <span class="nav-icon">◎</span>
-
-                <span>
-                    AI Matches
-                </span>
-
-            </a>
-
-
-
-            <p class="nav-label nav-label-space">
-                ACCOUNT
-            </p>
-
-
-            <a
-                href="student-profile.html"
-                class="sidebar-link"
-            >
-
-                <span class="nav-icon">◯</span>
-
-                <span>
-                    My Profile
-                </span>
-
-            </a>
-
-
-            <a
-                href="index.html"
-                class="sidebar-link"
-                id="logoutLink"
-            >
-
-                <span class="nav-icon">↪</span>
-
-                <span>
-                    Logout
-                </span>
-
-            </a>
-
-
-        </nav>
-
-
-    </aside>
+    <!-- Sidebar menu lives in js/sidebar.js (one place for all pages) -->
+    <script src="../js/sidebar.js"></script>
 
 
 
@@ -572,7 +394,7 @@
                         </div>
 
 
-                        <a href="student-browse-internships.html">
+                        <a href="/student-browse-internships">
                             View all →
                         </a>
 
@@ -656,7 +478,7 @@
 
 
                         <a
-                            href="internship-detail.html"
+                            href="/internship-detail"
                             class="match-view-button"
                         >
                             View
@@ -744,7 +566,7 @@
 
 
                         <a
-                            href="internship-detail.html"
+                            href="/internship-detail"
                             class="match-view-button"
                         >
                             View
@@ -832,7 +654,7 @@
 
 
                         <a
-                            href="internship-detail.html"
+                            href="/internship-detail"
                             class="match-view-button"
                         >
                             View
@@ -982,7 +804,7 @@
 
 
                     <a
-                        href="skill-gap.html"
+                        href="/skill-gap"
                         class="analysis-link"
                     >
                         View AI Skill Analysis →
@@ -1032,7 +854,7 @@
 
 
                 <a
-                    href="student-profile.html"
+                    href="/student-profile"
                     class="improve-match-button"
                 >
                     Update Profile →

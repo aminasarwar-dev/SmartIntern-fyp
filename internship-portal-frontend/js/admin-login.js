@@ -177,7 +177,7 @@ if (adminLoginForm) {
 
             setTimeout(function () {
 
-                window.location.href = "admin-dashboard.html";
+                window.location.href = "/admin-dashboard";
 
             }, 900);
 

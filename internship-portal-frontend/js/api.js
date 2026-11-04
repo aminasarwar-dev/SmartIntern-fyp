@@ -485,3 +485,70 @@ function deleteInternshipAPI(id) {
         headers: companyAuthHeaders()
     });
 }
+
+
+/* =========================================================
+   STUDENT — BROWSE INTERNSHIPS
+   ---------------------------------------------------------
+   GET /student/internships           the Browse page (cards + paging)
+        ?q=react&type=remote&location=lahore&duration=3
+        &category=web&page=1&page_size=12
+        type     : all | remote | onsite | hybrid
+        location : all | remote | a city name
+        duration : all | number of months (3, 6 ...)
+        category : all | web | design | data | marketing
+                   (or an exact category name, e.g. Finance)
+   GET /student/internships/{id}      the Internship Details page
+
+   Needs a logged-in STUDENT (same token as the other pages).
+   Only open internships of verified companies are returned.
+   Every error is { "detail": "message" } -> error.message,
+   and error.status is 401 (session expired) / 404 / 400 ...
+========================================================= */
+
+function studentAuthHeaders(extra = {}) {
+
+    // same token key as the company pages (smartInternToken)
+    return companyAuthHeaders(extra);
+}
+
+function browseInternshipsAPI(filters = {}) {
+
+    const params = new URLSearchParams();
+
+    ["q", "type", "location", "duration", "category", "page", "page_size"]
+        .forEach(key => {
+
+            const value = filters[key];
+
+            if (value !== undefined && value !== null && String(value).trim() !== "") {
+                params.set(key, String(value).trim());
+            }
+        });
+
+    const query = params.toString();
+
+    return apiRequest(
+        `/student/internships${query ? "?" + query : ""}`,
+        {
+            method: "GET",
+            headers: studentAuthHeaders()
+        }
+    );
+}
+
+function getStudentInternshipAPI(id) {
+
+    // Ids come from the server (numbers). Never put anything else in the URL.
+    if (!/^\d+$/.test(String(id))) {
+        throw new Error("Invalid internship ID.");
+    }
+
+    return apiRequest(
+        `/student/internships/${id}`,
+        {
+            method: "GET",
+            headers: studentAuthHeaders()
+        }
+    );
+}

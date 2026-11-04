@@ -978,7 +978,7 @@ async function handleStudentSubmit() {
         ========================= */
 
         window.location.href =
-            "student-dashboard.html";
+            "/student-dashboard";
 
     }
 
@@ -1492,7 +1492,7 @@ async function handleCompanySubmit() {
         ========================= */
 
         window.location.href =
-            "company-dashboard.html";
+            "/company-dashboard";
 
     }
 
